@@ -1,0 +1,143 @@
+
+<html lang="en">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+        <link href="{{ url_for('static',filename='master/css/bootstrap-multiselect.min.css') }}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+</head>
+<body class="skin-black">
+{% block body %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <div class="wrapper row-offcanvas row-offcanvas-right">
+        <aside class="right-side">
+            <section class="content-header">
+                <h1>
+                    Batch
+                    <small>Add Batch</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Batch</a></li>
+                    <li class="active">Add Batch</li>
+                </ol>
+            </section>
+            <section class="content"  style="height:100%">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">*All Details Are Mendatory</h3>
+                            </div>
+                            <div class="box-body">
+                                    <form class="contact-form">
+                                    {% with messages = get_flashed_messages(with_categories = True) %}
+                                        {% if messages %}
+                                            <ul class=flashes>
+                                                {% for message in messages %}
+                                                    <li class="{{ category }}">{{ message }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    {% endwith %}
+                                        <input type="hidden" name="id" value="{{ bid }}">
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Course Name</label>
+                                    <div class="col-sm-4">
+                                        <select name="course_txt" class="form-control">
+                                            {% for r in course_list %}
+                                                <option value="{{ r[0] }}">{{ r[1] }}</option>
+                                            {% endfor%}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><br />
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Faculty Name</label>
+                                    <div class="col-sm-4">
+                                        <select name="faculty_txt" class="form-control">
+                                            {% for r in faculty_list %}
+                                                <option value="{{ r[0] }}">{{ r[1] }}</option>
+                                            {% endfor%}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><br />
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label" for="days">Days</label>
+                                    <div class="col-sm-4">
+                                        <select id="day_txt" name="day_txt" class="multiselect" multiple="">
+                                            {% for r in days %}
+                                            <option value="{{ r }}">{{ r }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><br />
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <label class="col-sm-2" for="time">Time</label>
+                                    <div class="col-sm-4">
+                                        <select id="time_txt" name="time_txt" class="multiselect" multiple="">
+                                            {% for r in time %}
+                                            <option value="{{ r }}">{{ r }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div><br />
+
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-sm-6">
+                                        <button type="submit" class="btn btn-primary btn-mini" formmethod="POST" formaction="{{ url_for('bupdate') }}">add Batch</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+        </div>
+{% endblock %}
+{% block script %}
+    {{ super() }}
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.js') }}"></script>
+    <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.min.js') }}"></script>
+    <script type="text/javascript">
+        $('.multiselect').multiselect({
+             enableFiltering: true,
+             enableHTML: true,
+             buttonClass: 'form-control',
+             includeSelectAllOption: true,
+             templates: {
+                button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"><span class="multiselect-selected-text"></span> &nbsp;<b class="fa fa-caret-down"></b></button>',
+                ul: '<ul class="multiselect-container dropdown-menu"></ul>',
+                filter: '<li class="multiselect-item filter"><div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
+                filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span>',
+                li: '<li><a tabindex="0"><label></label></a></li>',
+                divider: '<li class="multiselect-item divider"></li>',
+                liGroup: '<li class="multiselect-item multiselect-group"><label></label></li>'
+             }
+            });
+        </script>
+{% endblock %}
+</body>
+</html>

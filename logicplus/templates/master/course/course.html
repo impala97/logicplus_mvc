@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+    <link href="{{ url_for('static',filename='master/css/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+</head>
+<body class="skin-black">
+    {% block body %}
+        {{ super() }}
+    {% endblock %}
+    {% block content %}
+        <div class="wrapper row-offcanvas row-offcanvas-right">
+        <aside class="right-side">
+            <section class="content-header">
+                <h1>
+                    course
+                    <small>Add course</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Course</a></li>
+                    <li class="active">Add Course</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">*All Details Are Mendatory</h3>
+                            </div>
+                            <div class="box-body">
+                                <form class="contact-form">
+                                {% with messages = get_flashed_messages(with_categories = True) %}
+                                    {% if messages %}
+                                        <ul class=flashes>
+                                        {% for message in messages %}
+                                            <li class="{{ category }}">{{ message }}</li>
+                                        {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                {% endwith %}
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Course</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="cname_txt" class="form-control" placeholder="Course Name" required />
+                                        </div>
+                                    </div>
+                                </div><br />
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Duration</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                                <input name="duration_txt" type="text" class="form-control pull-right" id="reservation" >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><br />
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Fees</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="fees_txt" class="form-control" placeholder="Fees" required />
+                                        </div>
+                                    </div>
+                                </div><br />
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Details</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="textarea" name="details_txt" rows="5" placeholder="Enter Extra Details"></textarea>
+                                        </div>
+                                    </div>
+                                </div><br />
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <button type="submit" class="btn btn-primary btn-mini" formmethod="POST" formaction="{{ url_for('rtcourse') }}">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+        </div>
+    {% endblock %}
+    {% block script %}
+        {{ super() }}
+    <script src="{{ url_for('static',filename='master/js/plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script type="text/javascript">
+            $(function() {
+                //Date range picker
+                $('#reservation').daterangepicker();
+                //Date range picker with time picker
+                $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+                //Date range as a button
+                $('#daterange-btn').daterangepicker(
+                        {
+                            ranges: {
+                                'Today': [moment(), moment()],
+                                'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+                                'Last 7 Days': [moment().subtract('days', 6), moment()],
+                                'Last 30 Days': [moment().subtract('days', 29), moment()],
+                                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                                'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+                            },
+                            startDate: moment().subtract('days', 29),
+                            endDate: moment()
+                        },
+                function(start, end) {
+                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                }
+                );
+
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

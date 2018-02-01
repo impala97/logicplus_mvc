@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+    {% endblock %}
+</head>
+<body class="skin-black">
+    {% block body %}
+        {{ super() }}
+    {% endblock %}
+    {% block content %}
+        <form action="{{ url_for('rtprofile') }}" method="POST" class="form-box">
+            <div class="form-group">
+                <input type="password" name="old_pwd" class="form-control" placeholder="Old Password" required/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="new_pwd" class="form-control" placeholder="New Password" required/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="cnew_pwd" class="form-control" placeholder="Re-type password" required/>
+            </div>
+            <button type="submit" class="btn bg-olive btn-block" formmethod="POST" formaction="{{ url_for('rtprofile') }}">Change Password</button>
+        </form>
+        {{ super() }}
+    {% endblock %}
+</body>
+</html>

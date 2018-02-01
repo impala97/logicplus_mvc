@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends "master/empty.html" %}
+<html lang="en">
+<head>
+{% block head %}
+    <meta charset="UTF-8">
+    {{ super() }}
+    {% block css %}
+        {{ super() }}
+    {% endblock %}
+{% endblock %}
+</head>
+<body>
+{% block body %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+<form method="POST" action="{{url_for('update') }}">
+    <input type="hidden" name="id" value="{{ row[0][0] }}">
+    <div class="clearfix">
+        <div class="pull-right tableTools-container"></div>
+    </div>
+    <div class="form-box">
+        <h3 class="header smaller lighter blue"> Login Table</h3>
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" value="{{ row[0][1] }}" /><br />
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="password" value="{{ row[0][2] }}" /><br />
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="email" value="{{ row[0][3] }}" /><br />
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" name="mobile" value="{{ row[0][4] }}" /><br />
+        </div>
+        <div class="form-group">
+            <input type="radio" class="form-control" name="active" value="True" checked>True</input>
+            <input type="radio" class="form-control" name="active" value="False">False </input><br />
+        </div>
+        <div class="form-group">
+            <a href="{{ url_for('update') }}">
+                <button type="submit" name="Update">Update</button>
+            </a>
+        </div>
+    </div>
+</form>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+{% endblock %}
+</body>
+</html>

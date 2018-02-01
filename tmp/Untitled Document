@@ -1,0 +1,30 @@
+master
+    programe - (id,tech,framework,defination)
+    technology - (id,tech,framework,active)
+    faculty - (id,name,email,phone,website,company,post,dob,address,gender,dp,active)
+trnxs
+    user - (id,username,password,email,mobile,last_login,status,live,active)
+    course_trxns - (id,cname,duration,start_date,details,active)
+    inquiry_trnxs - (id,name,phone,email,course,study,details,gender,date,active)
+    admission_trnxs - (id,name,phone,email,course,study,gender,join_date,fees,address,extra details,active)
+    batch_trnxs - (bid,cid,fid,days,time,active)
+    invoice_trnxs - (id,invoice_no,aid,amount,payment_type,bank,chq_no,active)
+
+
+batch table
+create table lp.batch_trnxs(bid serial primary key,cid integer not null references lp.course_trnxs(id),fid integer not null references lp.faculty(id),day text not null,time text not null,active boolean not null default '0');
+
+invoice_trnxs
+create table lp.invoice_trnxs(id serial primary key,invoice_no varchar(10) default 0 ,aid integer not null references lp.admission_trnxs(id) ,amount integer not null,payment_type boolean default '0',bank text not null,chq_no text,active boolean);
+
+
+select id,name,course,fees,installment_no,bid from lp.admission_trnxs;
+
+
+                $('').bind('change', function() {
+                    $.getJSON($SCRIPT_ROOT + '{{ url_for('') }}', {
+
+                    },function(data) {
+
+                    });
+                });

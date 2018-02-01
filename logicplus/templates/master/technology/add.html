@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+    {% endblock %}
+</head>
+<body class="skin-black">
+    {% block body %}
+        {{ super() }}
+    {% endblock %}
+    {% block content %}
+        <form action="{{ url_for('addtech') }}" method="POST" class="form-box">
+            {% with messages = get_flashed_messages(with_categories = True) %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <input type="text" name="Technology" class="form-control" placeholder="Add Technology" required/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="Framework" class="form-control" placeholder="New Framework" required/>
+            </div>
+            <button type="submit" class="btn bg-olive btn-block" formmethod="POST" formaction="{{ url_for('addtech') }}">Add Technology</button>
+        </form>
+        {{ super() }}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,194 @@
+<html>
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+
+    {% block css %}
+        {{ super() }}
+    {% endblock %}
+</head>
+<body class="skin-black">
+{% block body %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <aside class="right-side">
+        <section class="content-header">
+            <h1>
+                Invoice
+                <small>Generate</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="#">Invoice</a></li>
+                <li class="active">Generate</li>
+            </ol>
+        </section>
+        <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">*All Details Are Mendatory</h3>
+                            </div>
+                            <div class="box-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Display Picture</label>
+                                            <div class="col-sm-4">
+                                                <img name="student_img" id="student_img" alt="Display Picture" height="100" width="100" src="{{url_for('static',filename='master/img/profile-pic.jpg')}}" />
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Course</label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control" name="course_txt" id="course_txt">
+                                                    {% for r in range(0,course_name|length) %}
+                                                        <option value="{{ course_name[r][0] }}">{{ course_name[r][1] }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Full Name</label>
+                                            <div class="col-sm-4">
+                                                <div class="pos-rel" >
+                                                    <select class="form-control" name="name_txt" id="name_txt">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Fees Amount</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="fees_txt" name="fees_txt" placeholder="Enter Fees" />
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">select payment type</label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control" id="payment_type" name="payment_type">
+                                                    <option value="False">Cash</option>
+                                                    <option value="True">Chaque/Draft</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <div class="row" style="dislpay:none">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" id="bank_lbl" hidden>Enter Bank Name</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="bank_txt" name="bank_txt" class="form-control" placeholder="Enter bank details" />
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <div class="row" style="dislpay:none">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label" id="chq_no_lbl" hidden>Chaque No./Draft</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" id="chq_no" name="chq_no" class="form-control" placeholder="Enter Check Details" />
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <button type="submit" id="generate_btn" class="btn btn-primary btn-mini" formmethod="POST" formaction="{{ url_for('rtgenerate') }}">Generate Invoice</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </aside>
+{% endblock %}
+{% block script %}
+    {{ super() }}
+    <script src="{{ url_for('static',filename='master/js/jquery-typeahead.js') }}"></script>
+    <script type="text/javascript">
+            $(function() {
+                $('#course_txt').bind('change', function() {
+                  $.getJSON($SCRIPT_ROOT + '{{ url_for('rtiData') }}', {
+                    course: $('#course_txt').val()
+                  }, function(data) {
+                    $("#fees_txt").val(data.fees);
+                    $('#name_txt').find('option').remove()
+                    var $select = $('#name_txt');
+                    var $option;
+                    for(i = 0; i < data.sname.length; ++i) {
+                        $option = $('<option value="' + data.sname[i][0] + '">' + data.sname[i][1] + '</option>');
+                        $select.append($option);
+                    }
+
+                  return false;
+                  });
+                });
+
+                $('#name_txt').bind('click', function() {
+                  $.getJSON($SCRIPT_ROOT + '{{ url_for('getimage') }}', {
+                    student_name: $('#name_txt').val()
+                  }, function(data) {
+                        var src = "../static/master/profile/admission/" + data.dp;
+                        $('#student_img').attr("src", src );
+
+                        if(data.due_fees == 0){
+                            $('#generate_btn').attr("disabled","disabled");
+                            $('#fees_txt').val(data.due_fees);
+                            $('#fees_txt').attr("disabled","disabled");
+                            alert("remaining fees == "+data.due_fees);
+                        }
+                        else
+                        {
+                            $('#generate_btn').removeAttr("disabled");
+                            $('#fees_txt').removeAttr("disabled");
+                            $('#fees_txt').val(data.due_fees);
+                        }
+                  });
+                });
+
+                $('#payment_type').bind('change', function() {
+                    if($('#payment_type').val() == 'True'){
+                        $('#bank_lbl').show("fast");
+                        $('#bank_txt').show("fast");
+                        $('#chq_no_lbl').show("fast");
+                        $('#chq_no').show("fast");
+                    }
+                    else
+                    {
+                        $('#bank_lbl').hide("fast");
+                        $('#bank_txt').hide("fast");
+                        $('#chq_no_lbl').hide("fast");
+                        $('#chq_no').hide("fast");
+                    }
+                });
+                $('#bank_lbl').hide("fast");
+                $('#bank_txt').hide("fast");
+                $('#chq_no_lbl').hide("fast");
+                $('#chq_no').hide("fast");
+
+                $('#course_txt').trigger('change');
+            });
+        </script>
+{% endblock %}
+</body>

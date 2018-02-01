@@ -1,0 +1,722 @@
+import time
+from flask import Flask, redirect, url_for, render_template, request, flash, session, jsonify,json
+from module.user import user
+from module.tech import tech
+from module.master import master
+from module.fxml import fxml
+from module.tmp import tmp
+from module.faculty import faculty
+from module.course import course
+from module.admission import admission
+from module.inquiry import inquiry
+from module.batch import batch
+from module.invoice import invoice
+from flask_mail import Mail, Message
+
+app = Flask(__name__)
+mail = Mail(app)
+
+app.config['SECRET_KEY'] = 'logicplus'
+app.config['MAIL_SERVER'] = 'mail.itmusketeers.com'
+app.config['MAIL_PORT'] = 25
+app.config['MAIL_USE_TLS'] = False
+app.config['MAIL_USE_SSL'] = False
+
+
+def sent(recipients):
+    msg = Message('Hello', sender='sr_mehta@itmusketeers.com', recipients=[recipients])
+    msg.body = "Test email By <h1>%s</h1>" % msg.sender
+
+    app.config['MAIL_USERNAME'] = 'sr_mehta@itmusketeers.com'
+    app.config['MAIL_PASSWORD'] = 'Smit@12345'
+    time.strftime('%A %B, %d %Y %H:%M:%S')
+    mail.send(msg)
+
+
+@app.route('/mail',methods=['GET','POST'])
+def rtmail():
+    sent('harsh@itmusketeers.com')
+    return "Sent"
+
+
+@app.route('/', methods=['GET', 'POST'])
+def rtlogin():
+    if request.method == 'POST':
+        row = user().do_login(username=request.form['un_txt'])
+        if request.form['un_txt'] is None or request.form['pwd_txt'] is None:
+            flash(message='Invalid Username or Password.')
+            return redirect(url_for('rtlogin'))
+        elif row[0][1] == request.form['un_txt']:
+            if row[0][2] == request.form['pwd_txt']:
+                if user().update_login(row[0][0]) is True and row[0][6] is False:
+                    master.__username__ = request.form['un_txt']
+                    master.__id__ = user().__getId__(master.__username__)
+                    master.__email__ = user().__getEmail__(master.__id__)
+                    print master.__username__, master.__id__, master.__email__
+                    if user().update_login(master.__id__) is True:
+                        session['logged_in'] = master.__username__
+                        return redirect(url_for('rtindex'))
+            else:
+                flash(message='Password Does not match.')
+                return redirect(url_for('rtlogin'))
+        else:
+            flash(message='Invalid username')
+            return redirect(url_for('rtlogin'))
+    data = {'tilte': 'LogicPlus | Login'}
+    return render_template('master/login.html', **data)
+
+
+@app.route('/register', methods=['GET', 'POST'])
+def rtregister():
+    if request.method == 'POST':
+        un = request.form['un_txt']
+        email = request.form['email_txt']
+        mobile = request.form['mobile_txt']
+        pwd = request.form['pwd_txt']
+        cpwd = request.form['cpwd_txt']
+
+        if un is not None and email is not None and mobile is not None and pwd is not None and cpwd is not None:
+            if pwd != cpwd:
+                flash(message='password not match.')
+                return redirect(url_for('rtregister'))
+            elif pwd == cpwd:
+                valid = user().adduser(un, pwd, email, mobile)
+
+                if valid is not False:
+                    session['username'] = un
+                    master.__id__ = valid
+                    master.__username__ = un
+                    master.__email__ = email
+                    print master.__id__, master.__email__, master.__username__
+                    return redirect(url_for('rtindex'))
+                else:
+                    return "User already exists!"
+        else:
+            flash(message='Please enter valid data.')
+            return redirect(url_for('rtregister'))
+
+    data = {'title': 'LogicPlus | Registeration'}
+    return render_template('master/register.html', **data)
+
+
+@app.route('/index', methods=['GET', 'POST'])
+def rtindex():
+    if request.method == 'POST':
+        return "index==post"
+    t = {'title': 'LogicPlus | Index'}
+    return render_template('master/index.html', username=master.__username__, **t)
+
+
+@app.route('/simple')
+def simple():
+    data = {'title': 'LogicPlus | Simple'}
+    return render_template('master/pages/tables/simple.html', username=master.__username__, **data)
+
+
+@app.route('/data')
+def data():
+    data = {'title': 'LogicPlus | Data'}
+    return render_template('master/pages/tables/data.html', username=master.__username__, **data)
+
+
+# ------------------table user--------------
+@app.route('/user', methods=['GET', 'POST'])
+def tbluser():
+    if request.method == 'POST':
+        id = request.form['id']
+        t = {'title': 'LogicPlus | User | Update'}
+        udata = user().getuserdataById(id)
+        return render_template('master/pages/tables/userform.html', row=udata, **t)
+
+    t = {'title': 'LogicPlus | User'}
+    udata = user().getuserdata()
+    return render_template('master/pages/tables/tbluser.html', row=udata, username=master.__username__, **t)
+
+
+@app.route('/user/update', methods=['POST'])
+def update():
+    if request.method == 'POST':
+        id = request.form['id']
+        username = request.form['username']
+        password = request.form['password']
+        email = request.form['email']
+        mobile = request.form['mobile']
+        active = request.form['active']
+        valid = user().updateuserdata(id, username, password, email, mobile, active)
+        if valid is True:
+            return redirect(url_for('tbluser'))
+
+
+@app.route('/user/active', methods=['POST'])
+def active():
+    if request.method == 'POST':
+        id = request.form['id']
+        if user().activateuser(int(id)):
+            return redirect(url_for('tbluser'))
+
+
+@app.route('/user/delete', methods=['POST'])
+def delete():
+    if request.method == 'POST':
+        id = request.form['id']
+        if user().inactivateuser(int(id)):
+            return redirect(url_for('tbluser'))
+
+
+@app.route('/logout')
+def logout():
+    if user().update_logout(session.get('logged_in')) is True:
+        session['logged_in'] = 0
+        flash(message='You were logger out')
+        del master.__id__, master.__username__
+        return redirect(url_for('rtlogin'))
+
+
+@app.route('/profile', methods=['GET', 'POST'])
+def rtprofile():
+    if request.method == 'POST':
+        old_pwd = request.form['old_pwd']
+        new_pwd = request.form['new_pwd']
+        cnew_pwd = request.form['cnew_pwd']
+
+        if new_pwd == cnew_pwd:
+            valid = user().changepwd(master.__id__, old_pwd, new_pwd)
+        if valid is True:
+            return redirect(url_for('rtprofile'))
+    t = {'title': 'Master | Profile'}
+    return render_template('master/profile.html', username=master.__username__, **t)
+
+
+# -----------------technology----------------
+@app.route('/technology', methods=['GET', 'POST'])
+def tbltech():
+    if request.method == 'POST':
+        id = request.form['id']
+        t = {'title': 'LogicPlus | Technology'}
+        udata = tech().getTech(id)
+        return render_template('master/technology/techform.html', row=udata, **t)
+    t = "Master | Technology"
+    udata = tech().gettechnology()
+    udata = tmp().sort(udata)
+    data = tech().getTech()
+    return render_template('master/technology/technology.html', menu=udata, row=data, title=t)
+
+
+@app.route('/technology/update', methods=['POST'])
+def techUpdate():
+    if request.method == 'POST':
+        id = request.form['id']
+        technology = request.form['technology']
+        framework = request.form['framework']
+        valid = tech().updateTechnology(id, technology, framework)
+        if valid is True:
+            return redirect(url_for('tbltech'))
+
+
+@app.route('/technology/active', methods=['POST'])
+def techActive():
+    if request.method == 'POST':
+        id = request.form['id']
+        if tech().activatetech(int(id)):
+            return redirect(url_for('tbltech'))
+        else:
+            return redirect(url_for('tbltech'))
+
+
+@app.route('/technology/delete', methods=['POST'])
+def techDelete():
+    if request.method == 'POST':
+        id = request.form['id']
+        if tech().inactivatetech(int(id)):
+            return redirect(url_for('tbltech'))
+        else:
+            return redirect(url_for('tbltech'))
+
+
+@app.route('/<string:technology>/<string:framework>')
+def rtTech(technology=None, framework=None):
+    t = {'username': master.__username__, 'title': 'Master | ' + framework, 'Technology': technology,
+         'Framework': framework}
+    menu = tech().gettechnology()
+    menu = tmp().sort(menu)
+    return render_template('master/technology/tech.html', menu=menu, data=data, **t)
+
+
+@app.route('/technology/add', methods=['GET', 'POST'])
+def addtech():
+    if request.method == 'POST':
+        valid = tech().addtech(request.form['Technology'], request.form['Framework'])
+        if valid is True:
+            message = "%s | %s" % (request.form['Technology'], request.form['Framework'])
+            flash(message, 'add')
+            return redirect(url_for('addtech'))
+    t = {'title': 'Master | Add Technology'}
+    return render_template('master/technology/add.html', username=master.__username__, **t)
+
+
+# -----------faculty--------------------
+@app.route('/faculty/<int:sid>', methods=['GET', 'POST'])
+def rtfaculty(sid=0):
+    if request.method == 'POST':
+
+        name = request.form['name_txt']
+        email = request.form['email_txt']
+        phone = request.form['phone_txt']
+        website = request.form['ws_txt']
+        company = request.form['company_txt']
+        post = request.form['post_txt']
+        dob = request.form['dob_txt']
+        address = request.form['address_txt']
+        gender = request.form['gender']
+
+        if name is not None and email is not None and phone is not None and website is not None and company is not None and post is not None and dob is not None and address is not None:
+            rid = faculty().addFaculty(name, email, phone, website, company, post, dob, address, gender)
+            fxml().mkdir()
+            file = request.files['dp_img']
+            valid = tmp().saveIMG(file, rid)
+            if valid is not False:
+                flash('Image saved!!')
+                return redirect(url_for('rtprofile'))
+        else:
+            flash('Enter All Feilds Data')
+            return redirect(url_for('rtprofile'))
+
+    t = {'title': 'Master | Faculty'}
+    if sid != 0:
+        row = faculty().getdataById(int(sid))
+    else:
+        row = ""
+    return render_template('master/faculty/faculty.html', username=master.__username__, row=row, **t)
+
+
+@app.route('/faculty/profile/', methods=['GET', 'POST'])
+def rtfprofile():
+    if request.method == 'POST':
+        if request.method == 'POST':
+            name = request.form['name_txt']
+            email = request.form['email_txt']
+            phone = request.form['phone_txt']
+            website = request.form['ws_txt']
+            company = request.form['company_txt']
+            post = request.form['post_txt']
+            dob = request.form['dob_txt']
+            address = request.form['address_txt']
+            gender = request.form['gender']
+            id = request.form['sid']
+            valid = faculty().updateFaculty(id, name, email, phone, website, company, post, dob, address, gender)
+            if valid is True:
+                file = request.files['dp_img']
+                filename = tmp().saveIMG(file, id)
+                valid = faculty().updateimg(filename, id)
+                if valid is not False:
+                    flash('updated successfully!!')
+                    return redirect(url_for('rtfprofile'))
+    t = {'title': 'Master | Faculty'}
+    udata = faculty().getfacultydata()
+    return render_template('master/faculty/fprofile.html', row=udata, username=master.__username__, **t)
+
+
+@app.route('/faculty/active', methods=['POST'])
+def facultyActive():
+    if request.method == 'POST':
+        id = request.form['id']
+        if faculty().activateFaculty(int(id)):
+            return redirect(url_for('rtfprofile'))
+        else:
+            return redirect(url_for('rtfprofile'))
+
+
+@app.route('/faculty/delete', methods=['POST'])
+def facultyDelete():
+    if request.method == 'POST':
+        id = request.form['id']
+        if faculty().inactivateFaculty(int(id)):
+            return redirect(url_for('rtfprofile'))
+        else:
+            return redirect(url_for('rtfprofile'))
+
+
+# --------------------Inquiry---------------------------
+@app.route('/inquiry/<int:sid>', methods=['GET', 'POST'])
+def rtinquiry(sid=0):
+    if request.method == 'POST':
+        name = request.form['name_txt']
+        email = request.form['email_txt']
+        phone = request.form['phone_txt']
+        course = request.form['course_txt']
+        study = request.form['study_txt']
+        details = request.form['details_txt']
+        gender = request.form['gender']
+
+        if name is not None and email is not None and phone is not None and course is not None and study is not None and details is not None:
+            rid = inquiry().addInquiry(name, email, phone, course, study, details, gender)
+            if rid is not False:
+                flash('Inquiry inserted!')
+                return redirect(url_for('rtilist'))
+        else:
+            flash('Enter All Feilds Data')
+            return redirect(url_for('rtinquiry', sid=0))
+    t = {'title': 'Master | Inquiry'}
+    c = ['Python', 'Asp.net', 'Java', 'Php']
+
+    if sid != 0:
+        row = inquiry().getdataById(int(sid))
+    else:
+        row = ""
+    return render_template('master/inquiry/inquiry.html', username=master.__username__, c=c, row=row, **t)
+
+
+@app.route('/inquiry/list/', methods=['GET', 'POST'])
+def rtilist():
+    if request.method == 'POST':
+        name = request.form['name_txt']
+        email = request.form['email_txt']
+        phone = request.form['phone_txt']
+        course = request.form['course_txt']
+        study = request.form['study_txt']
+        details = request.form['details_txt']
+        gender = request.form['gender']
+        id = request.form['id']
+        if name is not None and email is not None and phone is not None and course is not None and study is not None and details is not None:
+            rid = inquiry().updateInquiry(id, name, email, phone, course, study, details, gender)
+            if rid is not False:
+                flash('Inquiry Updated!')
+                return redirect(url_for('rtilist'))
+        else:
+            flash('Enter All Feilds Data')
+            return redirect(url_for('rtilist'))
+    title = {'title': 'Master | Faculty'}
+    udata = inquiry().getinquiry()
+    return render_template('master/inquiry/list.html', row=udata, username=master.__username__, **title)
+
+
+@app.route('/inquiry/active', methods=['POST'])
+def inquiryActive():
+    if request.method == 'POST':
+        id = request.form['id']
+        if inquiry().activateInquiry(int(id)):
+            return redirect(url_for('rtilist'))
+        else:
+            return redirect(url_for('rtilist'))
+
+
+@app.route('/inquiry/delete', methods=['POST'])
+def inquiryDelete():
+    if request.method == 'POST':
+        id = request.form['id']
+        if inquiry().inactivateInquiry(int(id)):
+            return redirect(url_for('rtilist'))
+        else:
+            return redirect(url_for('rtilist'))
+
+
+@app.route('/empty')
+def rtempty():
+    return render_template('master/empty.html', username='smit')
+
+
+# ----------------------course-----------
+@app.route('/course', methods=['GET', 'POST'])
+def rtcourse():
+    if request.method == 'POST':
+        cname = request.form['cname_txt']
+        duration = request.form['duration_txt']
+        details = request.form['details_txt']
+        fees = request.form['fees_txt']
+        if course().addCourse(cname, duration, fees, details):
+            return redirect(url_for('rtclist'))
+    t = {'username': master.__username__, 'title': 'Master | Course'}
+    return render_template('master/course/course.html', **t)
+
+
+@app.route('/course/list', methods=['GET', 'POST'])
+def rtclist():
+    if request.method == 'POST':
+        id = request.form['id']
+        t = {'username': master.__username__, 'title': 'Master | Course'}
+        return render_template('master/course/cform.html', row=course().getCourseData(int(id)), **t)
+    t = {'username': master.__username__, 'title': 'Master | Course'}
+    return render_template('master/course/list.html', row=course().getCourseData(), **t)
+
+
+@app.route('/course/update', methods=['GET', 'POST'])
+def cupdate():
+    if request.method == 'POST':
+        id = request.form['id']
+        cname = request.form['cname_txt']
+        duration = request.form['duration_txt']
+        details = request.form['details_txt']
+        fees = request.form['fees_txt']
+        if course().updateCourse(cname, duration, int(fees), details, int(id)):
+            return redirect(url_for('rtclist'))
+
+
+@app.route('/course/active', methods=['GET', 'POST'])
+def cactive():
+    if request.method == 'POST':
+        id = request.form['id']
+        valid = course().active(int(id))
+        if valid is True:
+            return redirect(url_for('rtclist'))
+
+
+@app.route('/course/delete', methods=['GET', 'POST'])
+def cdelete():
+    if request.method == 'POST':
+        id = request.form['id']
+        valid = course().delete(int(id))
+        if valid is True:
+            return redirect(url_for('rtclist'))
+
+
+# ----------------------Admission-----------
+@app.route('/admission', methods=['GET', 'POST'])
+def rtadmission():
+    if request.method == 'POST':
+        dp = request.files['dp_img']
+        name = request.form['name_txt']
+        phone = request.form['phone_txt']
+        email = request.form['email_txt']
+        join = request.form['join_txt']
+        fees = request.form['fees_txt']
+        study = request.form['study_txt']
+        gender = request.form['gender']
+        details = request.form['details_txt']
+        address = request.form['address_txt']
+        bid = request.form.get('batch_txt')
+        cid = request.form.get('course_txt')
+        cname = course().getCourseName(cid)
+        id = admission().addAdmission(name, phone, email, study, cname[0], address, gender, join, fees, details, bid[0])
+        if id == int(id):
+            ufolder = 'static/master/profile/admission'
+            filename = tmp().saveIMG(dp, id, ufolder)
+            valid = admission().updatedpById(filename, id)
+            if valid is True:
+                return redirect(url_for('rtadmission'))
+    t = {'username': master.__username__, 'title': 'Master | Admission'}
+    cname = batch().getCid()
+    return render_template('master/admission/admission.html', c=cname, **t)
+
+
+@app.route('/admission/list', methods=['GET', 'POST'])
+def rtalist():
+    if request.method == 'POST':
+        id = request.form['id']
+        row = admission().getAdmission(int(id))
+        t = {'username': master.__username__, 'title': 'Master | Admission'}
+        cname = batch().getCid()
+        return render_template('master/admission/aform.html', row=row, c=cname, **t)
+    t = {'username': master.__username__, 'title': 'Master | Admission'}
+    return render_template('master/admission/list.html', row=admission().getAdmission(), **t)
+
+
+@app.route('/admission/update', methods=['GET', 'POST'])
+def rtaUpdate():
+    if request.method == 'POST':
+        dp = request.files['dp_img']
+        name = request.form['name_txt']
+        phone = request.form['phone_txt']
+        email = request.form['email_txt']
+        join = request.form['join_txt']
+        fees = request.form['fees_txt']
+        study = request.form['study_txt']
+        gender = request.form['gender']
+        details = request.form['details_txt']
+        address = request.form['address_txt']
+        bid = request.form.get('batch_txt')
+        cid = request.form.get('course_txt')
+
+        cname = course().getCourseName(cid)
+        id = request.form['id']
+        print dp,fees,bid
+        valid = admission().updateAddmission(name, phone, email, study, cname[0], address, gender, join, fees, details,bid, id)
+        if valid is True and dp :
+            ufolder = 'static/master/profile/admission'
+            filename = tmp().saveIMG(dp, id, ufolder)
+            valid = admission().updatedpById(filename, int(id))
+            if valid is True:
+                return redirect(url_for('rtalist'))
+        else:
+            return redirect(url_for('rtalist'))
+
+
+@app.route('/admission/active', methods=['GET', 'POST'])
+def rtaActive():
+    if request.method == 'POST':
+        id = request.form['id']
+        valid = admission().active(int(id))
+        if valid is True:
+            return redirect(url_for('rtalist'))
+
+
+@app.route('/admission/delete', methods=['GET', 'POST'])
+def rtaDelete():
+    if request.method == 'POST':
+        id = request.form['id']
+        valid = admission().delete(int(id))
+        if valid is True:
+            return redirect(url_for('rtalist'))
+
+
+@app.route('/admission/batch', methods=['GET','POST'])
+def rtaData():
+    cid = request.args.get('course')
+    fees = course().getFeesById(cid)
+    bid, bdata = batch().getbatch(cid)
+    return jsonify(course=cid, fees=fees, bid=bid, bdata=bdata)
+
+
+@app.route('/admission/faculty', methods=['GET', 'POST'])
+def rtaFaculty():
+    batch_id = request.args.get('batch')
+    fid = batch().getFid(batch_id)
+    faculty_name = faculty().getFacultyName(fid)
+    del batch_id, fid
+    return jsonify(fname=faculty_name)
+
+
+# -------------------Batch-------------------------
+@app.route('/batch', methods=['GET', 'POST'])
+def rtbatch():
+    if request.method == 'POST':
+        clist = request.form.get('course_txt')
+        flist = request.form.get('faculty_txt')
+        dlist = request.form.getlist('day_txt')
+        tlist = request.form.getlist('time_txt')
+
+        if batch().addBatch(clist, flist, dlist, tlist):
+            return redirect(url_for('rtblist'))
+    t = {'username': master.__username__, 'title': 'Master | Batch'}
+    clist = course().getCourseList()
+    flist = faculty().getFacultyName()
+    days = ['Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday']
+    time = ['10:00', '12:00', '15:00']
+    return render_template('master/batch/batch.html', course_list=clist, days=days, time=time,faculty_list=flist, **t)
+
+
+@app.route('/batch/list', methods=['GET', 'POST'])
+def rtblist():
+    if request.method == 'POST':
+        bid = request.form['id']
+        t = {'username': master.__username__, 'title': 'Master | Batch'}
+        clist = course().getCourseList()
+        flist = faculty().getFacultyName()
+        days = ['Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday']
+        time = ['10:00', '12:00', '15:00']
+        return render_template('master/batch/bform.html', course_list=clist, days=days, time=time,faculty_list=flist, bid=bid, **t)
+    t = {'username': master.__username__, 'title': 'Master | Batch'}
+    row = batch().getbatch()
+    return render_template('master/batch/list.html', batch=row, **t)
+
+
+@app.route('/batch/update', methods=['GET', 'POST'])
+def bupdate():
+    if request.method == 'POST':
+        clist = request.form.get('course_txt')
+        flist = request.form.get('faculty_txt')
+        dlist = request.form.getlist('day_txt')
+        tlist = request.form.getlist('time_txt')
+        bid = request.form['id']
+
+        if batch().updateBatch(clist, flist, dlist, tlist, bid):
+            return redirect(url_for('rtblist'))
+
+
+@app.route('/batch/active', methods=['GET', 'POST'])
+def bactive():
+    if request.method == 'POST':
+        bid = request.form['id']
+        if batch().Active(bid):
+            return redirect(url_for('rtblist'))
+
+
+@app.route('/batch/delete', methods=['GET', 'POST'])
+def bdelete():
+    if request.method == 'POST':
+        bid = request.form['id']
+        if batch().Delete(bid):
+            return redirect(url_for('rtblist'))
+
+
+@app.route('/invoice/list',methods=['GET','POST'])
+def rtlist():
+    if request.method == 'POST':
+        t = {'username': master.__username__, 'title': 'Master | Invoice'}
+        clist = course().getCourseList()
+        flist = faculty().getFacultyName()
+        course_name = request.form['course_txt']
+        faculty_name = request.form['faculty_txt']
+        invoice_data = admission().getInvoiceData(course_name,faculty_name)
+        return render_template('master/invoice/list.html', course_name=clist, faculty_name=flist, row=invoice_data, **t)
+    elif request.method == 'GET':
+        t = {'username': master.__username__, 'title': 'Master | Invoice'}
+        clist = course().getCourseList()
+        flist = faculty().getFacultyName()
+        invoice_data = admission().getInvoiceData()
+        print invoice_data
+        return render_template('master/invoice/list.html',course_name=clist,faculty_name=flist,row=invoice_data, **t)
+
+
+@app.route('/invoice/generate/<int:aid>')
+def rtinvoice(aid):
+    invoice_data = admission().getInvoiceGeneratedata(aid)
+    t = {'username': master.__username__, 'title': 'Master | Invoice'}
+    server_time = time.strftime('%d %B %Y %A ,%H:%M:%S')
+    return render_template('master/invoice/invoice.html', invoice_data=invoice_data, time=server_time, **t)
+
+
+@app.route('/invoice/',methods=['GET','POST'])
+def rtgenerate():
+    if request.method == "POST":
+        aid = request.form['name_txt']
+        fees = request.form['fees_txt']
+        payment_type = request.form.get('payment_type')
+        valid = 0
+        if payment_type == 'False':
+            print "step1"
+            valid = invoice().addInvoice(aid,fees)
+        elif payment_type == 'True':
+            bank = request.form['bank_txt']
+            chq_no = request.form['chq_no']
+            valid = invoice().addInvoice(aid,fees,payment_type,bank,chq_no)
+
+        if valid is True:
+            return redirect(url_for('rtinvoice',aid=aid))
+    t = {'username':master.__username__,'title':'Invoice | Generate'}
+    cname = batch().getCid()
+    return render_template('master/invoice/generate.html', course_name=cname,**t)
+
+
+@app.route('/invoice/get', methods=['GET','POST'])
+def rtiData():
+    cid = request.args.get('course')
+    fees = course().getFeesById(cid)
+    student_name = admission().getstudentNameByCid(cid)
+    return jsonify(course=cid, fees=fees,sname=student_name)
+
+
+@app.route('/invoice/getimage',methods=['GET'])
+def getimage():
+    id = request.args.get('student_name')
+    paid_fees = invoice().getFeeSumByAid(id)
+    dp = admission().getstudentImageById(id)
+
+    if paid_fees[0][0] is None:
+        paid_fees = 0
+    else:
+        paid_fees = paid_fees[0][0]
+    due_fees = int(dp[0][1]) - paid_fees
+    print "due_fees==",due_fees
+    return jsonify(dp=dp[0][0],due_fees=due_fees)
+
+
+@app.route('/invoice/list/process', methods=['POST'])
+def rtlist_process():
+    if request.method == "POST":
+        course_name = request.form['course_txt']
+        faculty_name = request.form['faculty_txt']
+        return json.dumps({'course_name': course_name, 'faculty_name': faculty_name});
+
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=8000, debug=True)

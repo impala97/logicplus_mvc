@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+    {% endblock %}
+</head>
+<body class="skin-black">
+    {% block body %}
+        {{ super() }}
+    {% endblock %}
+    {% block content %}
+    <div class="wrapper row-offcanvas row-offcanvas-right">
+        <aside class="right-side">
+            <section class="content-header">
+                <h1>
+                    Inquiry
+                    <small>Add details</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Inquiry</a></li>
+                    <li class="active">Add Details</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">*All Details Are Mendatory</h3>
+                            </div>
+                            <div class="box-body">
+                                <form enctype="multipart/form-data" class="contact-form">
+                                    {% with messages = get_flashed_messages(with_categories = True) %}
+                                        {% if messages %}
+                                        <ul class=flashes>
+                                            {% for message in messages %}
+                                            <li class="{{ category }}">{{ message }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                        {% endif %}
+                                    {% endwith %}
+                                    <!--name_txt | course_list-->
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Full Name</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="name_txt" class="form-control" placeholder="Full Name" required />
+                                            </div>
+
+                                            <label class="col-sm-2 control-label">Study</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" name="study_txt" class="form-control" placeholder="Study" required />
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <!--phone_txt | email_txt-->
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Mobile Number</label>
+                                            <div class="col-sm-4">
+                                                <input type="tel" name="phone_txt" class="form-control" placeholder="Mobile Number" required />
+                                            </div>
+
+                                            <label class="col-sm-2 control-label">Email-Address</label>
+                                            <div class="col-sm-4">
+                                                <input type="email" name="email_txt" class="form-control" placeholder="E-mail Address" required />
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <!-- course_txt | fees_txt-->
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Course</label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control" name="course_txt" id="course_txt">
+                                                    {% for r in range(0,c|length) %}
+                                                        <option value="{{ c[r][0] }}:{{ c[r][1] }}">{{ c[r][1] }}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+
+                                            <label class="col-sm-2 control-label">Fees</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control" id="fees_txt" name="fees_txt" placeholder="Enter Fees" />
+                                            </div>
+                                        </div>
+                                    </div><br />
+
+                                    <!--details_txt | gender -->
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Details</label>
+                                            <div class="col-sm-4">
+                                                <textarea class="textarea" name="details_txt" rows="5s" placeholder="Enter Extra Details"></textarea>
+                                            </div>
+
+                                            <label class="col-sm-2 control-label">Gender</label>
+                                            <div class="col-sm-2">
+                                                <input type="radio" class="form-control" name="gender" value="True" checked>Male</input>
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <input type="radio" class="form-control" name="gender" value="False">Female</input>&nbsp;
+                                            </div>
+                                        </div>&nbsp;
+                                    </div><br />
+
+                                    <!--submit button -->
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-sm-6">
+                                                <button type="submit" class="btn btn-primary btn-mini" formmethod="POST" formaction="{{ url_for('addinquiry') }}">Inquiry</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+    </div>
+    {% endblock %}
+    {% block script %}
+        {{ super() }}
+        <script type="text/javascript">
+            $(function () {
+               $('#course_txt').bind('change', function() {
+                  $.ajax({
+                      url: "{{ url_for('coursedata') }}",
+                      data: $('#course_txt'),
+                      type: 'POST',
+                      success: function(response) {
+                          var data = JSON.parse(response);
+                          $("#fees_txt").val(data.fees);
+                      },
+                      error: function (error) {
+                          console.log(error);
+                      }
+                  });
+                  return false;
+                });
+
+               $('#course_txt').trigger('change');
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

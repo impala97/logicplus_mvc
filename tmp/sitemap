@@ -1,0 +1,14 @@
+empty //block
+head
+css
+body
+content
+script
+
+
+empty //layout of template
+    login
+    index
+    registration
+
+
