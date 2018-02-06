@@ -94,8 +94,14 @@
 
                                 <div class="row">
                                     <div class="form-group">
+                                        <label class="col-sm-4 control-label" id="err_lbl"></label>
+                                    </div>
+                                </div><br / >
+
+                                <div class="row">
+                                    <div class="form-group">
                                         <div class="col-sm-6">
-                                            <button type="submit" class="btn btn-primary btn-mini" formmethod="POST" formaction="{{ url_for('rtupdatecourse') }}">Save</button>
+                                            <button type="button" id="add_btn" class="btn btn-primary btn-mini">Save</button>
                                         </div>
                                     </div>
                                 </div>
@@ -135,12 +141,35 @@
                     $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
                 });
 
+                $('#add_btn').bind('click', function () {
+                    $.ajax({
+                        url:"{{ url_for('rtupdatecourse') }}",
+                        data: $('form').serialize(),
+                        type:'POST',
+                        success: function(response) {
+                            var data = JSON.parse(response);
+                            if(data.error === 'True')
+                            {
+                                $('#err_lbl').text(data.str);
+                            }
+                            if(data.error === 'False')
+                            {
+                                window.location = data.url;
+                            }
+                        },
+                        error:function (error) {
+                            console.log(error);
+                        }
+                    })
+                });
+
                 $('#course_txt').bind('change', function () {
                    $.ajax({
                        url:"{{ url_for('rtaddcourse') }}",
                        type: 'POST',
                        data: $('#course_txt'),
                        success: function (response) {
+                           $('#err_lbl').text('');
                            var data = JSON.parse(response);
                            $('#batch_txt').find('option').remove();
                             $("#fees_txt").val(data.fees);
@@ -170,7 +199,7 @@
                             //alert(data.fees);
                         },
                         error: function (error) {
-                            console.log(error)
+                            console.log(error);
                         }
                     });
                   return false;

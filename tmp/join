@@ -54,3 +54,7 @@ select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,(lp.admission_t
 select distinct(cname) from lp.course_trnxs inner join lp.batch_trnxs on lp.batch_trnxs.bid=3 and lp.course_trnxs.id=lp.batch_trnxs.cid;
 
 \\to get email from bid using aid in batch_trnxs
+
+
+\\to get sum of fees from admission_batch using bid
+select sum(lp.course_trnxs.fees) from lp.course_trnxs join lp.batch_trnxs on lp.batch_trnxs.cid = lp.course_trnxs.id join lp.admission_batch on lp.admission_batch.bid=lp.batch_trnxs.bid and lp.admission_batch.aid=12;

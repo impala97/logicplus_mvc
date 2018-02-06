@@ -1,4 +1,5 @@
 from .lpdb import dbcon
+from .batch import batch
 
 
 class course:
@@ -30,7 +31,7 @@ class course:
         update = "update lp.course_trnxs set active='1' where id='%d';"%id
         return dbcon().do_insert(update)
 
-    def delete(self,id):
+    def delete(self, id):
         update = "update lp.course_trnxs set active='0' where id='%d';"%id
         return dbcon().do_insert(update)
 
@@ -39,7 +40,24 @@ class course:
         return dbcon().do_select(select)
 
     def getFeesById(self,cid):
-        select = "select fees from lp.course_trnxs where id=%d;"%int(cid)
+        select = "select fees from lp.course_trnxs where id=%d;" % int(cid)
+        fees = dbcon().do_select(select)
+        return fees[0][0]
+
+    def getcname(self, aid):
+        from .admission import admission_batch
+        bid = admission_batch().getbid(aid)
+        c = [None] * len(bid)
+
+        for i in range(len(bid)):
+            select = "select distinct(cname) from lp.course_trnxs inner join lp.batch_trnxs on lp.batch_trnxs.bid=%d and lp.course_trnxs.id=lp.batch_trnxs.cid;" % bid[i]
+            cname = dbcon().do_select(select)
+            c[i] = cname[0][0]
+
+        return batch().make_str(c), self.getsumfees(aid)
+
+    def getsumfees(self, aid):
+        select = "select sum(lp.course_trnxs.fees) from lp.course_trnxs join lp.batch_trnxs on lp.batch_trnxs.cid = lp.course_trnxs.id join lp.admission_batch on lp.admission_batch.bid=lp.batch_trnxs.bid and lp.admission_batch.aid=%d;" % aid
         fees = dbcon().do_select(select)
         return fees[0][0]
 

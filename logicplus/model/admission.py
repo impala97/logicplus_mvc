@@ -4,14 +4,23 @@ from .batch import batch
 
 
 class admission():
-    def updatecourse(self, **data):
+    def updatecourse(self, aid):
+        cname, fees = course().getcname(aid)
+        update = "update lp.admission_trnxs set course='%s',fees=%d where id=%d;" % (str(cname), fees, aid)
+        print(len(cname))
+        return dbcon().do_insert(update)
+
+        """
         select = "select course,fees from lp.admission_trnxs WHERE id=%d;" % (int(data['aid']))
+        print(select)
         ad_data = dbcon().do_select(select)
         if data['cname'] not in ad_data[0][0]:
             data['cname'] = ad_data[0][0] + ',' + str(data['cname'])
             fees = int(data['fees']) + ad_data[0][1]
             update = "update lp.admission_trnxs set course='%s',fees=%d WHERE id=%d;" % (data['cname'], fees, int(data['aid']))
+            print(update)
             return dbcon().do_insert(update)
+        """
 
     def addAdmission(self,name,phone,email,study,cname,address,gender,join,fees,details,bid):
         insert = "insert into lp.admission_trnxs(name,phone,email,study,course,address,gender,join_date,fees,active,dp,details,bid) values('%s','%s','%s','%s','%s','%s','%s','%s','%s','1','%s','%s',%d);"%(name,phone,email,study,cname,address,gender,join,fees,'profile-pic.jpg',details,int(bid))
@@ -113,12 +122,12 @@ class admission():
 
 
 class admission_batch():
-    def add(self, aid, bid):
+    def add(self, aid, bid, time):
         select = "select aid,bid from lp.admission_batch where aid=%d AND bid=%d;" % (aid, bid)
         result = dbcon().do_select(select)
         print('len', len(result))
         if len(result) == 0:
-            insert = "insert into lp.admission_batch(aid, bid) VALUES(%d,%d);" % (aid, bid)
+            insert = "insert into lp.admission_batch(aid, bid, time) VALUES(%d,%d,'%s');" % (aid, bid, time)
             del aid, bid, select, result
             return dbcon().do_insert(insert)
         else:
@@ -126,7 +135,7 @@ class admission_batch():
             return True
 
     def getdt(self, aid, bdata):
-        select = "select bid from lp.admission_batch where aid=%d;" % aid
+        select = "select bid,time from lp.admission_batch where aid=%d;" % aid
         bid = dbcon().do_select(select)
 
         for i in range(len(bid)):
@@ -138,28 +147,38 @@ class admission_batch():
         # extract bid from batch data
         bdata = bdata.split('_')
         bid_org = bdata[0]
-        print("bdata", bdata)
 
+        # extract day and time from batch data
+        dati = bdata[1].split(' ')
+        time = dati[1]
+        day = dati[0].split(',')
+        print("bdata==", bdata)
         for i in range(len(bid)):
-            if bid_org not in bid[i]:
-                # extract day and time from batch data
-                dati = bdata[1].split(' ')
-                time = dati[1]
-                day = dati[0].split(',')
-
+            if int(bid_org) != bid[i][0]:
                 # check day and time clash
                 for d in day:
-                    if d in bid[i][1]:
-                        print("does not check time because day's are not clash.")
-                        if time in bid[i][2]:
+                    if d in bid[i][2]:
+                        if time in bid[i][1]:
+                            time_clash = True
+                            print("time match==", time_clash)
                             return True
                         else:
                             time_clash = False
-                print("time_clash", time_clash)
             else:
                 # if no time clashing
-                return time_clash
+                time_clash = True
+                print("id match==", time_clash)
+                return True
         return time_clash
+
+    def getbid(self, aid):
+        select = "select bid from lp.admission_batch where aid=%d order by bid;" % aid
+        bid = dbcon().do_select(select)
+
+        for i in range(len(bid)):
+            for j in range(len(bid[i])):
+                bid[i] = bid[i][j]
+        return bid
 
 
 if __name__ == "__main__":

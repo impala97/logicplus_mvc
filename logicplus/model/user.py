@@ -1,11 +1,12 @@
 import datetime
 from .lpdb import dbcon
 
-class user():
-    def adduser(self,un,pwd,email,mobile):
-        valid_user = self.check_user_existance(un)
+
+class user:
+    def adduser(self,username,pwd,email,mobile):
+        valid_user = self.check_user_existance(username)
         if len(valid_user) == 0:
-            insert = "insert into lp.user(username,password,email,mobile,live) values('%s','%s','%s','%s','0')"%(un,pwd,email,mobile)
+            insert = "insert into lp.user(username,password,email,mobile,live) values('%s','%s','%s','%s','0')" % (username, pwd, email, mobile)
             valid = dbcon().do_insert(insert)
             if valid is True:
                 return self.__getId__(un)
@@ -18,13 +19,13 @@ class user():
         select = "select username from lp.user where username='%s'" % username
         return dbcon().do_select(select=select)
 
-    def __getId__(self,un):
-        select = "select id from lp.user where username='%s'" %un
+    def __getId__(self, username):
+        select = "select id from lp.user where username='%s'" %username
         row = dbcon().do_select(select)
         return row[0][0]
 
     def do_login(self,username):
-        select = "select * from lp.user where username='%s' and active='1';" %username
+        select = "select * from lp.user where username='%s' and active='1';" % username
         return dbcon().do_select(select=select)
 
     def update_login(self,id):

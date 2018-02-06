@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b1ca36a-51da-46d9-9832-f2b725b2f1cf" name="Default" comment="" />
+    <list default="true" id="1b1ca36a-51da-46d9-9832-f2b725b2f1cf" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/logicplus.png" afterPath="$PROJECT_DIR$/logicplus.png" />
+      <change beforePath="$PROJECT_DIR$/logicplus/controllers/admission.py" afterPath="$PROJECT_DIR$/logicplus/controllers/admission.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/controllers/mail.py" afterPath="$PROJECT_DIR$/logicplus/controllers/mail.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/model/admission.py" afterPath="$PROJECT_DIR$/logicplus/model/admission.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/model/batch.py" afterPath="$PROJECT_DIR$/logicplus/model/batch.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/model/course.py" afterPath="$PROJECT_DIR$/logicplus/model/course.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/model/user.py" afterPath="$PROJECT_DIR$/logicplus/model/user.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/static/master/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/logicplus/static/master/css/bootstrap.min.css" />
+      <change beforePath="$PROJECT_DIR$/logicplus/static/master/js/plugins/datatables/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/datatables/dataTables.bootstrap.js" />
+      <change beforePath="$PROJECT_DIR$/logicplus/static/master/js/plugins/datatables/jquery.dataTables.js" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/datatables/jquery.dataTables.js" />
+      <change beforePath="$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html" />
+      <change beforePath="$PROJECT_DIR$/logicplus/templates/master/admission/admission.html" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/admission.html" />
+      <change beforePath="$PROJECT_DIR$/logicplus/templates/master/admission/aform.html" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/aform.html" />
+      <change beforePath="$PROJECT_DIR$/logicplus/templates/master/admission/list.html" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/list.html" />
+      <change beforePath="$PROJECT_DIR$/logicplus/templates/master/empty.html" afterPath="$PROJECT_DIR$/logicplus/templates/master/empty.html" />
+      <change beforePath="$PROJECT_DIR$/logicplus/templates/master/pages/tables/tbluser.html" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/tables/tbluser.html" />
+      <change beforePath="$PROJECT_DIR$/new.pgsql" afterPath="$PROJECT_DIR$/new.pgsql" />
+      <change beforePath="$PROJECT_DIR$/tmp/join" afterPath="$PROJECT_DIR$/tmp/join" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,18 +32,121 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/logicplus$run.coverage" NAME="run Coverage Results" MODIFIED="1517492700255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/logicplus$run.coverage" NAME="run Coverage Results" MODIFIED="1517921866555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/logicplus$notification.coverage" NAME="notification Coverage Results" MODIFIED="1517417191418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logicplus/model" />
-    <SUITE FILE_PATH="coverage/logicplus$admission.coverage" NAME="admission Coverage Results" MODIFIED="1517479831289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logicplus/model" />
+    <SUITE FILE_PATH="coverage/logicplus$batch.coverage" NAME="batch Coverage Results" MODIFIED="1517572672177" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logicplus/model" />
+    <SUITE FILE_PATH="coverage/logicplus$admission.coverage" NAME="admission Coverage Results" MODIFIED="1517921578572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/logicplus/model" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="logicplus@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="logicplus@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="logicplus@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="logicplus: database" type="6d9b600a:PostgresImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="logicplus@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="logicplus: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="lp: schema" type="a16502c0:PostgresImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="logicplus@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="logicplus: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="lp: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="logicplus@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="logicplus: database" type="6d9b600a:PostgresImplModel$Database" />
+        <item name="lp: schema" type="a16502c0:PostgresImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="admission_trnxs: table" type="a93d6ac6:PostgresImplModel$LocalTable" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicplus/controllers/controllers.py">
+      <file leaf-file-name="empty.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/templates/master/empty.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-18">
+              <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="batch.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/model/batch.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1517921986254" expanded="true" signature="212:295" ph="insert into lp.batch_trnxs... " />
+                <marker date="1517921986254" expanded="true" signature="531:604" ph="update lp.batch_trnxs... " />
+                <marker date="1517921986254" expanded="true" signature="781:822" ph="select * fro... batch_trnxs" />
+                <marker date="1517921986254" expanded="true" signature="1261:1326" ph="select bid,d... " />
+                <marker date="1517921986254" expanded="true" signature="2100:2147" ph="update lp.batch_trnxs... " />
+                <marker date="1517921986254" expanded="true" signature="2250:2297" ph="update lp.batch_trnxs... " />
+                <marker date="1517921986254" expanded="true" signature="2727:2779" ph="select disti... batch_trnxs" />
+                <marker date="1517921986254" expanded="true" signature="3048:3100" ph="select disti... batch_trnxs" />
+                <marker date="1517921986254" expanded="true" signature="3423:3464" ph="select fid f... batch_trnxs" />
+                <marker date="1517921986254" expanded="true" signature="3600:3786" ph="select lp.ad... admission_batch" />
+                <marker date="1517921986254" expanded="true" signature="3889:3936" ph="update lp.batch_trnxs... " />
+                <marker date="1517921986254" expanded="true" signature="4047:4099" ph="select count... admission_batch" />
+                <marker date="1517921986254" expanded="true" signature="4176:4223" ph="update lp.batch_trnxs... " />
+                <marker date="1517921986254" expanded="true" signature="4344:4385" ph="select day,t... " />
+                <marker date="1517921986254" expanded="true" signature="4344:4387" ph="select day,t... " />
+                <marker date="1517921986254" expanded="true" signature="4520:4570" ph="select bid,d... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="faculty.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/model/faculty.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-              <folding />
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding>
+                <marker date="1517921854781" expanded="true" signature="152:285" ph="insert into lp.faculty... " />
+                <marker date="1517921854781" expanded="true" signature="475:517" ph="select id fr... faculty" />
+                <marker date="1517921854781" expanded="true" signature="647:686" ph="update lp.faculty... " />
+                <marker date="1517921854781" expanded="true" signature="799:852" ph="select * fro... faculty" />
+                <marker date="1517921854781" expanded="true" signature="949:991" ph="update lp.faculty... " />
+                <marker date="1517921854781" expanded="true" signature="1099:1141" ph="update lp.faculty... " />
+                <marker date="1517921854781" expanded="true" signature="1310:1443" ph="update lp.faculty... " />
+                <marker date="1517921854781" expanded="true" signature="1605:1639" ph="select * fro... faculty" />
+                <marker date="1517921854781" expanded="true" signature="1781:1818" ph="select name faculty" />
+                <marker date="1517921854781" expanded="true" signature="1942:2001" ph="select id,na... faculty" />
+                <marker date="1517921854781" expanded="true" signature="2091:2123" ph="select count... faculty" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -29,8 +154,98 @@
       <file leaf-file-name="admission.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1732">
-              <caret line="159" column="47" lean-forward="true" selection-start-line="159" selection-start-column="47" selection-end-line="159" selection-end-column="47" />
+            <state relative-caret-position="201">
+              <caret line="161" column="77" lean-forward="false" selection-start-line="161" selection-start-column="77" selection-end-line="161" selection-end-column="77" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+                <element signature="e#4048#4226#0" expanded="false" />
+                <element signature="e#4307#4485#0" expanded="false" />
+                <element signature="e#4556#4794#0" expanded="false" />
+                <element signature="e#4877#5085#0" expanded="false" />
+                <element signature="e#5197#5477#0" expanded="false" />
+                <element signature="e#5589#5844#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admission.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logicplus/model/admission.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="163" column="10" lean-forward="false" selection-start-line="163" selection-start-column="10" selection-end-line="163" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1517921986306" expanded="true" signature="193:252" ph="update lp.admission_trnxs... " />
+                <marker date="1517921986306" expanded="true" signature="193:254" ph="update lp.admission_trnxs... " />
+                <marker date="1517921986306" expanded="true" signature="371:693" ph="select = &quot;se... " />
+                <marker date="1517921986306" expanded="true" signature="381:433" ph="select cours... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="706:892" ph="update = &quot;up... " />
+                <marker date="1517921986306" expanded="true" signature="716:775" ph="update lp.admission_trnxs... " />
+                <marker date="1517921986306" expanded="true" signature="1018:1201" ph="insert into lp.admission_trnxs... " />
+                <marker date="1517921986306" expanded="true" signature="1525:1687" ph="update lp.admission_trnxs... " />
+                <marker date="1517921986306" expanded="true" signature="1872:1922" ph="select id fr... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="2027:2074" ph="update lp.admission_trnxs... " />
+                <marker date="1517921986306" expanded="true" signature="2205:2249" ph="select * fro... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="2288:2330" ph="select * fro... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="2424:2474" ph="update lp.admission_trnxs... " />
+                <marker date="1517921986306" expanded="true" signature="2568:2618" ph="update lp.admission_trnxs... " />
+                <marker date="1517921986306" expanded="true" signature="2776:2832" ph="select id,na... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="2949:2997" ph="select dp,fe... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="3113:3193" ph="select id,na... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="3301:3346" ph="select fees admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="3786:4125" ph="select lp.ad... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="4247:4409" ph="select lp.fa... faculty" />
+                <marker date="1517921986306" expanded="true" signature="4287:4377" ph="select lp.ba... batch_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="4608:4947" ph="select lp.ad... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="5070:5232" ph="select lp.fa... faculty" />
+                <marker date="1517921986306" expanded="true" signature="5110:5200" ph="select lp.ba... batch_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="5434:5747" ph="select lp.ad... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="5882:6044" ph="select lp.fa... faculty" />
+                <marker date="1517921986306" expanded="true" signature="5922:6012" ph="select lp.ba... batch_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="6224:6580" ph="select lp.ad... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="6717:6879" ph="select lp.fa... faculty" />
+                <marker date="1517921986306" expanded="true" signature="6757:6847" ph="select lp.ba... batch_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="7066:7106" ph="select count... admission_trnxs" />
+                <marker date="1517921986306" expanded="true" signature="7258:7318" ph="select aid,b... admission_batch" />
+                <marker date="1517921986306" expanded="true" signature="7464:7529" ph="insert into lp.admission_batch... " />
+                <marker date="1517921986306" expanded="true" signature="7768:7818" ph="select bid f... admission_batch" />
+                <marker date="1517921986306" expanded="true" signature="7768:7820" ph="select bid f... admission_batch" />
+                <marker date="1517921986306" expanded="true" signature="8978:9038" ph="select bid f... admission_batch" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/model/course.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+              <folding>
+                <marker date="1517921866541" expanded="true" signature="136:220" ph="insert into lp.course_trnxs... " />
+                <marker date="1517921866541" expanded="true" signature="381:441" ph="select cname... course_trnxs" />
+                <marker date="1517921866541" expanded="true" signature="560:615" ph="select cname... course_trnxs" />
+                <marker date="1517921866541" expanded="true" signature="741:783" ph="select * fro... course_trnxs" />
+                <marker date="1517921866541" expanded="true" signature="822:861" ph="select * fro... course_trnxs" />
+                <marker date="1517921866541" expanded="true" signature="988:1072" ph="update lp.course_trnxs... " />
+                <marker date="1517921866541" expanded="true" signature="1195:1246" ph="update lp.course_trnxs... " />
+                <marker date="1517921866541" expanded="true" signature="1338:1389" ph="update lp.course_trnxs... " />
+                <marker date="1517921866541" expanded="true" signature="1484:1549" ph="select id,cn... course_trnxs" />
+                <marker date="1517921866541" expanded="true" signature="1643:1685" ph="select fees course_trnxs" />
+                <marker date="1517921866541" expanded="true" signature="1976:2112" ph="select disti... course_trnxs" />
+                <marker date="1517921866541" expanded="true" signature="2309:2522" ph="select sum(l... course_trnxs" />
+                <marker date="1517921866541" expanded="true" signature="2309:2524" ph="select sum(l... course_trnxs" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/controllers/course.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-543">
+              <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -38,83 +253,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addcourse.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html">
+      <file leaf-file-name="tmp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/model/tmp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="155" column="48" lean-forward="true" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admission.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicplus/model/admission.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="109" column="30" lean-forward="false" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
+            <state relative-caret-position="-129">
+              <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
               <folding>
-                <element signature="e#0#23#0" expanded="true" />
-                <marker date="1517487007299" expanded="true" signature="151:203" ph="select cours... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="464:523" ph="update lp.admission_trnxs... " />
-                <marker date="1517487007299" expanded="true" signature="728:911" ph="insert into lp.admission_trnxs... " />
-                <marker date="1517487007299" expanded="true" signature="1235:1397" ph="update lp.admission_trnxs... " />
-                <marker date="1517487007299" expanded="true" signature="1582:1632" ph="select id fr... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="1737:1784" ph="update lp.admission_trnxs... " />
-                <marker date="1517487007299" expanded="true" signature="1915:1959" ph="select * fro... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="1998:2040" ph="select * fro... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="2134:2184" ph="update lp.admission_trnxs... " />
-                <marker date="1517487007299" expanded="true" signature="2278:2328" ph="update lp.admission_trnxs... " />
-                <marker date="1517487007299" expanded="true" signature="2486:2542" ph="select id,na... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="2659:2707" ph="select dp,fe... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="2823:2903" ph="select id,na... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="3011:3056" ph="select fees admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="3496:3835" ph="select lp.ad... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="3957:4119" ph="select lp.fa... faculty" />
-                <marker date="1517487007299" expanded="true" signature="3997:4087" ph="select lp.ba... batch_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="4318:4657" ph="select lp.ad... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="4780:4942" ph="select lp.fa... faculty" />
-                <marker date="1517487007299" expanded="true" signature="4820:4910" ph="select lp.ba... batch_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="5144:5457" ph="select lp.ad... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="5592:5754" ph="select lp.fa... faculty" />
-                <marker date="1517487007299" expanded="true" signature="5632:5722" ph="select lp.ba... batch_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="5934:6290" ph="select lp.ad... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="6427:6589" ph="select lp.fa... faculty" />
-                <marker date="1517487007299" expanded="true" signature="6467:6557" ph="select lp.ba... batch_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="6776:6816" ph="select count... admission_trnxs" />
-                <marker date="1517487007299" expanded="true" signature="6962:7022" ph="select aid,b... admission_batch" />
-                <marker date="1517487007299" expanded="true" signature="7168:7222" ph="insert into lp.admission_batch... " />
-                <marker date="1517487007299" expanded="true" signature="7455:7500" ph="select bid f... admission_batch" />
-                <marker date="1517487007299" expanded="true" signature="7455:7502" ph="select bid f... admission_batch" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/list.html">
+      <file leaf-file-name="join" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/join">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2020">
-              <caret line="158" column="22" lean-forward="false" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
+            <state relative-caret-position="418">
+              <caret line="59" column="216" lean-forward="false" selection-start-line="59" selection-start-column="216" selection-end-line="59" selection-end-column="216" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aform.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/aform.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="184" column="71" lean-forward="false" selection-start-line="184" selection-start-column="71" selection-end-line="184" selection-end-column="71" />
-              <folding>
-                <element signature="n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -131,13 +287,19 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>print</find>
-      <find>print</find>
       <find>tmp</find>
       <find>lpdb.</find>
+      <find>col-sm-4</find>
+      <find>batch()</find>
+      <find>updatecourse</find>
+      <find>course()</find>
     </findStrings>
     <replaceStrings>
       <replace>print(</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -147,20 +309,27 @@
         <option value="$PROJECT_DIR$/logicplus/model/chat.py" />
         <option value="$PROJECT_DIR$/logicplus/model/tech.py" />
         <option value="$PROJECT_DIR$/logicplus/model/inquiry.py" />
-        <option value="$PROJECT_DIR$/logicplus/model/user.py" />
         <option value="$PROJECT_DIR$/logicplus/model/invoice.py" />
         <option value="$PROJECT_DIR$/logicplus/model/mail.py" />
         <option value="$PROJECT_DIR$/logicplus/controllers/faculty.py" />
         <option value="$PROJECT_DIR$/logicplus/templates/master/index.html" />
         <option value="$PROJECT_DIR$/logicplus/controllers/controllers.py" />
-        <option value="$PROJECT_DIR$/logicplus/controllers/mail.py" />
-        <option value="$PROJECT_DIR$/logicplus/model/course.py" />
-        <option value="$PROJECT_DIR$/logicplus/model/batch.py" />
-        <option value="$PROJECT_DIR$/logicplus/model/faculty.py" />
-        <option value="$PROJECT_DIR$/logicplus/model/admission.py" />
-        <option value="$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html" />
-        <option value="$PROJECT_DIR$/logicplus/controllers/admission.py" />
+        <option value="$PROJECT_DIR$/logicplus/model/user.py" />
+        <option value="role:/5fa9fb3e/002f29c0-c4f7-494e-9735-e03e8a69236b/postgres" />
         <option value="$PROJECT_DIR$/logicplus/templates/master/admission/aform.html" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/9f973c65-4548-48cf-9257-f14d095f63a6/console.sql" />
+        <option value="$PROJECT_DIR$/logicplus/controllers/mail.py" />
+        <option value="$PROJECT_DIR$/logicplus/templates/master/empty.html" />
+        <option value="$PROJECT_DIR$/logicplus/templates/master/pages/tables/tbluser.html" />
+        <option value="$PROJECT_DIR$/logicplus/templates/master/admission/admission.html" />
+        <option value="$PROJECT_DIR$/logicplus/templates/master/admission/list.html" />
+        <option value="$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html" />
+        <option value="$PROJECT_DIR$/tmp/join" />
+        <option value="$PROJECT_DIR$/logicplus/controllers/admission.py" />
+        <option value="$PROJECT_DIR$/logicplus/model/course.py" />
+        <option value="$PROJECT_DIR$/logicplus/model/faculty.py" />
+        <option value="$PROJECT_DIR$/logicplus/model/batch.py" />
+        <option value="$PROJECT_DIR$/logicplus/model/admission.py" />
       </list>
     </option>
   </component>
@@ -170,11 +339,14 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="75" />
     <option name="y" value="16" />
     <option name="width" value="1281" />
     <option name="height" value="732" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -191,8 +363,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -238,6 +410,36 @@
               <item name="master" type="462c0819:PsiDirectoryNode" />
               <item name="admission" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="logicplus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logicplus" type="462c0819:PsiDirectoryNode" />
+              <item name="logicplus" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="master" type="462c0819:PsiDirectoryNode" />
+              <item name="course" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logicplus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logicplus" type="462c0819:PsiDirectoryNode" />
+              <item name="logicplus" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="master" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logicplus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logicplus" type="462c0819:PsiDirectoryNode" />
+              <item name="logicplus" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="master" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="tables" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="logicplus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="logicplus" type="462c0819:PsiDirectoryNode" />
+              <item name="tmp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -247,7 +449,9 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/logicplus.png" />
+    <property name="com.intellij.database.dataSource.DataSourceTemplate" value="PostgreSQL" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -261,7 +465,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
+  <component name="RunManager" selected="Python.admission">
     <configuration name="admission" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -276,6 +480,25 @@
       <module name="logicplus" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logicplus/model/admission.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="batch" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/logicplus/model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="logicplus" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/logicplus/model/batch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -338,17 +561,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.logicplus" />
       <item index="1" class="java.lang.String" itemvalue="Python.run" />
       <item index="2" class="java.lang.String" itemvalue="Python.notification" />
       <item index="3" class="java.lang.String" itemvalue="Python.admission" />
+      <item index="4" class="java.lang.String" itemvalue="Python.batch" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="Python.run" />
         <item index="1" class="java.lang.String" itemvalue="Python.admission" />
-        <item index="2" class="java.lang.String" itemvalue="Python.notification" />
+        <item index="2" class="java.lang.String" itemvalue="Python.batch" />
+        <item index="3" class="java.lang.String" itemvalue="Python.notification" />
       </list>
     </recent_temporary>
   </component>
@@ -369,27 +594,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="75" y="16" width="1303" height="780" extended-state="6" />
+    <frame x="-1" y="-35" width="1368" height="804" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934132" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.30209792" sideWeight="0.5058565" order="8" side_tool="true" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3048951" sideWeight="0.4941435" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15812592" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20717423" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.32867134" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="65" y="277" width="1301" height="207" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.3997006" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997006" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -404,212 +632,24 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/logicplus/model/batch.py</url>
-          <line>102</line>
+          <line>103</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html</url>
+          <line>144</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/logicplus/controllers/controllers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/admission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
-          <caret line="154" column="39" lean-forward="false" selection-start-line="154" selection-start-column="39" selection-end-line="154" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-            <marker date="1517487007299" expanded="true" signature="151:203" ph="select cours... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="464:523" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="728:911" ph="insert into lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="1235:1397" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="1582:1632" ph="select id fr... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="1737:1784" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="1915:1959" ph="select * fro... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="1998:2040" ph="select * fro... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="2134:2184" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="2278:2328" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="2486:2542" ph="select id,na... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="2659:2707" ph="select dp,fe... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="2823:2903" ph="select id,na... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="3011:3056" ph="select fees admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="3496:3835" ph="select lp.ad... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="3957:4119" ph="select lp.fa... faculty" />
-            <marker date="1517487007299" expanded="true" signature="3997:4087" ph="select lp.ba... batch_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="4318:4657" ph="select lp.ad... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="4780:4942" ph="select lp.fa... faculty" />
-            <marker date="1517487007299" expanded="true" signature="4820:4910" ph="select lp.ba... batch_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="5144:5457" ph="select lp.ad... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="5592:5754" ph="select lp.fa... faculty" />
-            <marker date="1517487007299" expanded="true" signature="5632:5722" ph="select lp.ba... batch_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="5934:6290" ph="select lp.ad... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="6427:6589" ph="select lp.fa... faculty" />
-            <marker date="1517487007299" expanded="true" signature="6467:6557" ph="select lp.ba... batch_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="6776:6816" ph="select count... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="6962:7022" ph="select aid,b... admission_batch" />
-            <marker date="1517487007299" expanded="true" signature="7168:7222" ph="insert into lp.admission_batch... " />
-            <marker date="1517487007299" expanded="true" signature="7455:7500" ph="select bid f... admission_batch" />
-            <marker date="1517487007299" expanded="true" signature="7455:7502" ph="select bid f... admission_batch" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/course.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding>
-            <marker date="1517479485373" expanded="true" signature="111:195" ph="insert into lp.course_trnxs... " />
-            <marker date="1517479485373" expanded="true" signature="356:416" ph="select cname... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="535:590" ph="select cname... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="716:758" ph="select * fro... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="797:836" ph="select * fro... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="963:1047" ph="update lp.course_trnxs... " />
-            <marker date="1517479485373" expanded="true" signature="1170:1221" ph="update lp.course_trnxs... " />
-            <marker date="1517479485373" expanded="true" signature="1312:1363" ph="update lp.course_trnxs... " />
-            <marker date="1517479485373" expanded="true" signature="1458:1523" ph="select id,cn... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="1617:1659" ph="select fees course_trnxs" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2844">
-          <caret line="158" column="22" lean-forward="false" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/aform.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4194">
-          <caret line="233" column="84" lean-forward="false" selection-start-line="233" selection-start-column="84" selection-end-line="233" selection-end-column="84" />
-          <folding>
-            <element signature="n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="90" column="17" lean-forward="true" selection-start-line="90" selection-start-column="17" selection-end-line="90" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="23" lean-forward="false" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-            <marker date="1517463418915" expanded="true" signature="204:292" ph="insert into lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="585:633" ph="select usern... user" />
-            <marker date="1517463418915" expanded="true" signature="741:783" ph="select id fr... user" />
-            <marker date="1517463418915" expanded="true" signature="906:962" ph="select * fro... user" />
-            <marker date="1517463418915" expanded="true" signature="1107:1162" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="1278:1325" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="1525:1560" ph="select email... user" />
-            <marker date="1517463418915" expanded="true" signature="1748:1781" ph="select * fro... user" />
-            <marker date="1517463418915" expanded="true" signature="1875:1914" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="2019:2058" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="2164:2209" ph="select * fro... user" />
-            <marker date="1517463418915" expanded="true" signature="2350:2441" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="2597:2659" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="2773:2802" ph="select count... user" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/tech.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/inquiry.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/notification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/batch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2124">
-          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
-          <folding>
-            <marker date="1517479506890" expanded="true" signature="241:324" ph="insert into lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="560:633" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="810:851" ph="select * fro... batch_trnxs" />
-            <marker date="1517479506890" expanded="true" signature="1251:1316" ph="select bid,d... " />
-            <marker date="1517479506890" expanded="true" signature="2089:2136" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="2239:2286" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="2716:2768" ph="select disti... batch_trnxs" />
-            <marker date="1517479506890" expanded="true" signature="3002:3054" ph="select disti... batch_trnxs" />
-            <marker date="1517479506890" expanded="true" signature="3377:3418" ph="select fid f... batch_trnxs" />
-            <marker date="1517479506890" expanded="true" signature="3554:3740" ph="select lp.ad... admission_batch" />
-            <marker date="1517479506890" expanded="true" signature="3843:3890" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="4001:4053" ph="select count... admission_batch" />
-            <marker date="1517479506890" expanded="true" signature="4130:4177" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="4298:4344" ph="select day,t... " />
-            <marker date="1517479506890" expanded="true" signature="4298:4346" ph="select day,t... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/master.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logicplus/model/chat.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -617,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -639,30 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="76" column="18" lean-forward="false" selection-start-line="76" selection-start-column="18" selection-end-line="76" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-            <marker date="1517463418915" expanded="true" signature="204:292" ph="insert into lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="585:633" ph="select usern... user" />
-            <marker date="1517463418915" expanded="true" signature="741:783" ph="select id fr... user" />
-            <marker date="1517463418915" expanded="true" signature="906:962" ph="select * fro... user" />
-            <marker date="1517463418915" expanded="true" signature="1107:1162" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="1278:1325" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="1525:1560" ph="select email... user" />
-            <marker date="1517463418915" expanded="true" signature="1748:1781" ph="select * fro... user" />
-            <marker date="1517463418915" expanded="true" signature="1875:1914" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="2019:2058" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="2164:2209" ph="select * fro... user" />
-            <marker date="1517463418915" expanded="true" signature="2350:2441" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="2597:2659" ph="update lp.user... " />
-            <marker date="1517463418915" expanded="true" signature="2773:2802" ph="select count... user" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -677,12 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="18" column="22" lean-forward="false" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <marker date="1517464613548" expanded="true" signature="349:439" ph="insert into lp.invoice_trnxs... " />
-            <marker date="1517464613548" expanded="true" signature="578:696" ph="insert into lp.invoice_trnxs... " />
-            <marker date="1517464613548" expanded="true" signature="879:928" ph="select sum(f... invoice_trnxs" />
-            <marker date="1517464613548" expanded="true" signature="1025:1063" ph="select sum(f... invoice_trnxs" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -697,15 +706,332 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2826">
           <caret line="349" column="40" lean-forward="false" selection-start-line="349" selection-start-column="40" selection-end-line="349" selection-end-column="40" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7b5df67b-ed2f-4e2d-9abb-4326f95c1a98/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://role:/5fa9fb3e/7b5df67b-ed2f-4e2d-9abb-4326f95c1a98/postgres" />
+    <entry file="uml://DATABASE/7b5df67b-ed2f-4e2d-9abb-4326f95c1a98">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>7b5df67b-ed2f-4e2d-9abb-4326f95c1a98</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="220.0" y="240.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/002f29c0-c4f7-494e-9735-e03e8a69236b/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://role:/5fa9fb3e/002f29c0-c4f7-494e-9735-e03e8a69236b/postgres" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2e748a2c-41ef-4df1-a687-7b918160f00f/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/000aaef8-220b-40b6-b72f-acce741899f8/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ece80c10-3b05-44c9-9ba5-7f01c47658af/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9776b656-4d17-4c3c-bdf4-7cc30a164e4b/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/56cb4d5a-c3d1-4af0-9588-60ce77df1910/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/3e871b5c-01cd-4023-8cc1-23ed7923ee0f/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9f973c65-4548-48cf-9257-f14d095f63a6/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/4a8f6dc5-5dd1-4b97-ba6d-680914491fc6/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://role:/5fa9fb3e/7be82cd1-1d76-479b-81f9-815472b31d02/postgres" />
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/7be82cd1-1d76-479b-81f9-815472b31d02/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1c136517-4bdb-4a5f-88e8-82deaf1ab886/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/master.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-54">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logicplus/controllers/mail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="2" column="18" lean-forward="false" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+        <state relative-caret-position="306">
+          <caret line="21" column="18" lean-forward="false" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1c136517-4bdb-4a5f-88e8-82deaf1ab886.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>1c136517-4bdb-4a5f-88e8-82deaf1ab886</OriginalElement>
+          <nodes>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.inquiry_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.invoice_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.technology</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.faculty</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.user</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.admission_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.test</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.batch_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.chat</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.programe</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.course_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.admission_batch</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.4979658258746949" x="657.0" y="605.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/pages/tables/userform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/course/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/pages/tables/data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23418">
+          <caret line="1301" column="39" lean-forward="false" selection-start-line="1295" selection-start-column="42" selection-end-line="1301" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/pages/tables/tbluser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="98" column="44" lean-forward="true" selection-start-line="98" selection-start-column="44" selection-end-line="98" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/aform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2934">
+          <caret line="20" column="18" lean-forward="true" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/admission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="204" column="18" lean-forward="true" selection-start-line="204" selection-start-column="18" selection-end-line="204" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="156" column="47" lean-forward="true" selection-start-line="156" selection-start-column="47" selection-end-line="156" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/multi course">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/Untitled Document">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="13" column="11" lean-forward="true" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/empty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/tmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-129">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/join">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="59" column="216" lean-forward="false" selection-start-line="59" selection-start-column="216" selection-end-line="59" selection-end-column="216" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/course.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-543">
+          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/5fa9fb3e/1c136517-4bdb-4a5f-88e8-82deaf1ab886/logicplus.lp.admission_trnxs">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/course.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding>
+            <marker date="1517921866541" expanded="true" signature="136:220" ph="insert into lp.course_trnxs... " />
+            <marker date="1517921866541" expanded="true" signature="381:441" ph="select cname... course_trnxs" />
+            <marker date="1517921866541" expanded="true" signature="560:615" ph="select cname... course_trnxs" />
+            <marker date="1517921866541" expanded="true" signature="741:783" ph="select * fro... course_trnxs" />
+            <marker date="1517921866541" expanded="true" signature="822:861" ph="select * fro... course_trnxs" />
+            <marker date="1517921866541" expanded="true" signature="988:1072" ph="update lp.course_trnxs... " />
+            <marker date="1517921866541" expanded="true" signature="1195:1246" ph="update lp.course_trnxs... " />
+            <marker date="1517921866541" expanded="true" signature="1338:1389" ph="update lp.course_trnxs... " />
+            <marker date="1517921866541" expanded="true" signature="1484:1549" ph="select id,cn... course_trnxs" />
+            <marker date="1517921866541" expanded="true" signature="1643:1685" ph="select fees course_trnxs" />
+            <marker date="1517921866541" expanded="true" signature="1976:2112" ph="select disti... course_trnxs" />
+            <marker date="1517921866541" expanded="true" signature="2309:2522" ph="select sum(l... course_trnxs" />
+            <marker date="1517921866541" expanded="true" signature="2309:2524" ph="select sum(l... course_trnxs" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="161" column="77" lean-forward="false" selection-start-line="161" selection-start-column="77" selection-end-line="161" selection-end-column="77" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#4048#4226#0" expanded="false" />
+            <element signature="e#4307#4485#0" expanded="false" />
+            <element signature="e#4556#4794#0" expanded="false" />
+            <element signature="e#4877#5085#0" expanded="false" />
+            <element signature="e#5197#5477#0" expanded="false" />
+            <element signature="e#5589#5844#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -714,161 +1040,119 @@
         <state relative-caret-position="0">
           <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
           <folding>
-            <marker date="1517479524358" expanded="true" signature="152:285" ph="insert into lp.faculty... " />
-            <marker date="1517479524358" expanded="true" signature="475:517" ph="select id fr... faculty" />
-            <marker date="1517479524358" expanded="true" signature="647:686" ph="update lp.faculty... " />
-            <marker date="1517479524358" expanded="true" signature="799:852" ph="select * fro... faculty" />
-            <marker date="1517479524358" expanded="true" signature="949:991" ph="update lp.faculty... " />
-            <marker date="1517479524358" expanded="true" signature="1099:1141" ph="update lp.faculty... " />
-            <marker date="1517479524358" expanded="true" signature="1310:1443" ph="update lp.faculty... " />
-            <marker date="1517479524358" expanded="true" signature="1605:1639" ph="select * fro... faculty" />
-            <marker date="1517479524358" expanded="true" signature="1781:1818" ph="select name faculty" />
-            <marker date="1517479524358" expanded="true" signature="1942:2001" ph="select id,na... faculty" />
-            <marker date="1517479524358" expanded="true" signature="2091:2123" ph="select count... faculty" />
+            <marker date="1517921854781" expanded="true" signature="152:285" ph="insert into lp.faculty... " />
+            <marker date="1517921854781" expanded="true" signature="475:517" ph="select id fr... faculty" />
+            <marker date="1517921854781" expanded="true" signature="647:686" ph="update lp.faculty... " />
+            <marker date="1517921854781" expanded="true" signature="799:852" ph="select * fro... faculty" />
+            <marker date="1517921854781" expanded="true" signature="949:991" ph="update lp.faculty... " />
+            <marker date="1517921854781" expanded="true" signature="1099:1141" ph="update lp.faculty... " />
+            <marker date="1517921854781" expanded="true" signature="1310:1443" ph="update lp.faculty... " />
+            <marker date="1517921854781" expanded="true" signature="1605:1639" ph="select * fro... faculty" />
+            <marker date="1517921854781" expanded="true" signature="1781:1818" ph="select name faculty" />
+            <marker date="1517921854781" expanded="true" signature="1942:2001" ph="select id,na... faculty" />
+            <marker date="1517921854781" expanded="true" signature="2091:2123" ph="select count... faculty" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logicplus/model/batch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1638">
-          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        <state relative-caret-position="377">
+          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding>
-            <marker date="1517479506890" expanded="true" signature="241:324" ph="insert into lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="560:633" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="810:851" ph="select * fro... batch_trnxs" />
-            <marker date="1517479506890" expanded="true" signature="1251:1316" ph="select bid,d... " />
-            <marker date="1517479506890" expanded="true" signature="2089:2136" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="2239:2286" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="2716:2768" ph="select disti... batch_trnxs" />
-            <marker date="1517479506890" expanded="true" signature="3002:3054" ph="select disti... batch_trnxs" />
-            <marker date="1517479506890" expanded="true" signature="3377:3418" ph="select fid f... batch_trnxs" />
-            <marker date="1517479506890" expanded="true" signature="3554:3740" ph="select lp.ad... admission_batch" />
-            <marker date="1517479506890" expanded="true" signature="3843:3890" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="4001:4053" ph="select count... admission_batch" />
-            <marker date="1517479506890" expanded="true" signature="4130:4177" ph="update lp.batch_trnxs... " />
-            <marker date="1517479506890" expanded="true" signature="4298:4344" ph="select day,t... " />
-            <marker date="1517479506890" expanded="true" signature="4298:4346" ph="select day,t... " />
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1517921986254" expanded="true" signature="212:295" ph="insert into lp.batch_trnxs... " />
+            <marker date="1517921986254" expanded="true" signature="531:604" ph="update lp.batch_trnxs... " />
+            <marker date="1517921986254" expanded="true" signature="781:822" ph="select * fro... batch_trnxs" />
+            <marker date="1517921986254" expanded="true" signature="1261:1326" ph="select bid,d... " />
+            <marker date="1517921986254" expanded="true" signature="2100:2147" ph="update lp.batch_trnxs... " />
+            <marker date="1517921986254" expanded="true" signature="2250:2297" ph="update lp.batch_trnxs... " />
+            <marker date="1517921986254" expanded="true" signature="2727:2779" ph="select disti... batch_trnxs" />
+            <marker date="1517921986254" expanded="true" signature="3048:3100" ph="select disti... batch_trnxs" />
+            <marker date="1517921986254" expanded="true" signature="3423:3464" ph="select fid f... batch_trnxs" />
+            <marker date="1517921986254" expanded="true" signature="3600:3786" ph="select lp.ad... admission_batch" />
+            <marker date="1517921986254" expanded="true" signature="3889:3936" ph="update lp.batch_trnxs... " />
+            <marker date="1517921986254" expanded="true" signature="4047:4099" ph="select count... admission_batch" />
+            <marker date="1517921986254" expanded="true" signature="4176:4223" ph="update lp.batch_trnxs... " />
+            <marker date="1517921986254" expanded="true" signature="4344:4385" ph="select day,t... " />
+            <marker date="1517921986254" expanded="true" signature="4344:4387" ph="select day,t... " />
+            <marker date="1517921986254" expanded="true" signature="4520:4570" ph="select bid,d... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/controllers/course.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-432">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/course.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
-          <folding>
-            <marker date="1517479485373" expanded="true" signature="111:195" ph="insert into lp.course_trnxs... " />
-            <marker date="1517479485373" expanded="true" signature="356:416" ph="select cname... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="535:590" ph="select cname... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="716:758" ph="select * fro... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="797:836" ph="select * fro... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="963:1047" ph="update lp.course_trnxs... " />
-            <marker date="1517479485373" expanded="true" signature="1170:1221" ph="update lp.course_trnxs... " />
-            <marker date="1517479485373" expanded="true" signature="1312:1363" ph="update lp.course_trnxs... " />
-            <marker date="1517479485373" expanded="true" signature="1458:1523" ph="select id,cn... course_trnxs" />
-            <marker date="1517479485373" expanded="true" signature="1617:1659" ph="select fees course_trnxs" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/controllers/controllers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding />
+    <entry file="uml://DATABASE/1c136517-4bdb-4a5f-88e8-82deaf1ab886">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>1c136517-4bdb-4a5f-88e8-82deaf1ab886</OriginalElement>
+          <nodes>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.inquiry_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.invoice_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.technology</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.faculty</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.user</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.admission_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.test</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.batch_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.programe</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.chat</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.course_trnxs</node>
+            <node x="" y="">1c136517-4bdb-4a5f-88e8-82deaf1ab886.TABLE:logicplus.lp.admission_batch</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.36045565500406834" x="656.5" y="604.5" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logicplus/model/admission.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
-          <caret line="109" column="30" lean-forward="false" selection-start-line="109" selection-start-column="30" selection-end-line="109" selection-end-column="30" />
+        <state relative-caret-position="161">
+          <caret line="163" column="10" lean-forward="false" selection-start-line="163" selection-start-column="10" selection-end-line="163" selection-end-column="10" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
-            <marker date="1517487007299" expanded="true" signature="151:203" ph="select cours... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="464:523" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="728:911" ph="insert into lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="1235:1397" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="1582:1632" ph="select id fr... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="1737:1784" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="1915:1959" ph="select * fro... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="1998:2040" ph="select * fro... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="2134:2184" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="2278:2328" ph="update lp.admission_trnxs... " />
-            <marker date="1517487007299" expanded="true" signature="2486:2542" ph="select id,na... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="2659:2707" ph="select dp,fe... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="2823:2903" ph="select id,na... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="3011:3056" ph="select fees admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="3496:3835" ph="select lp.ad... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="3957:4119" ph="select lp.fa... faculty" />
-            <marker date="1517487007299" expanded="true" signature="3997:4087" ph="select lp.ba... batch_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="4318:4657" ph="select lp.ad... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="4780:4942" ph="select lp.fa... faculty" />
-            <marker date="1517487007299" expanded="true" signature="4820:4910" ph="select lp.ba... batch_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="5144:5457" ph="select lp.ad... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="5592:5754" ph="select lp.fa... faculty" />
-            <marker date="1517487007299" expanded="true" signature="5632:5722" ph="select lp.ba... batch_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="5934:6290" ph="select lp.ad... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="6427:6589" ph="select lp.fa... faculty" />
-            <marker date="1517487007299" expanded="true" signature="6467:6557" ph="select lp.ba... batch_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="6776:6816" ph="select count... admission_trnxs" />
-            <marker date="1517487007299" expanded="true" signature="6962:7022" ph="select aid,b... admission_batch" />
-            <marker date="1517487007299" expanded="true" signature="7168:7222" ph="insert into lp.admission_batch... " />
-            <marker date="1517487007299" expanded="true" signature="7455:7500" ph="select bid f... admission_batch" />
-            <marker date="1517487007299" expanded="true" signature="7455:7502" ph="select bid f... admission_batch" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2020">
-          <caret line="158" column="22" lean-forward="false" selection-start-line="158" selection-start-column="22" selection-end-line="158" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="155" column="48" lean-forward="true" selection-start-line="155" selection-start-column="48" selection-end-line="155" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1732">
-          <caret line="159" column="47" lean-forward="true" selection-start-line="159" selection-start-column="47" selection-end-line="159" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/aform.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="184" column="71" lean-forward="false" selection-start-line="184" selection-start-column="71" selection-end-line="184" selection-end-column="71" />
-          <folding>
-            <element signature="n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#5;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1517921986306" expanded="true" signature="193:252" ph="update lp.admission_trnxs... " />
+            <marker date="1517921986306" expanded="true" signature="193:254" ph="update lp.admission_trnxs... " />
+            <marker date="1517921986306" expanded="true" signature="371:693" ph="select = &quot;se... " />
+            <marker date="1517921986306" expanded="true" signature="381:433" ph="select cours... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="706:892" ph="update = &quot;up... " />
+            <marker date="1517921986306" expanded="true" signature="716:775" ph="update lp.admission_trnxs... " />
+            <marker date="1517921986306" expanded="true" signature="1018:1201" ph="insert into lp.admission_trnxs... " />
+            <marker date="1517921986306" expanded="true" signature="1525:1687" ph="update lp.admission_trnxs... " />
+            <marker date="1517921986306" expanded="true" signature="1872:1922" ph="select id fr... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="2027:2074" ph="update lp.admission_trnxs... " />
+            <marker date="1517921986306" expanded="true" signature="2205:2249" ph="select * fro... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="2288:2330" ph="select * fro... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="2424:2474" ph="update lp.admission_trnxs... " />
+            <marker date="1517921986306" expanded="true" signature="2568:2618" ph="update lp.admission_trnxs... " />
+            <marker date="1517921986306" expanded="true" signature="2776:2832" ph="select id,na... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="2949:2997" ph="select dp,fe... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="3113:3193" ph="select id,na... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="3301:3346" ph="select fees admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="3786:4125" ph="select lp.ad... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="4247:4409" ph="select lp.fa... faculty" />
+            <marker date="1517921986306" expanded="true" signature="4287:4377" ph="select lp.ba... batch_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="4608:4947" ph="select lp.ad... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="5070:5232" ph="select lp.fa... faculty" />
+            <marker date="1517921986306" expanded="true" signature="5110:5200" ph="select lp.ba... batch_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="5434:5747" ph="select lp.ad... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="5882:6044" ph="select lp.fa... faculty" />
+            <marker date="1517921986306" expanded="true" signature="5922:6012" ph="select lp.ba... batch_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="6224:6580" ph="select lp.ad... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="6717:6879" ph="select lp.fa... faculty" />
+            <marker date="1517921986306" expanded="true" signature="6757:6847" ph="select lp.ba... batch_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="7066:7106" ph="select count... admission_trnxs" />
+            <marker date="1517921986306" expanded="true" signature="7258:7318" ph="select aid,b... admission_batch" />
+            <marker date="1517921986306" expanded="true" signature="7464:7529" ph="insert into lp.admission_batch... " />
+            <marker date="1517921986306" expanded="true" signature="7768:7818" ph="select bid f... admission_batch" />
+            <marker date="1517921986306" expanded="true" signature="7768:7820" ph="select bid f... admission_batch" />
+            <marker date="1517921986306" expanded="true" signature="8978:9038" ph="select bid f... admission_batch" />
           </folding>
         </state>
       </provider>

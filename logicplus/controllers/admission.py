@@ -50,6 +50,7 @@ def rtalist():
         cname = batch().getCid()
         return render_template('master/admission/aform.html', row=row, c=cname, **t)
     t = {'username': master.__username__, 'title': 'Master | Admission'}
+    print("rtalist==", request.method)
     return render_template('master/admission/list.html', row=admission().getAdmission(), **t)
 
 
@@ -87,7 +88,7 @@ def rtaUpdate():
             else:
                 return redirect(url_for('rtalist'))
         else:
-            return json.dumps({'error': True, 'string': 'You have time clash with another batch.'});
+            return json.dumps({'error': True, 'string': 'You have time clash with another batch.'})
 
 
 @app.route('/admission/active', methods=['GET', 'POST'])
@@ -126,6 +127,7 @@ def rtaFaculty():
     return json.dumps({'fname': faculty_name})
 
 
+# redirect to add course page
 @app.route('/admissoin/course/', methods=['GET', 'POST'])
 def rtacourse():
     if request.method == 'POST':
@@ -136,6 +138,7 @@ def rtacourse():
         return render_template('/master/admission/addcourse.html', aid=aid, c=cname, **t)
 
 
+# for ajax data loading
 @app.route('/admission/course/data', methods=['GET', 'POST'])
 def rtaddcourse():
     if request.method == 'POST':
@@ -145,6 +148,7 @@ def rtaddcourse():
         return json.dumps({'course': cid, 'fees': fees, 'bid': bid, 'bdata': bdata})
 
 
+# for udpate the course details
 @app.route('/admission/course/update', methods=['GET', 'POST'])
 def rtupdatecourse():
     if request.method == 'POST':
@@ -152,9 +156,13 @@ def rtupdatecourse():
         batch_data = request.form['batch_txt']
         fees = request.form['fees_txt']
         cname = request.form['course_txt'].split(':')
-        if admission_batch().getdt(int(aid), batch_data):
+        if admission_batch().getdt(int(aid), batch_data) is False:
             batch_data = batch_data.split('_')
-            admission_batch().add(int(aid), int(batch_data[0]))
-            admission().updatecourse(**{'aid': aid, 'fees': fees, 'cname': cname[1]})
+            time = batch_data[1].split(' ')
+            admission_batch().add(int(aid), int(batch_data[0]), str(time[1]))
+            # admission().updatecourse(**{'aid': aid, 'fees': fees, 'cname': cname[1]})
+            admission().updatecourse(int(aid))
             del batch_data, aid, fees, cname
-            return redirect(url_for('rtalist'))
+            return json.dumps({'url': url_for('rtalist'), 'error': 'False'})
+        else:
+            return json.dumps({'error': 'True', 'str': 'Your batch time is clash with another batch.'})

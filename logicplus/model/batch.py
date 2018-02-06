@@ -1,9 +1,8 @@
 from .lpdb import dbcon
-from .course import course
 from .faculty import faculty
 
 
-class batch():
+class batch:
     def addBatch(self, clist, flist, dlist, tlist):
         dlist = self.make_str(dlist)
         tlist = self.make_str(tlist)
@@ -25,6 +24,7 @@ class batch():
             for r in range(0, len(row)):
                 row[r] = list(row[r])
 
+            from .course import course
             for r in range(0, len(row)):
                 c = course().getCourseName(row[r][1])
                 row[r][1] = c[0]
@@ -36,7 +36,7 @@ class batch():
             row = dbcon().do_select(select)
             return self.reverse(row)
 
-    def reverse(self,row):
+    def reverse(self, row):
         time = [None] * len(row)
         len_time = 0
 
@@ -84,6 +84,7 @@ class batch():
     def getCid(self):
         select = "select distinct cid from lp.batch_trnxs order by cid;"
         row = dbcon().do_select(select)
+        from .course import course
         for r in range(0, len(row)):
             row[r] += course().getCourseName(row[r][0])
         return row
@@ -119,9 +120,68 @@ class batch():
         return dbcon().do_insert(update)
 
     def getdtbybid(self, bid):
-        select = "select day,time from lp.batch_trnxs where bid=%d;" % bid
+        select = "select day from lp.batch_trnxs where bid=%d;" % bid
         result = dbcon().do_select(select)
         return result[0]
+
+    def getdt(self, fid, day, time):
+        select = "select bid,day,time from lp.batch_trnxs where fid=%d;" % fid
+        fdata = dbcon().do_select(select)
+        print(len(fdata))
+        time_clash = False
+        if len(fdata) >= 1:
+            print(fdata)
+
+            if ',' in time:
+                time = time.split(',')
+
+            if ',' in day:
+                day = day.split(',')
+
+            print("fdata==", fdata)
+            for i in range(len(fdata)):
+                if isinstance(day, list):
+                    # check day and time clash
+                    for d in day:
+                        if d in fdata[i][1]:
+                            if isinstance(time, list):
+                                for t in time:
+                                    if t in fdata[i][2]:
+                                        time_clash = True
+                                        print("time match==", time_clash)
+                                        return True
+                                    else:
+                                        time_clash = False
+                            else:
+                                if time in fdata[i][2]:
+                                    time_clash = True
+                                    print("time match==", time_clash)
+                                    return True
+                                else:
+                                    time_clash = False
+                        else:
+                            print("does not check time because day's are not clash.")
+                else:
+                    if day in fdata[i][1]:
+                        if isinstance(time, list):
+                            for t in time:
+                                if t in fdata[i][2]:
+                                    time_clash = True
+                                    print("time match==", time_clash)
+                                    return True
+                                else:
+                                    time_clash = False
+                        else:
+                            if time in fdata[i][2]:
+                                time_clash = True
+                                pritn("time match==", time_clash)
+                                return True
+                            else:
+                                time_clash = False
+                    else:
+                        print("does not check time because day's are not clash.")
+        return time_clash
+
 
 
 if __name__ == "__main__":
