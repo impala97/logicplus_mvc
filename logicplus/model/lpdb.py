@@ -17,7 +17,7 @@ class dbcon:
         return row
 
     def do_insert(self, insert):
-        result = cursor.execute(insert)
+        cursor.execute(insert)
         con.commit()
         return True
 

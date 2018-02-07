@@ -46,7 +46,7 @@
                                             </ul>
                                         {% endif %}
                                     {% endwith %}
-                                        <input type="hidden" name="id" value="{{ bid }}">
+                                        <input type="hidden" name="bid" value="{{ bid }}">
                             <div class="row">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Course Name</label>
@@ -102,7 +102,7 @@
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col-sm-6">
-                                        <button type="submit" class="btn btn-primary btn-mini" formmethod="POST" formaction="{{ url_for('bupdate') }}">add Batch</button>
+                                        <button type="button" id="batch_btn" class="btn btn-primary btn-mini" formmethod="POST" formaction="{{ url_for('bupdate') }}">add Batch</button>
                                     </div>
                                 </div>
                             </div>
@@ -122,6 +122,20 @@
     <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.js') }}"></script>
     <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.min.js') }}"></script>
     <script type="text/javascript">
+        $('#batch_btn').click(function () {
+            $.ajax({
+                url: "{{ url_for('bupdate') }}",
+                data: $('form').serialize(),
+                type: 'POST',
+                success: function (response) {
+                    window.location = response;
+                },
+                error: function (error) {
+                    
+                }
+            });
+        });
+        
         $('.multiselect').multiselect({
              enableFiltering: true,
              enableHTML: true,

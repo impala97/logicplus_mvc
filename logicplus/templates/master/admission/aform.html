@@ -179,11 +179,15 @@
                                     </div>
                                 </div>&nbsp;
                             </div>
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label id="err_lbl" class="col-sm-4"></label>
+                                        </div>
+                                    </div>
 
                             <div class="row">
                                 <div class="form-group">
                                     <div class="col-sm-6">
-                                        <label id="err_lbl" class="col-sm-2"></label>
                                         <button type="button" id="submit_btn" class="btn btn-primary btn-mini">admission</button>
                                     </div>
                                 </div>
@@ -232,8 +236,10 @@
                        type: 'POST',
                        success: function(response) {
                            var data = JSON.parse(response);
-                           if(data.error == 'True'){
-                               $('#err_lbl').html("you have clash with another batch....");
+                           if(data.error === 'True')
+                           {
+                               console.log(data.string);
+                               $('#err_lbl').text(data.string);
                            }
                        },
                         error: function(error) {

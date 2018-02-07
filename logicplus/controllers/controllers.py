@@ -121,70 +121,6 @@ def rtprofile():
     return render_template('master/profile.html', username=master.__username__, **t)
 
 
-# -------------------Batch-------------------------
-@app.route('/batch', methods=['GET', 'POST'])
-def rtbatch():
-    if request.method == 'POST':
-        clist = request.form.get('course_txt')
-        flist = request.form.get('faculty_txt')
-        print(clist, flist)
-        dlist = request.form.getlist('day_txt')
-        tlist = request.form.getlist('time_txt')
-
-        if batch().addBatch(clist, flist, dlist, tlist):
-            return redirect(url_for('rtblist'))
-    t = {'username': master.__username__, 'title': 'Master | Batch'}
-    clist = course().getCourseList()
-    flist = faculty().getFacultyName()
-    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    time = ['10:00', '12:00', '15:00']
-    return render_template('master/batch/batch.html', course_list=clist, days=days, time=time,faculty_list=flist, **t)
-
-
-@app.route('/batch/list', methods=['GET', 'POST'])
-def rtblist():
-    if request.method == 'POST':
-        bid = request.form['id']
-        t = {'username': master.__username__, 'title': 'Master | Batch'}
-        clist = course().getCourseList()
-        flist = faculty().getFacultyName()
-        days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-        time = ['10:00', '12:00', '15:00']
-        return render_template('master/batch/bform.html', course_list=clist, days=days, time=time, faculty_list=flist, bid=bid, **t)
-    t = {'username': master.__username__, 'title': 'Master | Batch'}
-    row = batch().getbatch()
-    return render_template('master/batch/list.html', batch=row, **t)
-
-
-@app.route('/batch/update', methods=['GET', 'POST'])
-def bupdate():
-    if request.method == 'POST':
-        clist = request.form.get('course_txt')
-        flist = request.form.get('faculty_txt')
-        dlist = request.form.getlist('day_txt')
-        tlist = request.form.getlist('time_txt')
-        bid = request.form['id']
-
-        if batch().updateBatch(clist, flist, dlist, tlist, bid):
-            return redirect(url_for('rtblist'))
-
-
-@app.route('/batch/active', methods=['GET', 'POST'])
-def bactive():
-    if request.method == 'POST':
-        bid = request.form['id']
-        if batch().Active(bid):
-            return redirect(url_for('rtblist'))
-
-
-@app.route('/batch/delete', methods=['GET', 'POST'])
-def bdelete():
-    if request.method == 'POST':
-        bid = request.form['id']
-        if batch().Delete(bid):
-            return redirect(url_for('rtblist'))
-
-
 @app.route('/invoice/list', methods=['GET', 'POST'])
 def rtlist():
     if request.method == 'POST':
@@ -193,7 +129,7 @@ def rtlist():
         flist = faculty().getFacultyName()
         course_name = request.form['course_txt']
         faculty_name = request.form['faculty_txt']
-        invoice_data = admission().getInvoiceData(course_name,faculty_name)
+        invoice_data = admission().getInvoiceData(course_name, faculty_name)
         return render_template('master/invoice/list.html', course_name=clist, faculty_name=flist, row=invoice_data, **t)
     elif request.method == 'GET':
         t = {'username': master.__username__, 'title': 'Master | Invoice'}
@@ -201,7 +137,7 @@ def rtlist():
         flist = faculty().getFacultyName()
         invoice_data = admission().getInvoiceData()
         print(invoice_data)
-        return render_template('master/invoice/list.html',course_name=clist,faculty_name=flist,row=invoice_data, **t)
+        return render_template('master/invoice/list.html', course_name=clist, faculty_name=flist, row=invoice_data, **t)
 
 
 @app.route('/invoice/generate/<int:aid>')
@@ -245,7 +181,7 @@ def rtiData():
 @app.route('/invoice/getimage', methods=['GET'])
 def getimage():
     id = request.args.get('student_name')
-    paid_fees = invoice().getFeeSumByAid(id)
+    paid_fees = invoice().getFeeSumByAid(int(id))
     dp = admission().getstudentImageById(id)
 
     if paid_fees[0][0] is None:

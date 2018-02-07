@@ -6,9 +6,10 @@ class batch:
     def addBatch(self, clist, flist, dlist, tlist):
         dlist = self.make_str(dlist)
         tlist = self.make_str(tlist)
-        insert = "insert into lp.batch_trnxs(cid,fid,day,time,active) values('%s','%s','%s','%s','1')" % (
-        clist, flist, dlist, tlist)
-        return dbcon().do_insert(insert)
+        insert = "insert into lp.batch_trnxs(cid,fid,day,time,active) values('%s','%s','%s','%s','1')" % (clist, flist, dlist, tlist)
+        if dbcon().do_insert(insert):
+            select = "select bid from lp.batch_trnxs where cid='%s' and fid='%s' and day='%s' and time='%s';"
+            return dbcon().do_select(select)
 
     def updateBatch(self, clist, flist, dlist, tlist, bid):
         dlist = self.make_str(dlist)
@@ -174,7 +175,7 @@ class batch:
                         else:
                             if time in fdata[i][2]:
                                 time_clash = True
-                                pritn("time match==", time_clash)
+                                print("time match==", time_clash)
                                 return True
                             else:
                                 time_clash = False
@@ -182,6 +183,18 @@ class batch:
                         print("does not check time because day's are not clash.")
         return time_clash
 
+
+class batch_faculty:
+    def add(self, fid, bid, time):
+        select = "select id,time from lp.batch_faculty where fid=%d and bid=%d;" % (fid, bid)
+        result = dbcon().do_select(select)
+        if len(result) == 0:
+            insert = "insert into lp.batch_faculty(fid, bid, time) values(%d, %d,'%s');" % (fid, bid, time)
+            return dbcon().do_insert(insert)
+        else:
+            if time != result[0][1]:
+                update = "update lp.batch_faculty set time='%s' where id=%d;" % (time, int(result[0][0]))
+                return dbcon().do_insert(update)
 
 
 if __name__ == "__main__":

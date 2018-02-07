@@ -124,11 +124,13 @@ class admission():
 class admission_batch():
     def add(self, aid, bid, time):
         select = "select aid,bid from lp.admission_batch where aid=%d AND bid=%d;" % (aid, bid)
+        print(select)
         result = dbcon().do_select(select)
+        print(result)
         print('len', len(result))
         if len(result) == 0:
             insert = "insert into lp.admission_batch(aid, bid, time) VALUES(%d,%d,'%s');" % (aid, bid, time)
-            del aid, bid, select, result
+            print(insert)
             return dbcon().do_insert(insert)
         else:
             del aid, bid, select, result
@@ -165,10 +167,13 @@ class admission_batch():
                         else:
                             time_clash = False
             else:
-                # if no time clashing
-                time_clash = True
-                print("id match==", time_clash)
-                return True
+                if time in bid[i][1]:
+                    # if no time clashing
+                    time_clash = True
+                    print("id match==", time_clash)
+                    return True
+                else:
+                    time_clash = False
         return time_clash
 
     def getbid(self, aid):

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="batch_list">
 {% extends "master/empty.html" %}
 <head>
     {% block head %}
@@ -57,16 +57,16 @@
                                     <td>
                                         <div class="hidden-sm hidden-xs btn-group">
                                             <form>
-                                                <input type="hidden" name="id" value="{{r[0]}}">
-                                                <button class="btn btn-xs btn-info" formmethod="post" formaction="{{ url_for('rtblist') }}">
+                                                <input type="hidden" ng-model="bid" name="bid" id="bid" value="{{r[0]}}">
+                                                <button type="button" ng-controller="edit" class="btn btn-xs btn-info">
                                                     <i class="ace-icon fa fa-pencil bigger-120"></i>
                                                 </button>
 
-                                                <button type="submit" class="btn btn-xs btn-success" name="Active" formmethod="POST" formaction="{{ url_for('bactive') }}">
+                                                <button type="button" ng-controller="active" class="btn btn-xs btn-success" name="Active">
                                                     <i class="ace-icon fa fa-check bigger-120"></i>
                                                 </button>
 
-                                                <button type="submit" class="btn btn-xs btn-danger" name="Delete" formmethod="POST" formaction="{{ url_for('bdelete') }}">
+                                                <button type="button" ng-controller="delete" class="btn btn-xs btn-danger" name="Delete">
                                                     <i class="ace-icon fa fa-trash-o bigger-120"></i>
                                                 </button>
                                             </form>
@@ -88,10 +88,41 @@
     <script src="{{ url_for('static',filename='master/js/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
     <script src="{{ url_for('static',filename='master/js/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
-            $(function() {
-                $("#example2").dataTable();
-            });
-        </script>
+        $(function() {
+            angular.module('batch_list', []).controller('edit', ['$scope','$log', '$http', function ($scope, $log, $http) {
+                function send(url,bid) {
+                    $http({
+                        method: 'POST',
+                        url: url,
+                        data: {
+                            bid: bid
+                        }
+                    }).then(function (response) {
+                        window.location = response;
+                    }), function (error) {
+                        console.log(error);
+                    }
+                };
+
+                $scope.edit = function () {
+                    $scope.url = "{{ url_for('rtblist') }}";
+                    send(url, $scope.bid);
+                };
+
+                $scope.active = function(){
+                    $scope.url = "{{ url_for('bactive') }}";
+                    send(url, $scope.bid);
+                };
+
+                $scope.delete = function(){
+                    $scope.url = "{{ url_for('bdelete') }}";
+                    send(url, $scope.bid);
+                };
+            }]);
+
+            $("#example2").dataTable();
+        });
+    </script>
 {% endblock %}
 </body>
 </html>

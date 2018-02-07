@@ -2,6 +2,7 @@ from logicplus import app
 from flask import url_for, render_template, redirect, request
 from ..model.faculty import faculty
 from ..model.master import master
+from ..model.batch import batch_faculty
 from ..model.tmp import tmp
 
 
@@ -63,7 +64,7 @@ def facultyprofile():
         fid = request.form['fid']
         faculty_data = faculty().getdataById(fid)
         title = 'Master | Faculty'
-        return redirect(render_template('master/faculty/updatefaculty.html', row=faculty_data, title=title))
+        return render_template('master/faculty/updatefaculty.html', row=faculty_data, title=title)
     title = 'Master | Faculty'
     faculty_data = faculty().getfacultydata()
     return render_template('/master/faculty/facultyprofile.html', row=faculty_data, username=master.__username__, title=title)
