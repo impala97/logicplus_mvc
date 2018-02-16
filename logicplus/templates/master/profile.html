@@ -1,0 +1,67 @@
+
+<html lang="en" ng-app="httpExample">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+    {% endblock %}
+</head>
+<body class="skin-black">
+    {% block body %}
+        {{ super() }}
+    {% endblock %}
+    {% block content %}
+        <form action="{{ url_for('rtprofile') }}" method="POST" class="form-box" ng-controller="FetchController">
+            <div class="form-group">
+                <input type="password" ng-model="old_pwd" name="old_pwd" class="form-control" placeholder="Old Password" required/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="new_pwd" ng-model="new_pwd" class="form-control" placeholder="New Password" required/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="cnew_pwd" ng-model="cnew_pwd" class="form-control" placeholder="Re-type password" required/>
+            </div>
+            <button ng-click="fetch()" class="btn bg-olive btn-block">Change Password</button>
+        </form>
+        {{ super() }}
+    {% endblock %}
+    {% block script %}
+    <script src="{{ url_for('static', filename='master/js/angular.js') }}"></script>
+    <script type="text/javascript">
+         angular.module('httpExample', [])
+    .config(['$sceDelegateProvider', function($sceDelegateProvider) {
+      // We must whitelist the JSONP endpoint that we are using to show that we trust it
+      $sceDelegateProvider.resourceUrlWhitelist([
+          'https://angularjs.org/**',
+      ]);
+    }])
+    .controller('FetchController', ['$scope', '$http', '$templateCache',
+      function($scope, $http, $templateCache) {
+        $scope.method = 'POST';
+        $scope.url = '{{ url_for('rtprofile') }}';
+
+        $scope.fetch = function() {
+          $scope.code = null;
+          $scope.response = null;
+
+          $http({method: $scope.method, url: $scope.url, cache: $templateCache}).
+            then(function(response) {
+                $window.location.href = "{{ url_for('rtindex') }}";
+            }, function(response) {
+              //$scope.data = response.data || 'Request failed';
+              $scope.status = response.status;
+          });
+        };
+
+        $scope.updateModel = function(method, url) {
+          $scope.method = method;
+          $scope.url = url;
+        };
+      }]);
+    </script>
+    {% endblock %}
+</body>
+</html>

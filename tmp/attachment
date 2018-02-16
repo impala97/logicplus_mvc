@@ -1,0 +1,10 @@
+
+                                        <div class="attachment">
+                                            <h4>Attachments:</h4>
+                                            <p class="filename">
+                                                {{ url_for('static',filename='master/img/Theme-thumbnail-image.jpg') }}
+                                            </p>
+                                            <div class="pull-right">
+                                                <button class="btn btn-primary btn-sm btn-flat">Open</button>
+                                            </div>
+                                        </div>

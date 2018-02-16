@@ -1,0 +1,60 @@
+\\to get lp.faculty.name from lp.batch_trnxs.fid
+
+select distinct(lp.faculty.name) from lp.faculty inner join lp.batch_trnxs on lp.batch_trnxs.fid = lp.faculty.id;
+
+
+\\total table to get final data
+
+lp.admission_trnxs
+lp.course_trnxs
+lp.faculty
+lp.invoice_trnxs
+
+
+\\target??
+
+lp.admissoin_trnxs.id as student_id
+lp.admissoin_trnxs.name as student_name
+lp.course_trnxs.cname as course_name
+lp.faculty.name as faculty_name
+lp.admissoni_trnxs.fees as total_fees
+lp.admission_trnxs.installment_no as fees_installment_no
+lp.admission_trnxs.mobile as student_mobile_no
+
+lp.invoice_trnxs.total_paid_fees
+
+
+\\sum of total_paid_fees of every student;
+select sum(lp.invoice_trnxs.fees) as total_paid_fees from lp.invoice_trnxs inner join lp.admission_trnxs on lp.invoice_trnxs.aid = lp.admission_trnxs.id;
+
+
+select lp.admissoin_trnxs.id,lp.admissoin_trnxs.name,lp.course_trnxs.cname,lp.faculty.name,lp.admission_trnxs.fees,lp.admission_trnxs.installment_no from lp.admission_trnxs
+ inner join lp.batch_trnxs on lp.batch_trnxs.fid = lp.faculty.id,
+ inner join lp.course_trnxs on lp.course_trnxs = lp.admission_trnxs.course;
+
+
+
+\\result-1 get all invoice data remaining faculty_name
+select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,sum(lp.invoice_trnxs.fees),phone,count(lp.invoice_trnxs.aid) as installment_no from lp.admission_trnxs inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id group by lp.admission_trnxs.id;
+
+\\to get fid from bid
+select fid from lp.batch_trnxs where id=lp.invoice_trnxs.bid;
+
+\\ to get cname from course
+select cname from lp.course_trnxs where id=lp.admission_trnxs.course;
+
+\\to get remaining fees
+select sum(fees) from lp.invoice_trnxs where aid=lp.invoice_trnxs.id;
+
+
+select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,(lp.admission_trnxs.fees-sum(lp.invoice_trnxs.fees)) as remaining_fees,phone,count(lp.invoice_trnxs.aid) as installment_no,faculty_name from lp.admission_trnxs,(select lp.faculty.name from lp.faculty,(select lp.batch_trnxs.fid from lp.batch_trnxs,lp.admission_trnxs where lp.batch_trnxs.bid=lp.admission_trnxs.bid) as fid where lp.faculty.id=fid) as faculty_name inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id group by lp.admission_trnxs.id;
+
+
+\\to get cname from bid using cid in batch_trnxs
+select distinct(cname) from lp.course_trnxs inner join lp.batch_trnxs on lp.batch_trnxs.bid=3 and lp.course_trnxs.id=lp.batch_trnxs.cid;
+
+\\to get email from bid using aid in batch_trnxs
+
+
+\\to get sum of fees from admission_batch using bid
+select sum(lp.course_trnxs.fees) from lp.course_trnxs join lp.batch_trnxs on lp.batch_trnxs.cid = lp.course_trnxs.id join lp.admission_batch on lp.admission_batch.bid=lp.batch_trnxs.bid and lp.admission_batch.aid=12;

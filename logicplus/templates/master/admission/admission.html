@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+        <link href="{{ url_for('static',filename='master/css/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static',filename='master/css/bootstrap-multiselect.min.css') }}" rel="stylesheet" type="text/css" />
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+<!-- (Optional) Latest compiled and minified JavaScript translation files -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+    {% endblock %}
+</head>
+<body class="skin-black">
+    {% block body %}
+        {{ super() }}
+    {% endblock %}
+    {% block content %}
+        <div class="wrapper row-offcanvas row-offcanvas-right">
+        <aside class="right-side">
+            <section class="content-header">
+                <h1>
+                    admission
+                    <small>Add details</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">admission</a></li>
+                    <li class="active">Add Details</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">*All Details Are Mendatory</h3>
+                            </div>
+                            <div class="box-body">
+                                    <form enctype="multipart/form-data" id="myform" class="contact-form">
+                                    {% with messages = get_flashed_messages(with_categories = True) %}
+                                        {% if messages %}
+                                            <ul class=flashes>
+                                                {% for message in messages %}
+                                                    <li class="{{ category }}">{{ message }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                    {% endwith %}
+                                        <!-- output | dp_img -->
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Display Picture</label>
+                                                <div class="col-sm-4">
+                                                    <img id="output" name="img" alt="Display Picture" height="100" width="100" src="{{url_for('static',filename='master/img/profile-pic.jpg')}}" />
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input accept="file_extension|image/*" type="file" name="dp_img" class="form-control" required onchange="loadFile(event)" value="{{url_for('static',filename='master/img/profile-pic.jpg')}}" />
+
+                                                    <script type="text/javascript">
+                                                    var loadFile = function(event) {
+                                                        var output = document.getElementById('output');
+                                                        output.src = URL.createObjectURL(event.target.files[0]);
+                                                    };
+                                                    </script>
+                                                </div>
+                                            </div>
+                                        </div><br />
+
+                                        <!-- name_txt | join_txt -->
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Full Name</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" id="name_txt" class="form-control" name="name_txt" placeholder="Full Name" required />
+                                                </div>
+
+                                                <label class="col-sm-2 control-label">Join Date</label>
+                                                <div class="col-sm-4">
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                        <input type="text" class="form-control pull-right" id="reservation" name="join_txt">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><br />
+
+                                        <!--phone_txt | email_txt -->
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Mobile Number</label>
+                                                <div class="col-sm-4">
+                                                    <input type="tel" name="phone_txt" class="form-control" placeholder="Mobile Number" required />
+                                                </div>
+
+                                                <label class="col-sm-2 control-label">Email-Address</label>
+                                                <div class="col-sm-4">
+                                                    <input type="email" name="email_txt" class="form-control" placeholder="E-mail Address" required />
+                                                </div>
+                                            </div>
+                                        </div><br />
+
+                                        <!-- course_txt | batch_txt -->
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label" for="course_txt">Course</label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control" id="course_txt" name="course_txt">
+                                                        {% for r in range(0,c|length) %}
+                                                            <option value="{{ c[r][0] }}">{{ c[r][1] }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+
+                                                <label class="col-sm-2 control-label" for="batch_txt">Batch</label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control" id="batch_txt" name="batch_txt">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div><br />
+
+                                        <!-- fees_txt | faculty_txt -->
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Fees</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="fees_txt" name="fees_txt" placeholder="Enter Fees" />
+                                                </div>
+
+                                                <label class="col-sm-2 control-label">Faculty</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="faculty_txt" name="faculty_txt" readonly />
+                                                </div>
+                                            </div>
+                                        </div><br />
+
+                                        <!--study_txt | gender -->
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Study</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" id="study_txt" class="form-control" name="study_txt" placeholder="Study" required />
+                                                </div>
+
+                                                <label class="col-sm-2 control-label">Gender</label>
+                                                <div class="col-sm-2">
+                                                    <input type="radio" class="form-control" name="gender" value="True" checked>Male</input>
+                                                </div>
+
+                                                <div class="col-sm-2">
+                                                    <input type="radio" class="form-control" name="gender" value="False">Female</input>&nbsp
+                                                </div>
+                                            </div>
+                                        </div><br />
+
+                                        <!-- details_txt | address_txt-->
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Details</label>
+                                                <div class="col-sm-4">
+                                                    <textarea class="textarea" name="details_txt" rows="5" placeholder="Enter Installment Details"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">Address</label>
+                                                <div class="col-sm-4">
+                                                    <textarea class="textarea" name="address_txt" rows="5" placeholder="Enter Address"></textarea>
+                                                </div>
+                                            </div>&nbsp;
+                                        </div>
+                                        <!-- err_lbl-->
+
+                                        <!-- add_btn -->
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <div class="col-sm-6">
+                                                    <input type="button" class="btn btn-primary btn-mini" id="add_btn" value="admission"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    {% endblock %}
+    {% block script %}
+        {{ super() }}
+    <script src="{{ url_for('static',filename='master/js/plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.js') }}"></script>
+    <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.min.js') }}"></script>
+    <script type="text/javascript">
+            $(function() {
+                $('.multiselect').multiselect({
+                     enableFiltering: true,
+                     enableHTML: true,
+                     buttonClass: 'form-control',
+                     includeSelectAllOption: true,
+                     templates: {
+                        button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"><span class="multiselect-selected-text"></span> &nbsp;<b class="fa fa-caret-down"></b></button>',
+                        ul: '<ul class="multiselect-container dropdown-menu"></ul>',
+                        filter: '<li class="multiselect-item filter"><div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
+                        filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span>',
+                        li: '<li><a tabindex="0"><label></label></a></li>',
+                        divider: '<li class="multiselect-item divider"></li>',
+                        liGroup: '<li class="multiselect-item multiselect-group"><label></label></li>'
+                     }
+                });
+
+                //Date range picker
+                $('#reservation').daterangepicker();
+                //Date range picker with time picker
+                $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+                //Date range as a button
+                $('#daterange-btn').daterangepicker({
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+                        'Last 7 Days': [moment().subtract('days', 6), moment()],
+                        'Last 30 Days': [moment().subtract('days', 29), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+                    },
+                    startDate: moment().subtract('days', 29),
+                    endDate: moment()
+                },
+                function(start, end) {
+                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                });
+
+                $('#course_txt').bind('change', function() {
+                    $.ajax({
+                        url: "{{ url_for('rtaData') }}",
+                        data: $('#course_txt'),
+                        type: 'POST',
+                        success: function(response) {
+                            var data = JSON.parse(response);
+                            //alert(data.bid);
+                            //alert(data.bdata);
+                            $('#batch_txt').find('option').remove();
+                            $("#fees_txt").val(data.fees);
+                            var $select = $('#batch_txt');
+                            var $option;
+                            for (i = 0; i < data.bid.length; ++i) {
+                                $option = $('<option value="' + data.bid[i]+ '_'+ data.bdata[i] + '">' + data.bdata[i] + '</option>');
+                                $select.append($option);
+                            }
+                            //alert(data.bid,data.bdata);
+                            $('#batch_txt').trigger('change');
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                });
+
+                $('#batch_txt').bind('change', function() {
+                    $.ajax({
+                        url: "{{ url_for('rtaFaculty') }}",
+                        data: $('#batch_txt'),
+                        type: "POST",
+                        success: function (response) {
+                            var data = JSON.parse(response);
+                            $('#faculty_txt').val(data.fname);
+                            //alert(data.fees);
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        }
+                    });
+                  return false;
+                });
+
+                $('#add_btn').bind('click', function () {
+                    event.preventDefault();
+                    var myform = $('#myform')[0];
+                    var data = new FormData(myform);
+                    $.ajax({
+                        url: "{{ url_for('rtadmission') }}",
+                        type: 'POST',
+                        enctype: 'multipart/form-data',
+                        processData: false,
+                        contentType: false,
+                        data: data,
+                        success: function (response) {
+                            console.log("d" + response.error);
+                            if(response.error === 'False'){
+                                window.location = response.url;
+                            }
+                            else if(response.error === 'True'){
+                                $('#err_lbl').text(response.errstr);
+                            }
+                            else{
+                                $('#err_lbl').text("Something went wrong");
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                });
+
+                $('#course_txt').trigger('change');
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

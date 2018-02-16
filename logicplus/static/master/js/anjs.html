@@ -1,0 +1,33 @@
+<html ng-app="myapp">
+<head>
+	<title>myapp | angularjs</title>
+</head>
+<body ng-controller="myctrl">
+	<form>
+		<button type="button" ng-click="btn1()"></button>
+		<button type="button" ng-click="bnt2()"></button>
+		<button type="button" ng-click="btn3()"></button>
+		{{ which }}
+	</form>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.7/angular.js"></script>
+	<scirpt type="text/javascript">
+		angular.module('myapp', [])
+			.controller('myctrl', ['$scope', '$log', function($scope, $log) {
+				$scope.$log = $log;
+				$scope.message = 'Hello World!';
+				$scope.which = $scope.message;
+
+			$scope.btn1 = function(){
+				$scope.which = "btn1";
+			};
+			$scope.btn2 = function(){
+				$scope.which = "btn2";
+			};
+			$scope.btn3 = function(){
+				$scope.which = "btn3";
+			};
+
+		}]);
+	</script>
+</body>
+</html>

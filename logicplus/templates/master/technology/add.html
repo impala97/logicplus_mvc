@@ -1,0 +1,57 @@
+<!DOCTYPE html ng-app="myapp">
+<html lang="en">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+    {% endblock %}
+</head>
+<body class="skin-black" ng-controller="myctrl">
+    {% block body %}
+        {{ super() }}
+    {% endblock %}
+    {% block content %}
+        <form action="{{ url_for('addtech') }}" method="POST" class="form-box">
+            {% with messages = get_flashed_messages(with_categories = True) %}
+                {% if messages %}
+                    <ul class=flashes>
+                        {% for message in messages %}
+                            <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <input type="text" ng-model="name" name="Technology" class="form-control" placeholder="Add Technology" required/>
+            </div>
+            <div class="form-group">
+                <input type="text" name="Framework" ng-model="frame" class="form-control" placeholder="New Framework" required/>
+            </div>
+            <button type="submit" class="btn bg-olive btn-block" data-ng-click="btn()">Add Technology</button>
+        </form>
+        {{ super() }}
+    {% endblock %}
+    <script src="{{ url_for('static', filename='master/js/angular.js') }}"></script>
+    <script type="text/javascript">
+        (function ()
+        {
+            angular.
+        module('myapp', []).
+        controller('myctrl', ['$scope', '$http', function($scope, $http) {
+
+          $scope.update = function(user) {
+            // Example with 2 arguments
+            $http({
+                 url: "{{ url_for('addtech') }}",
+                 method: 'POST',
+                 data: {name : $scope.name, frame:$scope.frame},
+               });
+          };
+        }]);
+        }());
+    </script>
+</body>
+</html>

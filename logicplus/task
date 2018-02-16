@@ -1,0 +1,10 @@
+batch timing notification to student
+timing clush
+
+
+required format of data
+
+[[aid,cname,time]]
+
+
+insert into lp.batch_trnxs(entries) values();

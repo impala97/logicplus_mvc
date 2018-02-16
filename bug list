@@ -1,0 +1,99 @@
+#--------- Not done ------------
+bug : after password change angularjs does not redirect to page.
+bug type : small changes
+prority : low
+solution : learn how to redirect to another page using angularjs
+
+
+#-------- got it ------
+bug : remove old profile pic when user uploads a new one
+bug type : small changes
+priority : low
+solution : get the old name of file from database | learn how to delete a file from python
+
+#----Not Done-------
+bug : return batch which is causing the time clash
+bug type : small
+priority : normal
+suggestion : return id of batch which is causing the time clash | get name of course through that batch id
+
+#-----Not Done-------
+bug : when calculating time clash remove entry of current batch timings.
+bug type : small change
+priority : normal
+suggestion : sql query change on model/batch.py getdt() function.
+
+#-----------Not done ------------------------------
+implementation : craete db session
+bug type : small
+priority : normal
+
+#-------- Not done-----
+bug : session time out
+bug type : major changes
+priority : high
+solution : exception handling
+suggestion : in order to do this implement flask-WTF plugin
+
+#---- Not done ---
+bug : implement exception handling
+bug type : major changes
+priority : high
+
+#------ Not done -----
+bug : roll back database when exception raise
+bug type : major
+priority : high
+solution : implement exception handling | and view in database
+
+#--- Not done -------
+bug : js confalict at datatbale
+bug type : major
+priority : normal
+solution : use angular js to solve this
+
+#--- Not done -------
+bug : js confalict at batch
+bug type : small
+priority : small
+solution : use noconfalict() function of jQuery
+page : batch.html | bform.html
+
+
+#------ got it ----
+bug : did not update course in lp.admission_trnxs when add course.
+solution : just happended because of error handling is not implemented at server side. 
+
+#------ got it -------------------
+page: aform.html
+bug : id conflict=true
+bug type : small changes
+priority : normal
+solution : optimize code for mult course conflict algorithm | change at add() function | double check the insert data if confalict do update
+change at : model/admission/admission_batch
+
+#----- got it ------
+bug : faculty time clashing | add time functionality
+bug type : major changes required
+priority : high
+solution : implement intermediate tabel batch_faculty | change at add() function | double check the insert data if confalict do update data
+
+#------- Got it -------------------
+bug : test update admission seems like there is an error to submit form
+bug type : major changes
+priority : high
+suggestion : send data using ajax bcuz type is button. | display error if there is | provide url when it's successfully done.
+
+#--------got it--------
+bug : add admission does not work due to type=button
+bug type :small changes
+priority : high
+solution : use angularjs or jquery to send data
+
+#-------- got it -------
+bug : getting error list index out of ragne when batch update
+bug type : smalll changes
+priority : high
+solution : do something about error handling
+
+

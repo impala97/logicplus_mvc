@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+    <link href="{{ url_for('static',filename='master/css/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css" />
+    {% endblock %}
+</head>
+<body class="skin-black">
+    {% block body %}
+        {{ super() }}
+    {% endblock %}
+    {% block content %}
+        <div class="wrapper row-offcanvas row-offcanvas-right">
+        <aside class="right-side">
+            <section class="content-header">
+                <h1>
+                    course
+                    <small>Add course</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li><a href="#">Course</a></li>
+                    <li class="active">Add Course</li>
+                </ol>
+            </section>
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">*All Details Are Mendatory</h3>
+                            </div>
+                            <div class="box-body">
+                                <form class="contact-form" enctype="multipart/form-data">
+                                    <input type="hidden" name="aid" value="{{ aid }}"/>
+                                {% with messages = get_flashed_messages(with_categories = True) %}
+                                    {% if messages %}
+                                        <ul class=flashes>
+                                        {% for message in messages %}
+                                            <li class="{{ category }}">{{ message }}</li>
+                                        {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                {% endwith %}
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Course</label>
+                                        <div class="col-sm-4">
+                                            <select class="form-control" name="course_txt" id="course_txt">
+                                                {% for r in range(0,c|length) %}
+                                                    <option value="{{ c[r][0] }}:{{ c[r][1] }}">{{ c[r][1] }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div><br />
+
+                                    <div class="row">
+                                        <div class="form=-group">
+                                            <label class="col-sm-2 control-label">Batch</label>
+                                                <div class="col-sm-4">
+                                                    <select class="form-control" id="batch_txt" name="batch_txt">
+                                                        {% for r in f %}
+                                                            <option>{{ r[0] }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                        </div>
+                                    </div><br />
+
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Faculty</label>
+                                                <div class="col-sm-4">
+                                                    <input type="text" class="form-control" id="faculty_txt" name="faculty_txt" readonly />
+                                                </div>
+                                        </div>
+                                    </div><br />
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">Fees</label>
+                                        <div class="col-sm-4">
+                                            <input type="text" name="fees_txt" id="fees_txt" class="form-control" placeholder="Fees" required />
+                                        </div>
+                                    </div>
+                                </div><br />
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" id="err_lbl"></label>
+                                    </div>
+                                </div><br / >
+
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-sm-6">
+                                            <button type="button" id="add_btn" class="btn btn-primary btn-mini">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </aside>
+        </div>
+    {% endblock %}
+    {% block script %}
+        {{ super() }}
+    <script src="{{ url_for('static',filename='master/js/plugins/daterangepicker/daterangepicker.js') }}"></script>
+    <script type="text/javascript">
+            $(function() {
+                //Date range picker
+                $('#reservation').daterangepicker();
+                //Date range picker with time picker
+                $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+                //Date range as a button
+                $('#daterange-btn').daterangepicker(
+                        {
+                            ranges: {
+                                'Today': [moment(), moment()],
+                                'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)],
+                                'Last 7 Days': [moment().subtract('days', 6), moment()],
+                                'Last 30 Days': [moment().subtract('days', 29), moment()],
+                                'This Month': [moment().startOf('month'), moment().endOf('month')],
+                                'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
+                            },
+                            startDate: moment().subtract('days', 29),
+                            endDate: moment()
+                        },
+                function(start, end) {
+                    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+                });
+
+                $('#add_btn').bind('click', function () {
+                    $.ajax({
+                        url:"{{ url_for('rtupdatecourse') }}",
+                        data: $('form').serialize(),
+                        type:'POST',
+                        success: function(response) {
+                            var data = JSON.parse(response);
+                            if(data.error === 'True')
+                            {
+                                $('#err_lbl').text(data.str);
+                            }
+                            if(data.error === 'False')
+                            {
+                                window.location = data.url;
+                            }
+                        },
+                        error:function (error) {
+                            console.log(error);
+                        }
+                    })
+                });
+
+                $('#course_txt').bind('change', function () {
+                   $.ajax({
+                       url:"{{ url_for('rtaddcourse') }}",
+                       type: 'POST',
+                       data: $('#course_txt'),
+                       success: function (response) {
+                           $('#err_lbl').text('');
+                           var data = JSON.parse(response);
+                           $('#batch_txt').find('option').remove();
+                            $("#fees_txt").val(data.fees);
+                            var $select = $('#batch_txt');
+                            var $option;
+                            for (i = 0; i < data.bid.length; ++i) {
+                                $option = $('<option value="' + data.bid[i]+ '_'+ data.bdata[i] + '">' + data.bdata[i] + '</option>');
+                                $select.append($option);
+                            }
+                            //alert(data.bid,data.bdata);
+                            $('#batch_txt').trigger('change');
+                       },
+                       error: function (error) {
+                           console.log(error);
+                       }
+                   })
+                });
+
+                $('#batch_txt').bind('change', function() {
+                    $.ajax({
+                        url: "{{ url_for('rtaFaculty') }}",
+                        data: $('#batch_txt'),
+                        type: "POST",
+                        success: function (response) {
+                            var data = JSON.parse(response);
+                            $('#faculty_txt').val(data.fname);
+                            //alert(data.fees);
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                  return false;
+                });
+
+                $('#course_txt').trigger('change')
+            });
+        </script>
+    {% endblock %}
+</body>
+</html>

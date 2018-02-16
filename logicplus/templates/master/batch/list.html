@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+{% extends "master/empty.html" %}
+<head>
+    {% block head %}
+        {{ super() }}
+    {% endblock %}
+    {% block css %}
+        {{ super() }}
+        <link href="{{ url_for('static',filename='master/css/datatables/dataTables.bootstrap.css') }}" rel="stylesheet" type="text/css" />
+        <script src="{{ url_for('static', filename='master/js/angular.js') }}"></script>
+    {% endblock %}
+</head>
+<body class="skin-black" ng-app="batch" ng-controller="my">
+{% block body %}
+    {{ super() }}
+{% endblock %}
+{% block content %}
+    <aside class="right-side">
+        <section class="content-header">
+            <h1>
+                Batch
+                <small>Table</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                <li><a href="#">Batch</a></li>
+                <li class="active">Table</li>
+            </ol>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <h3 class="box-title">Manage Data</h3>
+                        </div><!-- /.box-header -->
+                        <div class="box-body table-responsive">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Course Name</th>
+                                    <th>Faculty Name</th>
+                                    <th>Day</th>
+                                    <th>Time</th>
+                                    <th>Active</th>
+                                    <th>Entries</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                {% for r in batch %}
+                                <tr>
+                                    {% for c in r %}
+                                    <td>{{ c }}</td>
+                                    {% endfor %}
+                                    <td>
+                                        <div class="hidden-sm hidden-xs btn-group">
+                                            <form id="{{ r[0] }}">
+                                                <input type="hidden" name="bid" value="{{ r[0] }}" />
+                                                <button name="update" class="update_btn btn btn-xs btn-info" type="button" formmethod="post" formaction="{{ url_for('rtblist') }}">
+                                                    <i class="ace-icon fa fa-pencil bigger-120"></i>
+                                                </button>
+
+                                                <button name="active" class="active_btn btn btn-xs btn-success" type="button" value="{{ r[0] }}">
+                                                    <i class="ace-icon fa fa-check bigger-120"></i>
+                                                </button>
+
+                                                <button name="delete" class="delete_btn btn btn-xs btn-danger" type="button" value="{{ r[0] }}">
+                                                    <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tfoot>
+                            </table>
+                        </div><!-- /.box-body -->
+                    </div><!-- /.box -->
+                </div>
+            </div>
+        </section><!-- /.content -->
+    </aside><!-- /.right-side -->
+{% endblock %}
+{% block script %}
+    {{ super() }}
+    <script src="{{ url_for('static',filename='master/js/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static',filename='master/js/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        (function($) {
+            function send(url,data)
+            {
+                $.ajax({
+                    url: url,
+                    data: { bid: data },
+                    type: "POST",
+                    success: function (response) {
+                        window.location = response.url;
+
+                    },
+                    error: function (error) {
+                        console.log(error);
+                    }
+                });
+            }
+
+            $('.update_btn').bind('click', function () {
+                console.log("update_btn");
+                var url = "{{ url_for('rtblist') }}";
+                var form_id = $(this).closest("form").attr('id');
+                console.log(url);
+                console.log(form_id);
+                $('#'+form_id).attr('action',url);
+                $('#'+form_id).attr('method','POST');
+                $('#'+form_id).submit();
+            });
+
+            $('.active_btn').bind('click', function () {
+                var url = "{{ url_for('bactive') }}";
+                var data = $(this).val();
+                send(url,data);
+            });
+
+            $('.delete_btn').bind('click', function () {
+                var url = "{{ url_for('bdelete') }}";
+                var data = $(this).val();
+                send(url,data);
+            });
+
+            $("#example2").dataTable();
+        })(jQuery);
+    </script>
+{% endblock %}
+</body>
+</html>
