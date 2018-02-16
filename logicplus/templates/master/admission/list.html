@@ -23,12 +23,12 @@
                 </ol>
             </section>
             <section class="content">
-                {% for r in row %}
+                {% for r in range(row|length) %}
                 <div class="row">
                     <div class="col-md-12">
                         <div class="box  box-success">
                         <div class="box-header">
-                            <h3 class="box-title"><i class="fa fa-user">&nbsp;{{ r[1] }}</i></h3>
+                            <h3 class="box-title"><i class="fa fa-user">&nbsp;{{ row[r][1] }}</i></h3>
                             <div class="box-tools pull-right">
                                 <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-chevron-up"></i></button>
                             </div>
@@ -40,11 +40,11 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-3 center">
                                 <span class="profile-picture">
-                                    <img class="editable img-responsive" width="300px" height="300px" halt="dp" id="avatar2" src="{{ url_for('static',filename='master/profile/admission/'+r[11]) }}">
+                                    <img class="editable img-responsive" width="300px" height="300px" halt="dp" id="avatar2" src="{{ url_for('static',filename='master/profile/admission/'+row[r][11]) }}">
                                 </span>
                                 <div class="space space-4"></div>
                                 <form>
-                                    <input type="hidden" name="id" value="{{ r[0] }}">
+                                    <input type="hidden" name="id" value="{{ row[r][0] }}">
                                     <button class="btn btn-sm btn-block btn-success" formmethod="post" formaction="{{ url_for('rtalist') }}">
                                         <i class="ace-icon fa fa-edit bigger-120"></i>
                                         <span class="bigger-110">Edit Profile</span>
@@ -67,51 +67,59 @@
                                         <div class="profile-info-name"> Name </div>
                                         <div class="profile-info-value">
                                             <i class="fa fa-user light-orange bigger-110"></i>
-                                            <span>{{ r[1] }}</span>
+                                            <span>{{ row[r][1] }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Phone</div>
                                         <div class="profile-info-value">
                                             <i class="fa fa-mobile-phone light-orange bigger-110"></i>
-                                            <span>{{ r[2] }}</span>
+                                            <span>{{ row[r][2] }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Email</div>
                                         <div class="profile-info-value">
                                             <i class="fa fa-envelope light-orange bigger-110"></i>
-                                            <span>{{ r[3] }}</span>
+                                            <span>{{ row[r][3] }}</span>
                                         </div>
                                     </div>
 
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Study</div>
                                         <div class="profile-info-value">
-                                            <span>{{ r[4] }}</span>
+                                            <span>{{ row[r][4] }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Course</div>
                                         <div class="profile-info-value">
-                                            <i class="fa fa-book light-orange bigger-110"></i>
-                                            <span>{{ r[5] }}</span>
+                                            <i class="fa fa-book light-orange bigger-110" style="float: left;margin-right: 10px;padding: 6px 4px 6px 6px;vertical-align: middle"></i>
+                                            <span><form id="cdata">
+                                                <input type="hidden" value="{{ row[r][0] }}" name="aid" />
+                                                {% for c in course[r] %}
+                                                    <button type="button" class="course btn btn-xs btn-info2 btn-success" value="{{ c[0] }}">
+                                                        {{ c[1] }}&nbsp;&nbsp;
+                                                        <i class="ace-icon fa fa-eject bigger-120"></i>
+                                                    </button>
+                                                {% endfor %}
+                                            </form></span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Address</div>
                                         <div class="profile-info-value">
                                             <i class="fa fa-home light-orange bigger-110"></i>
-                                            <span>{{ r[6] }}</span>
+                                            <span>{{ row[r][6] }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Gender</div>
                                         <div class="profile-info-value">
-                                            {% if r[7] %}
+                                            {% if row[r][7] %}
                                             <i class="fa fa-male light-orange bigger-110"></i>
                                             <span>Male</span>
-                                            {% elif not r[7] %}
+                                            {% elif not row[r][7] %}
                                             <i class="fa fa-female light-orange bigger-110"></i>
                                             <span>Female</span>
                                             {% endif %}
@@ -121,27 +129,27 @@
                                         <div class="profile-info-name">Join Date</div>
                                         <div class="profile-info-value">
                                             <i class="fa fa-calendar light-orange bigger-110"></i>
-                                            <span>{{ r[8] }}</span>
+                                            <span>{{ row[r][8] }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Fees</div>
                                         <div class="profile-info-value">
                                             <i class="fa fa-inr light-orange bigger-110"></i>
-                                            <span>{{r[9]}}</span>
+                                            <span>{{row[r][9]}}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Details</div>
                                         <div class="profile-info-value">
                                             <i class="fa fa-info light-orange bigger-110"></i>
-                                            <span>{{ r[12] }}</span>
+                                            <span>{{ row[r][12] }}</span>
                                         </div>
                                     </div>
                                     <div class="profile-info-row">
                                         <div class="profile-info-name">Status</div>
                                         <div class="profile-info-value">
-                                            <span>{{ r[10] }}</span>
+                                            <span>{{ row[r][10] }}</span>
                                         </div>
                                     </div>
                             </div><!-- /.col -->
@@ -164,7 +172,24 @@
     <script src="{{ url_for('static',filename='master/js/plugins/input-mask/jquery.inputmask.js') }}" type="text/javascript"></script>
     <script src="{{ url_for('static',filename='master/js/plugins/input-mask/jquery.inputmask.date.extensions.js') }}" type="text/javascript"></script>
     <script src="{{ url_for('static',filename='master/js/plugins/input-mask/jquery.inputmask.extensions.js') }}" type="text/javascript"></script>
-
+        <script type="text/javascript">
+            $(function () {
+                $('.course').bind('click', function () {
+                    $.ajax({
+                        url: "{{ url_for('deletecourse') }}",
+                        type: 'POST',
+                        data: $("#cdata").serialize() + "_" + $(this).val()   ,
+                        success: function (response) {
+                            console.log("Course Successfully deleted." + response)
+                            window.location = response.url;
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                });
+            });
+        </script>
     {% endblock %}
 </body>
 </html>

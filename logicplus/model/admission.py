@@ -69,7 +69,7 @@ class admission():
         return dbcon().do_select(select)
 
     def getstudentfees(self, aid):
-        select = "select fees from lp.admission_trnxs where id=%d;"%aid
+        select = "select fees from lp.admission_trnxs where id=%d;"% aid
         return dbcon().do_select(select)
 
     def getInvoiceData(self,course_name=None,faculty_name=None):
@@ -123,16 +123,27 @@ class admission():
     def getimgbyid(self, aid):
         select = "select dp from lp.admission_trnxs where id=%d;" % aid
         img_name = dbcon().do_select(select)
-        print(img_name)
         return img_name[0][0]
+
+    def deletecourse(self, aid, bid):
+        select = "select fees from lp.admission_trnxs where id=%d;" % aid
+        total_fees = dbcon().do_select(select)
+        total_fees = total_fees[0][0]
+        select = "select fees from lp.admission_batch WHERE aid=%d and bid=%d;" % (aid, bid)
+        fees = dbcon().do_select(select)
+        fees = fees[0][0]
+        update = "update lp.admission_trnxs set fees=%d where id=%d;" % (total_fees-fees, aid)
+        if dbcon().do_insert(update):
+            delete = "delete from lp.admission_batch where aid=%d and bid=%d;" % (aid ,bid)
+            return dbcon().do_insert(delete)
 
 
 class admission_batch():
-    def add(self, aid, bid, time):
+    def add(self, aid, bid, time, fees):
         select = "select aid,bid from lp.admission_batch where aid=%d AND bid=%d;" % (aid, bid)
         result = dbcon().do_select(select)
         if len(result) == 0:
-            insert = "insert into lp.admission_batch(aid, bid, time) VALUES(%d,%d,'%s');" % (aid, bid, time)
+            insert = "insert into lp.admission_batch(aid, bid, time, fees) VALUES(%d,%d,'%s',%d);" % (aid, bid, time, fees)
             return dbcon().do_insert(insert)
         else:
             del aid, bid, select, result
@@ -149,7 +160,7 @@ class admission_batch():
         # extract bid from batch data
         bdata = bdata.split('_')
         bid_org = bdata[0]
-        print(bid_org)
+        print("getdt===bid", bid_org)
 
         # extract day and time from batch data
         dati = bdata[1].split(' ')
@@ -186,6 +197,7 @@ class admission_batch():
         for i in range(len(bid)):
             for j in range(len(bid[i])):
                 bid[i] = bid[i][j]
+        print(bid)
         return bid
 
 

@@ -186,7 +186,7 @@ class batch_faculty:
         select = "select lp.batch_trnxs.bid,lp.batch_trnxs.day,lp.batch_faculty.time from lp.batch_trnxs inner join lp.batch_faculty on lp.batch_trnxs.fid=%d and lp.batch_faculty.bid=lp.batch_trnxs.bid;" % fid
         fdata = dbcon().do_select(select)
         time_clash = False
-        print("bid===", bid)
+        print("batch=getdt=bid=", bid)
         if len(fdata) >= 1:
             if ',' in time:
                 time = time.split(',')

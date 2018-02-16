@@ -61,6 +61,21 @@ class course:
         fees = dbcon().do_select(select)
         return fees[0][0]
 
+    def getcnamebyaid(self):
+        from .admission import admission_batch
+        select = "select id from lp.admission_trnxs order by id;"
+        aid = dbcon().do_select(select)
+        bid = []
+        for i in range(len(aid)):
+            select = "select bid from lp.admission_batch where aid=%d" % aid[i]
+            bid.append(dbcon().do_select(select))
+            # bid.append(tuple(admission_batch().getbid(aid[i][0])))
+            for j in range(len(bid[i])):
+                select = "select distinct(cname) from lp.course_trnxs inner join lp.batch_trnxs on lp.batch_trnxs.bid=%d and lp.course_trnxs.id=lp.batch_trnxs.cid;" % bid[i][j]
+                cname = dbcon().do_select(select)
+                bid[i][j] += cname[0]
+        return bid
+
 
 if __name__ == "__main__":
     course()

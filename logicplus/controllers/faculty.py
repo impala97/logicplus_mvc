@@ -47,15 +47,21 @@ def updatefaculty():
             dob = request.form['dob_txt']
             address = request.form['address_txt']
             gender = request.form['gender']
-            id = request.form['sid']
-            valid = faculty().updateFaculty(id, name, email, phone, website, company, post, dob, address, gender)
+            fid = request.form['sid']
+            valid = faculty().updateFaculty(int(fid), name, email, phone, website, company, post, dob, address, gender)
             if valid is True:
-                file = request.files['dp_img']
-                filename = tmp().saveIMG(file, id)
-                valid = faculty().updateimg(filename, id)
-                if valid is not False:
-                    flash('updated successfully!!')
-                    return redirect(url_for('facultyprofile'))
+                if not request.form.get('dp_img', None):
+                    file = request.files['dp_img']
+                    ufolder = '/logicplus/static/master/profile/faculty'
+                    path = os.path.sep.join(app.instance_path.split(os.path.sep)[:-1]) + ufolder
+                    filename = tmp().saveIMG(file, fid, ufolder=path)
+                    if filename:
+                        tmp().remove_img(path, old_img)
+                        print("old image removed.")
+                        valid = faculty().updateimg(filename, fid)
+                        if valid is not False:
+                            flash('updated successfully!!')
+                            return redirect(url_for('facultyprofile'))
 
 
 @app.route('/faculty/profile/', methods=['GET', 'POST'])

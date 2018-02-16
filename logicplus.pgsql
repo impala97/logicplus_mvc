@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.10
 
--- Started on 2018-02-16 10:36:21 IST
+-- Started on 2018-02-16 19:22:22 IST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -34,7 +34,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2424 (class 0 OID 0)
+-- TOC entry 2425 (class 0 OID 0)
 -- Dependencies: 1
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -51,7 +51,7 @@ CREATE EXTENSION IF NOT EXISTS citext WITH SCHEMA public;
 
 
 --
--- TOC entry 2425 (class 0 OID 0)
+-- TOC entry 2426 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION citext; Type: COMMENT; Schema: -; Owner: 
 --
@@ -98,7 +98,8 @@ CREATE TABLE admission_batch (
     aid integer NOT NULL,
     bid integer NOT NULL,
     id integer NOT NULL,
-    "time" character varying(50) DEFAULT ''::character varying NOT NULL
+    "time" character varying(50) DEFAULT ''::character varying NOT NULL,
+    fees integer DEFAULT 0 NOT NULL
 );
 
 
@@ -120,7 +121,7 @@ CREATE SEQUENCE admission_batch_id_seq
 ALTER TABLE admission_batch_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2426 (class 0 OID 0)
+-- TOC entry 2427 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: admission_batch_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -169,7 +170,7 @@ CREATE SEQUENCE admission_trnxs_fees_seq
 ALTER TABLE admission_trnxs_fees_seq OWNER TO postgres;
 
 --
--- TOC entry 2428 (class 0 OID 0)
+-- TOC entry 2429 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: admission_trnxs_fees_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -193,7 +194,7 @@ CREATE SEQUENCE admission_trnxs_id_seq
 ALTER TABLE admission_trnxs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2429 (class 0 OID 0)
+-- TOC entry 2430 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: admission_trnxs_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -232,7 +233,7 @@ CREATE SEQUENCE batch_faculty_id_seq
 ALTER TABLE batch_faculty_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2430 (class 0 OID 0)
+-- TOC entry 2431 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: batch_faculty_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -274,7 +275,7 @@ CREATE SEQUENCE batch_trnxs_bid_seq
 ALTER TABLE batch_trnxs_bid_seq OWNER TO postgres;
 
 --
--- TOC entry 2432 (class 0 OID 0)
+-- TOC entry 2433 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: batch_trnxs_bid_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -314,7 +315,7 @@ CREATE SEQUENCE chat_id_seq
 ALTER TABLE chat_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2434 (class 0 OID 0)
+-- TOC entry 2435 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: chat_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -355,7 +356,7 @@ CREATE SEQUENCE course_trxns_id_seq
 ALTER TABLE course_trxns_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2436 (class 0 OID 0)
+-- TOC entry 2437 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: course_trxns_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -402,7 +403,7 @@ CREATE SEQUENCE faculty_id_seq
 ALTER TABLE faculty_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2438 (class 0 OID 0)
+-- TOC entry 2439 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: faculty_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -447,7 +448,7 @@ CREATE SEQUENCE inquiry_trnxs_id_seq
 ALTER TABLE inquiry_trnxs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2440 (class 0 OID 0)
+-- TOC entry 2441 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: inquiry_trnxs_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -490,7 +491,7 @@ CREATE SEQUENCE invoice_trnxs_id_seq
 ALTER TABLE invoice_trnxs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2442 (class 0 OID 0)
+-- TOC entry 2443 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: invoice_trnxs_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -529,7 +530,7 @@ CREATE SEQUENCE programe_id_seq
 ALTER TABLE programe_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2444 (class 0 OID 0)
+-- TOC entry 2445 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: programe_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -568,7 +569,7 @@ CREATE SEQUENCE technology_id_seq
 ALTER TABLE technology_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2446 (class 0 OID 0)
+-- TOC entry 2447 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: technology_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -606,7 +607,7 @@ CREATE SEQUENCE test_id_seq
 ALTER TABLE test_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2448 (class 0 OID 0)
+-- TOC entry 2449 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: test_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -650,7 +651,7 @@ CREATE SEQUENCE user_id_seq
 ALTER TABLE user_id_seq OWNER TO postgres;
 
 --
--- TOC entry 2450 (class 0 OID 0)
+-- TOC entry 2451 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: user_id_seq; Type: SEQUENCE OWNED BY; Schema: lp; Owner: postgres
 --
@@ -687,7 +688,7 @@ ALTER TABLE new OWNER TO postgres;
 SET search_path = lp, pg_catalog;
 
 --
--- TOC entry 2223 (class 2604 OID 42523)
+-- TOC entry 2224 (class 2604 OID 42523)
 -- Name: id; Type: DEFAULT; Schema: lp; Owner: postgres
 --
 
@@ -711,7 +712,7 @@ ALTER TABLE ONLY admission_trnxs ALTER COLUMN fees SET DEFAULT nextval('admissio
 
 
 --
--- TOC entry 2224 (class 2604 OID 42526)
+-- TOC entry 2225 (class 2604 OID 42526)
 -- Name: id; Type: DEFAULT; Schema: lp; Owner: postgres
 --
 
@@ -799,42 +800,43 @@ ALTER TABLE ONLY "user" ALTER COLUMN id SET DEFAULT nextval('user_id_seq'::regcl
 
 
 --
--- TOC entry 2409 (class 0 OID 25137)
+-- TOC entry 2410 (class 0 OID 25137)
 -- Dependencies: 205
 -- Data for Name: admission_batch; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
 
-COPY admission_batch (aid, bid, id, "time") FROM stdin;
-1	1	1	12:00
-1	2	2	10:00
-5	1	13	10:00
-1	3	14	10:00
+COPY admission_batch (aid, bid, id, "time", fees) FROM stdin;
+1	1	6	12:00	15000
+1	2	7	10:00	10000
+1	3	8	10:00	12500
+1	5	9	15:00	15000
+5	1	5	10:00	15000
 \.
 
 
 --
--- TOC entry 2451 (class 0 OID 0)
+-- TOC entry 2452 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: admission_batch_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
 
-SELECT pg_catalog.setval('admission_batch_id_seq', 14, true);
+SELECT pg_catalog.setval('admission_batch_id_seq', 9, true);
 
 
 --
--- TOC entry 2387 (class 0 OID 24950)
+-- TOC entry 2388 (class 0 OID 24950)
 -- Dependencies: 183
 -- Data for Name: admission_trnxs; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
 
 COPY admission_trnxs (id, name, phone, email, study, course, address, gender, join_date, fees, active, dp, details, bid) FROM stdin;
 5	Bhavik Vyas	9033986379	vcr.faculty@gmail.com	BE-IT	Python	dsgsdfg	t	10/13/2017 - 10/13/2017	15000	t	5_201801122021.jpg	cvbcv	1
-1	mehta smit	9904274495	vcr.student@gmail.com	BE-IT	Java	arihant aashish,6/10 gayakwadi plot	t	09/14/2017 - 09/14/2017	12500	t	1_201802151910.jpg	GEC,Modasa	3
+1	mehta smit	9904274495	vcr.student@gmail.com	BE-IT	Python,Asp.net,Java,Python	arihant aashish,6/10 gayakwadi plot	t	09/14/2017 - 09/14/2017	52500	t	1_201802161438.jpg	GEC,Modasa	1
 \.
 
 
 --
--- TOC entry 2452 (class 0 OID 0)
+-- TOC entry 2453 (class 0 OID 0)
 -- Dependencies: 184
 -- Name: admission_trnxs_fees_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -843,7 +845,7 @@ SELECT pg_catalog.setval('admission_trnxs_fees_seq', 1, false);
 
 
 --
--- TOC entry 2453 (class 0 OID 0)
+-- TOC entry 2454 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: admission_trnxs_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -852,7 +854,7 @@ SELECT pg_catalog.setval('admission_trnxs_id_seq', 6, false);
 
 
 --
--- TOC entry 2411 (class 0 OID 33398)
+-- TOC entry 2412 (class 0 OID 33398)
 -- Dependencies: 207
 -- Data for Name: batch_faculty; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -870,7 +872,7 @@ COPY batch_faculty (id, fid, bid, "time") FROM stdin;
 
 
 --
--- TOC entry 2454 (class 0 OID 0)
+-- TOC entry 2455 (class 0 OID 0)
 -- Dependencies: 208
 -- Name: batch_faculty_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -879,22 +881,22 @@ SELECT pg_catalog.setval('batch_faculty_id_seq', 11, true);
 
 
 --
--- TOC entry 2390 (class 0 OID 24963)
+-- TOC entry 2391 (class 0 OID 24963)
 -- Dependencies: 186
 -- Data for Name: batch_trnxs; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
 
 COPY batch_trnxs (bid, cid, fid, day, "time", active, entries) FROM stdin;
+1	1	1	Monday,Wednesday,Friday	10:00,12:00	t	2
 2	2	6	Monday,Wednesday,Friday	10:00,15:00	t	1
 5	1	6	Wednesday,Thursday,Friday,Saturday	15:00	t	1
-1	1	1	Monday,Wednesday,Friday	10:00,12:00	t	2
 4	4	1	Tuesday,Thursday,Saturday	15:00	t	1
 3	3	1	Tuesday,Thursday,Saturday	10:00,12:00	t	1
 \.
 
 
 --
--- TOC entry 2455 (class 0 OID 0)
+-- TOC entry 2456 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: batch_trnxs_bid_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -903,7 +905,7 @@ SELECT pg_catalog.setval('batch_trnxs_bid_seq', 11, true);
 
 
 --
--- TOC entry 2392 (class 0 OID 24972)
+-- TOC entry 2393 (class 0 OID 24972)
 -- Dependencies: 188
 -- Data for Name: chat; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -918,7 +920,7 @@ COPY chat (id, name, message, date, "time") FROM stdin;
 
 
 --
--- TOC entry 2456 (class 0 OID 0)
+-- TOC entry 2457 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: chat_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -927,7 +929,7 @@ SELECT pg_catalog.setval('chat_id_seq', 5, true);
 
 
 --
--- TOC entry 2394 (class 0 OID 24977)
+-- TOC entry 2395 (class 0 OID 24977)
 -- Dependencies: 190
 -- Data for Name: course_trnxs; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -941,7 +943,7 @@ COPY course_trnxs (id, cname, duration, details, active, fees) FROM stdin;
 
 
 --
--- TOC entry 2457 (class 0 OID 0)
+-- TOC entry 2458 (class 0 OID 0)
 -- Dependencies: 191
 -- Name: course_trxns_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -950,7 +952,7 @@ SELECT pg_catalog.setval('course_trxns_id_seq', 7, true);
 
 
 --
--- TOC entry 2396 (class 0 OID 24986)
+-- TOC entry 2397 (class 0 OID 24986)
 -- Dependencies: 192
 -- Data for Name: faculty; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -963,7 +965,7 @@ COPY faculty (id, name, email, phone, website, company, post, dob, address, gend
 
 
 --
--- TOC entry 2458 (class 0 OID 0)
+-- TOC entry 2459 (class 0 OID 0)
 -- Dependencies: 193
 -- Name: faculty_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -972,7 +974,7 @@ SELECT pg_catalog.setval('faculty_id_seq', 6, true);
 
 
 --
--- TOC entry 2398 (class 0 OID 24996)
+-- TOC entry 2399 (class 0 OID 24996)
 -- Dependencies: 194
 -- Data for Name: inquiry_trnxs; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -986,7 +988,7 @@ COPY inquiry_trnxs (id, name, phone, email, course, study, details, active, date
 
 
 --
--- TOC entry 2459 (class 0 OID 0)
+-- TOC entry 2460 (class 0 OID 0)
 -- Dependencies: 195
 -- Name: inquiry_trnxs_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -995,7 +997,7 @@ SELECT pg_catalog.setval('inquiry_trnxs_id_seq', 8, true);
 
 
 --
--- TOC entry 2400 (class 0 OID 25006)
+-- TOC entry 2401 (class 0 OID 25006)
 -- Dependencies: 196
 -- Data for Name: invoice_trnxs; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -1009,7 +1011,7 @@ COPY invoice_trnxs (id, invoice_no, aid, fees, payment_type, bank, chq_no, activ
 
 
 --
--- TOC entry 2460 (class 0 OID 0)
+-- TOC entry 2461 (class 0 OID 0)
 -- Dependencies: 197
 -- Name: invoice_trnxs_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -1018,7 +1020,7 @@ SELECT pg_catalog.setval('invoice_trnxs_id_seq', 14, true);
 
 
 --
--- TOC entry 2402 (class 0 OID 25017)
+-- TOC entry 2403 (class 0 OID 25017)
 -- Dependencies: 198
 -- Data for Name: programe; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -1028,7 +1030,7 @@ COPY programe (id, tech, framework, defination) FROM stdin;
 
 
 --
--- TOC entry 2461 (class 0 OID 0)
+-- TOC entry 2462 (class 0 OID 0)
 -- Dependencies: 199
 -- Name: programe_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -1037,7 +1039,7 @@ SELECT pg_catalog.setval('programe_id_seq', 1, false);
 
 
 --
--- TOC entry 2404 (class 0 OID 25025)
+-- TOC entry 2405 (class 0 OID 25025)
 -- Dependencies: 200
 -- Data for Name: technology; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -1054,7 +1056,7 @@ COPY technology (id, tech, framework, active) FROM stdin;
 
 
 --
--- TOC entry 2462 (class 0 OID 0)
+-- TOC entry 2463 (class 0 OID 0)
 -- Dependencies: 201
 -- Name: technology_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -1063,7 +1065,7 @@ SELECT pg_catalog.setval('technology_id_seq', 19, true);
 
 
 --
--- TOC entry 2406 (class 0 OID 25031)
+-- TOC entry 2407 (class 0 OID 25031)
 -- Dependencies: 202
 -- Data for Name: test; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -1080,7 +1082,7 @@ COPY test (mobile, email, id) FROM stdin;
 
 
 --
--- TOC entry 2463 (class 0 OID 0)
+-- TOC entry 2464 (class 0 OID 0)
 -- Dependencies: 209
 -- Name: test_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -1089,7 +1091,7 @@ SELECT pg_catalog.setval('test_id_seq', 22, true);
 
 
 --
--- TOC entry 2407 (class 0 OID 25037)
+-- TOC entry 2408 (class 0 OID 25037)
 -- Dependencies: 203
 -- Data for Name: user; Type: TABLE DATA; Schema: lp; Owner: postgres
 --
@@ -1098,12 +1100,12 @@ COPY "user" (id, username, password, email, mobile, last_login, status, live, ac
 2	bhavik1991	bhavik1991	bhavik@itmusketeers.com	9033986379	2017-09-06 17:17:00	f	f	t
 3	test	ITMCS	test@itmusketeers.com	1234567890	2017-08-19 13:04:00	f	f	f
 1	sr_mehta	srmehta	postgres@itmusketeers.com	9904274495	2018-02-15 16:12:00	f	t	t
-4	admin	admin	admin@itmusketeers.com	1234567890	2018-02-15 16:36:00	f	t	t
+4	admin	admin	admin@itmusketeers.com	1234567890	2018-02-16 18:45:00	f	t	t
 \.
 
 
 --
--- TOC entry 2464 (class 0 OID 0)
+-- TOC entry 2465 (class 0 OID 0)
 -- Dependencies: 204
 -- Name: user_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
@@ -1114,7 +1116,7 @@ SELECT pg_catalog.setval('user_id_seq', 5, true);
 SET search_path = public, pg_catalog;
 
 --
--- TOC entry 2415 (class 0 OID 43437)
+-- TOC entry 2416 (class 0 OID 43437)
 -- Dependencies: 211
 -- Data for Name: logicplus1; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2552,7 +2554,7 @@ GRANT ALL ON TABLE "user" TO postgres;
 
 
 --
--- TOC entry 2414 (class 0 OID 43431)
+-- TOC entry 2415 (class 0 OID 43431)
 -- Dependencies: 210
 -- Data for Name: new; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -2564,7 +2566,7 @@ COPY new (c1) FROM stdin;
 SET search_path = lp, pg_catalog;
 
 --
--- TOC entry 2262 (class 2606 OID 25154)
+-- TOC entry 2263 (class 2606 OID 25154)
 -- Name: admission_batch_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2573,7 +2575,7 @@ ALTER TABLE ONLY admission_batch
 
 
 --
--- TOC entry 2226 (class 2606 OID 25064)
+-- TOC entry 2227 (class 2606 OID 25064)
 -- Name: admission_trnxs_email_key; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2582,7 +2584,7 @@ ALTER TABLE ONLY admission_trnxs
 
 
 --
--- TOC entry 2228 (class 2606 OID 25066)
+-- TOC entry 2229 (class 2606 OID 25066)
 -- Name: admission_trnxs_phone_key; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2591,7 +2593,7 @@ ALTER TABLE ONLY admission_trnxs
 
 
 --
--- TOC entry 2230 (class 2606 OID 25068)
+-- TOC entry 2231 (class 2606 OID 25068)
 -- Name: admission_trnxs_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2600,7 +2602,7 @@ ALTER TABLE ONLY admission_trnxs
 
 
 --
--- TOC entry 2264 (class 2606 OID 33417)
+-- TOC entry 2265 (class 2606 OID 33417)
 -- Name: batch_faculty_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2609,7 +2611,7 @@ ALTER TABLE ONLY batch_faculty
 
 
 --
--- TOC entry 2232 (class 2606 OID 25070)
+-- TOC entry 2233 (class 2606 OID 25070)
 -- Name: batch_trnxs_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2618,7 +2620,7 @@ ALTER TABLE ONLY batch_trnxs
 
 
 --
--- TOC entry 2234 (class 2606 OID 25072)
+-- TOC entry 2235 (class 2606 OID 25072)
 -- Name: chat_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2627,7 +2629,7 @@ ALTER TABLE ONLY chat
 
 
 --
--- TOC entry 2236 (class 2606 OID 25074)
+-- TOC entry 2237 (class 2606 OID 25074)
 -- Name: course_trxns_cname_key; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2636,7 +2638,7 @@ ALTER TABLE ONLY course_trnxs
 
 
 --
--- TOC entry 2238 (class 2606 OID 25076)
+-- TOC entry 2239 (class 2606 OID 25076)
 -- Name: course_trxns_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2645,7 +2647,7 @@ ALTER TABLE ONLY course_trnxs
 
 
 --
--- TOC entry 2240 (class 2606 OID 25078)
+-- TOC entry 2241 (class 2606 OID 25078)
 -- Name: faculty_email_key; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2654,7 +2656,7 @@ ALTER TABLE ONLY faculty
 
 
 --
--- TOC entry 2242 (class 2606 OID 25080)
+-- TOC entry 2243 (class 2606 OID 25080)
 -- Name: faculty_phone_key; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2663,7 +2665,7 @@ ALTER TABLE ONLY faculty
 
 
 --
--- TOC entry 2244 (class 2606 OID 25082)
+-- TOC entry 2245 (class 2606 OID 25082)
 -- Name: faculty_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2672,7 +2674,7 @@ ALTER TABLE ONLY faculty
 
 
 --
--- TOC entry 2246 (class 2606 OID 25084)
+-- TOC entry 2247 (class 2606 OID 25084)
 -- Name: inquiry_trnxs_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2681,7 +2683,7 @@ ALTER TABLE ONLY inquiry_trnxs
 
 
 --
--- TOC entry 2248 (class 2606 OID 25086)
+-- TOC entry 2249 (class 2606 OID 25086)
 -- Name: invoice_trnxs_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2690,7 +2692,7 @@ ALTER TABLE ONLY invoice_trnxs
 
 
 --
--- TOC entry 2250 (class 2606 OID 25088)
+-- TOC entry 2251 (class 2606 OID 25088)
 -- Name: programe_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2699,7 +2701,7 @@ ALTER TABLE ONLY programe
 
 
 --
--- TOC entry 2252 (class 2606 OID 25090)
+-- TOC entry 2253 (class 2606 OID 25090)
 -- Name: technology_framework_key; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2708,7 +2710,7 @@ ALTER TABLE ONLY technology
 
 
 --
--- TOC entry 2254 (class 2606 OID 25092)
+-- TOC entry 2255 (class 2606 OID 25092)
 -- Name: technology_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2717,7 +2719,7 @@ ALTER TABLE ONLY technology
 
 
 --
--- TOC entry 2256 (class 2606 OID 41594)
+-- TOC entry 2257 (class 2606 OID 41594)
 -- Name: test_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2726,7 +2728,7 @@ ALTER TABLE ONLY test
 
 
 --
--- TOC entry 2258 (class 2606 OID 25094)
+-- TOC entry 2259 (class 2606 OID 25094)
 -- Name: user_pkey; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2735,7 +2737,7 @@ ALTER TABLE ONLY "user"
 
 
 --
--- TOC entry 2260 (class 2606 OID 25096)
+-- TOC entry 2261 (class 2606 OID 25096)
 -- Name: user_username_key; Type: CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2744,7 +2746,7 @@ ALTER TABLE ONLY "user"
 
 
 --
--- TOC entry 2269 (class 2606 OID 25140)
+-- TOC entry 2270 (class 2606 OID 25140)
 -- Name: admission_batch_aid_fkey; Type: FK CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2753,7 +2755,7 @@ ALTER TABLE ONLY admission_batch
 
 
 --
--- TOC entry 2270 (class 2606 OID 25145)
+-- TOC entry 2271 (class 2606 OID 25145)
 -- Name: admission_batch_bid_fkey; Type: FK CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2762,7 +2764,7 @@ ALTER TABLE ONLY admission_batch
 
 
 --
--- TOC entry 2271 (class 2606 OID 33418)
+-- TOC entry 2272 (class 2606 OID 33418)
 -- Name: batch_faculty_bid_fkey; Type: FK CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2771,7 +2773,7 @@ ALTER TABLE ONLY batch_faculty
 
 
 --
--- TOC entry 2272 (class 2606 OID 33423)
+-- TOC entry 2273 (class 2606 OID 33423)
 -- Name: batch_faculty_fid_fkey; Type: FK CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2780,7 +2782,7 @@ ALTER TABLE ONLY batch_faculty
 
 
 --
--- TOC entry 2265 (class 2606 OID 25097)
+-- TOC entry 2266 (class 2606 OID 25097)
 -- Name: batch_trnxs_cid_fkey; Type: FK CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2789,7 +2791,7 @@ ALTER TABLE ONLY batch_trnxs
 
 
 --
--- TOC entry 2266 (class 2606 OID 25102)
+-- TOC entry 2267 (class 2606 OID 25102)
 -- Name: batch_trnxs_fid_fkey; Type: FK CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2798,7 +2800,7 @@ ALTER TABLE ONLY batch_trnxs
 
 
 --
--- TOC entry 2267 (class 2606 OID 25107)
+-- TOC entry 2268 (class 2606 OID 25107)
 -- Name: invoice_trnxs_aid_fkey; Type: FK CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2807,7 +2809,7 @@ ALTER TABLE ONLY invoice_trnxs
 
 
 --
--- TOC entry 2268 (class 2606 OID 25112)
+-- TOC entry 2269 (class 2606 OID 25112)
 -- Name: programe_framework_fkey; Type: FK CONSTRAINT; Schema: lp; Owner: postgres
 --
 
@@ -2816,7 +2818,7 @@ ALTER TABLE ONLY programe
 
 
 --
--- TOC entry 2421 (class 0 OID 0)
+-- TOC entry 2422 (class 0 OID 0)
 -- Dependencies: 9
 -- Name: lp; Type: ACL; Schema: -; Owner: postgres
 --
@@ -2827,7 +2829,7 @@ GRANT ALL ON SCHEMA lp TO postgres;
 
 
 --
--- TOC entry 2423 (class 0 OID 0)
+-- TOC entry 2424 (class 0 OID 0)
 -- Dependencies: 8
 -- Name: public; Type: ACL; Schema: -; Owner: postgres
 --
@@ -2839,7 +2841,7 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
 --
--- TOC entry 2427 (class 0 OID 0)
+-- TOC entry 2428 (class 0 OID 0)
 -- Dependencies: 183
 -- Name: admission_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2850,7 +2852,7 @@ GRANT ALL ON TABLE admission_trnxs TO postgres;
 
 
 --
--- TOC entry 2431 (class 0 OID 0)
+-- TOC entry 2432 (class 0 OID 0)
 -- Dependencies: 186
 -- Name: batch_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2861,7 +2863,7 @@ GRANT ALL ON TABLE batch_trnxs TO postgres;
 
 
 --
--- TOC entry 2433 (class 0 OID 0)
+-- TOC entry 2434 (class 0 OID 0)
 -- Dependencies: 188
 -- Name: chat; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2872,7 +2874,7 @@ GRANT ALL ON TABLE chat TO postgres;
 
 
 --
--- TOC entry 2435 (class 0 OID 0)
+-- TOC entry 2436 (class 0 OID 0)
 -- Dependencies: 190
 -- Name: course_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2883,7 +2885,7 @@ GRANT ALL ON TABLE course_trnxs TO postgres;
 
 
 --
--- TOC entry 2437 (class 0 OID 0)
+-- TOC entry 2438 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: faculty; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2894,7 +2896,7 @@ GRANT ALL ON TABLE faculty TO postgres;
 
 
 --
--- TOC entry 2439 (class 0 OID 0)
+-- TOC entry 2440 (class 0 OID 0)
 -- Dependencies: 194
 -- Name: inquiry_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2905,7 +2907,7 @@ GRANT ALL ON TABLE inquiry_trnxs TO postgres;
 
 
 --
--- TOC entry 2441 (class 0 OID 0)
+-- TOC entry 2442 (class 0 OID 0)
 -- Dependencies: 196
 -- Name: invoice_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2916,7 +2918,7 @@ GRANT ALL ON TABLE invoice_trnxs TO postgres;
 
 
 --
--- TOC entry 2443 (class 0 OID 0)
+-- TOC entry 2444 (class 0 OID 0)
 -- Dependencies: 198
 -- Name: programe; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2927,7 +2929,7 @@ GRANT ALL ON TABLE programe TO postgres;
 
 
 --
--- TOC entry 2445 (class 0 OID 0)
+-- TOC entry 2446 (class 0 OID 0)
 -- Dependencies: 200
 -- Name: technology; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2938,7 +2940,7 @@ GRANT ALL ON TABLE technology TO postgres;
 
 
 --
--- TOC entry 2447 (class 0 OID 0)
+-- TOC entry 2448 (class 0 OID 0)
 -- Dependencies: 202
 -- Name: test; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2949,7 +2951,7 @@ GRANT ALL ON TABLE test TO postgres;
 
 
 --
--- TOC entry 2449 (class 0 OID 0)
+-- TOC entry 2450 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: user; Type: ACL; Schema: lp; Owner: postgres
 --
@@ -2959,7 +2961,7 @@ REVOKE ALL ON TABLE "user" FROM postgres;
 GRANT ALL ON TABLE "user" TO postgres;
 
 
--- Completed on 2018-02-16 10:36:22 IST
+-- Completed on 2018-02-16 19:22:22 IST
 
 --
 -- PostgreSQL database dump complete

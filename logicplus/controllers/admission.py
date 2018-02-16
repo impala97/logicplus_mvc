@@ -33,7 +33,7 @@ def rtadmission():
             filename = tmp().saveIMG(dp, aid, ufolder)
             valid = admission().updatedpById(filename, aid)
             if valid is True:
-                admission_batch().add(int(aid), int(bid[0]), str(time[1]))
+                admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
                 batch().updatecount(int(bid[0]))
                 return jsonify(url=url_for('rtalist'), error='False')
             else:
@@ -52,7 +52,10 @@ def rtalist():
         cname = batch().getCid()
         return render_template('master/admission/aform.html', row=row, c=cname, **t)
     t = {'username': master.__username__, 'title': 'Master | Admission'}
-    return render_template('master/admission/list.html', row=admission().getAdmission(), **t)
+    row = admission().getAdmission()
+    course_data = course().getcnamebyaid()
+    print(course_data)
+    return render_template('master/admission/list.html', row=row, course=course_data, **t)
 
 
 @app.route('/admission/update', methods=['POST'])
@@ -80,23 +83,28 @@ def rtaUpdate():
         if valid is False:
             valid = admission().updateAddmission(name, phone, email, study, cname[0], address, gender, join, fees, details, int(bid[0]), aid)
             if valid is True:
-                if not request.form.get('dp_img', None):
+                print(request.files)
+                if 'file' in request.files:
+                    # if not request.form.get('dp_img', None):
+                    print(request.form.get('dp_img'))
                     ufolder = '/logicplus/static/master/profile/admission'
                     old_img = admission().getimgbyid(int(aid))
+                    print(old_img)
                     path = os.path.sep.join(app.instance_path.split(os.path.sep)[:-1]) + ufolder
-                    if tmp().remove_img(path, old_img):
+                    dp = request.files['dp_img']
+                    filename = tmp().saveIMG(dp, aid, path)
+                    if filename:
+                        tmp().remove_img(path, old_img)
                         print("old image removed.")
-                        dp = request.files['dp_img']
                         print(dp)
-                        filename = tmp().saveIMG(dp, aid, path)
                         print("image uploaded.")
                         if admission().updatedpById(filename, int(aid)):
-                            admission_batch().add(int(aid), int(bid[0]), str(time[1]))
+                            admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
                             batch().updatecount(int(bid[0]))
                             return jsonify(url=url_for('rtalist'), error='False')
                 else:
                     print("image not uploaded")
-                    admission_batch().add(int(aid), int(bid[0]), str(time[1]))
+                    admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
                     batch().updatecount(int(bid[0]))
                     return jsonify(url=url_for('rtalist'), error='False')
         else:
@@ -146,7 +154,7 @@ def rtacourse():
         t = {'username': master.__username__, 'title': 'Master | Admission'}
         cname = batch().getCid()
         aid = request.form['id']
-        print(aid)
+        print("aid====", aid)
         return render_template('/master/admission/addcourse.html', aid=aid, c=cname, **t)
 
 
@@ -171,10 +179,24 @@ def rtupdatecourse():
         if admission_batch().getdt(int(aid), batch_data) is False:
             batch_data = batch_data.split('_')
             time = batch_data[1].split(' ')
-            print(admission_batch().add(int(aid), int(batch_data[0]), str(time[1])))
+            print(admission_batch().add(int(aid), int(batch_data[0]), str(time[1]), int(fees)))
             # admission().updatecourse(**{'aid': aid, 'fees': fees, 'cname': cname[1]})
             admission().updatecourse(int(aid))
             del batch_data, aid, fees, cname
             return json.dumps({'url': url_for('rtalist'), 'error': 'False'})
         else:
             return json.dumps({'error': 'True', 'str': 'Your batch time is clash with another batch.'})
+
+
+@app.route('/admission/course/delete', methods=['POST'])
+def deletecourse():
+    if request.method == 'POST':
+        print(request.form)
+        aid = request.form["aid"]
+        aid = aid.split("_")
+        admission().deletecourse(int(aid[0]), int(aid[1]))
+        return jsonify(url=url_for('rtalist'))
+
+
+
+

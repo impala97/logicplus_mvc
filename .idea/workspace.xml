@@ -2,705 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a71a9cd-5802-40e1-bcf6-7698428021b1" name="Default" comment="add admission ajax">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/logicplus_mvc.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Logicplus Report.odt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bug list" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus.pgsql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/app" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/admission.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/bacth.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/chat.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/controllers.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/course.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/faculty.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/inquiry.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/mail.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/notification.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/technology.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/controllers/user.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/admission.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/batch.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/chat.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/course.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/faculty.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/fxml.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/inquiry.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/invoice.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/lpdb.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/mail.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/master.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/notification.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/tech.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/tmp.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/model/user.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/srmod/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/srmod/dt/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/srmod/dt/dt.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/srmod/xml/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/srmod/xml/create.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/ajax/dashboard-boxrefresh-demo.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/AdminLTE.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/bootstrap-multiselect.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/bootstrap-slider/slider.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/bootstrap.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/colorpicker/bootstrap-colorpicker.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/colorpicker/bootstrap-colorpicker.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/datatables/dataTables.bootstrap.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/datatables/images/sort_asc.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/datatables/images/sort_asc_disabled.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/datatables/images/sort_both.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/datatables/images/sort_desc.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/datatables/images/sort_desc_disabled.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/daterangepicker/daterangepicker-bs3.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/dxads/ace.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/dxads/bootstrap-datepicker3.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/dxads/bootstrap-editable.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/dxads/custom.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/dxads/jquery-ui.custom.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/dxads/jquery.gritter.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/dxads/main.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/dxads/select2.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/font-awesome.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/font-awesome.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/fullcalendar/fullcalendar.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/fullcalendar/fullcalendar.print.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/all.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/_all.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/aero.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/aero.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/aero@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/blue.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/blue@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/flat.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/flat.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/flat@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/green.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/green.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/green@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/grey.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/grey@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/orange.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/orange.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/orange@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/pink.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/pink.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/pink@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/purple.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/purple.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/purple@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/red.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/red.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/red@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/yellow.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/yellow.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/flat/yellow@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/futurico/futurico.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/futurico/futurico.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/futurico/futurico@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/_all.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/aero.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/blue.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/green.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/grey.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/line.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/line.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/line@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/orange.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/pink.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/purple.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/red.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/line/yellow.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/_all.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/aero.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/aero.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/aero@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/blue.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/blue@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/green.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/green.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/green@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/grey.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/grey@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/minimal.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/minimal.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/minimal@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/orange.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/orange.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/orange@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/pink.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/pink.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/pink@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/purple.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/purple.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/purple@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/red.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/red.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/red@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/yellow.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/yellow.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/minimal/yellow@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/polaris/polaris.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/polaris/polaris.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/polaris/polaris@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/_all.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/aero.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/aero.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/aero@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/blue.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/blue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/blue@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/green.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/green.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/green@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/grey.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/grey.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/grey@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/orange.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/orange.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/orange@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/pink.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/pink.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/pink@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/purple.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/purple.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/purple@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/red.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/red.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/red@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/square.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/square.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/square@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/yellow.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/yellow.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/iCheck/square/yellow@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/animated-overlay.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-bg_flat_55_fbec88_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-bg_glass_75_d0e5f5_1x400.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-bg_glass_85_dfeffc_1x400.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-bg_gloss-wave_55_5c9ccc_500x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-bg_inset-hard_100_f5f8f9_1x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-bg_inset-hard_100_fcfdfd_1x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-icons_217bc0_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-icons_2e83ff_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-icons_469bdd_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-icons_6da8d5_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-icons_cd0a0a_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-icons_d8e7f3_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/images/ui-icons_f9bd01_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/ionicons.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/ionicons.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/ionslider/ion.rangeSlider.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/ionslider/ion.rangeSlider.skinFlat.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/ionslider/ion.rangeSlider.skinNice.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/animated-overlay.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-bg_flat_100_e6e7e8_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-bg_flat_100_f56954_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-bg_flat_55_f39c12_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-bg_flat_65_ffffff_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-bg_flat_75_dadada_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-bg_flat_75_e6e6e6_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-icons_222222_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-icons_454545_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-icons_888888_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/images/ui-icons_ffffff_256x240.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/jquery-ui-1.10.3.custom.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jQueryUI/jquery-ui-1.10.3.custom.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/jvectormap/jquery-jvectormap-1.2.2.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/morris/morris.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/timepicker/bootstrap-timepicker.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/css/timepicker/bootstrap-timepicker.min.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/FontAwesome.otf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/fontawesome-webfont.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/fontawesome-webfont.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/fontawesome-webfont.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/fontawesome-webfont.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/glyphicons-halflings-regular.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/glyphicons-halflings-regular.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/glyphicons-halflings-regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/glyphicons-halflings-regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/ionicons.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/ionicons.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/ionicons.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/fonts/ionicons.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/ajax-loader.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/ajax-loader1.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/avatar.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/avatar04.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/avatar2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/avatar3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/avatar5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/back1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/back2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/back3.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/bootstrap-colorpicker/alpha-horizontal.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/bootstrap-colorpicker/alpha.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/bootstrap-colorpicker/hue-horizontal.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/bootstrap-colorpicker/hue.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/bootstrap-colorpicker/saturation.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/credit/american-express.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/credit/cirrus.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/credit/mastercard.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/credit/mestro.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/credit/paypal.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/credit/paypal2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/credit/visa.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/favicon/5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/profile-pic.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/sprite-skin-flat.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/sprite-skin-nice.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/user-bg.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/user.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/img/user2.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/angular.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs/.idea/anjs.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs/jquery.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs/script.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/anjs/script1.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/bootstrap-multiselect.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/bootstrap-multiselect.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/bootstrap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/html5shiv.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/jquery-typeahead.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/jquery-ui-1.10.3.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/jquery-ui-1.10.3.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/AdminLTE/app.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/AdminLTE/dashboard.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/bootstrap-slider/bootstrap-slider.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/bootstrap.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/CHANGES.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/LICENSE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/adapters/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/build-config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/ckeditor.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/config.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/contents.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/af.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/bg.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/bn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/bs.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ca.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/cs.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/cy.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/da.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/de.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/el.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/en-au.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/en-ca.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/en-gb.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/en.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/eo.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/es.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/et.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/eu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/fa.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/fi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/fo.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/fr-ca.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/fr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/gl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/gu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/he.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/hi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/hr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/hu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/id.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/is.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/it.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ja.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ka.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/km.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ko.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ku.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/lt.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/lv.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/mk.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/mn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ms.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/nb.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/nl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/no.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/pl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/pt-br.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/pt.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ro.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ru.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/si.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/sk.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/sl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/sq.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/sr-latn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/sr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/sv.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/th.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/tr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/ug.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/uk.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/vi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/zh-cn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/lang/zh.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/a11yhelp.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/_translationstatus.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/bg.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ca.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/cs.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/cy.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/da.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/de.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/el.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/en.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/eo.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/es.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/et.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/fa.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/fi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/fr-ca.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/fr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/gl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/gu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/he.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/hi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/hr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/hu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/id.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/it.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ja.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/km.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ko.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ku.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/lt.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/lv.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/mk.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/mn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/nb.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/nl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/no.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/pl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/pt-br.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/pt.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ro.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ru.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/si.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sk.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sq.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sr-latn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/sv.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/th.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/tr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/ug.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/uk.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/vi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/zh-cn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/a11yhelp/dialogs/lang/zh.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/about/dialogs/about.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/about/dialogs/hidpi/logo_ckeditor.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/about/dialogs/logo_ckeditor.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/clipboard/dialogs/paste.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/dialog/dialogDefinition.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/fakeobjects/images/spacer.gif" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/icons_hidpi.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/image/dialogs/image.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/image/images/noimage.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/link/dialogs/anchor.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/link/dialogs/link.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/link/images/anchor.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/link/images/hidpi/anchor.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/magicline/images/hidpi/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/magicline/images/icon.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/pastefromword/filter/default.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/scayt/LICENSE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/scayt/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/scayt/dialogs/options.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/scayt/dialogs/toolbar.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/_translationstatus.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/bg.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ca.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/cs.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/cy.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/de.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/el.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/en.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/eo.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/es.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/et.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/fa.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/fi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/fr-ca.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/fr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/gl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/he.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/hr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/hu.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/id.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/it.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ja.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/km.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ku.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/lv.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/nb.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/nl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/no.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/pl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/pt-br.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/pt.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ru.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/si.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/sk.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/sl.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/sq.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/sv.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/th.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/tr.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/ug.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/uk.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/vi.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/zh-cn.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/lang/zh.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/specialchar/dialogs/specialchar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/table/dialogs/table.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/tabletools/dialogs/tableCell.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/wsc/LICENSE.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/wsc/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/wsc/dialogs/ciframe.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/wsc/dialogs/tmp.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/wsc/dialogs/tmpFrameset.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/wsc/dialogs/wsc.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/wsc/dialogs/wsc.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/plugins/wsc/dialogs/wsc_ie.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/dialog.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/dialog_ie.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/dialog_ie7.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/dialog_ie8.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/dialog_iequirks.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/dialog_opera.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/editor.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/editor_gecko.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/editor_ie.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/editor_ie7.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/editor_ie8.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/editor_iequirks.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/icons.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/icons_hidpi.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/arrow.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/close.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/hidpi/close.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/hidpi/lock-open.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/hidpi/lock.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/hidpi/refresh.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/lock-open.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/lock.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/images/refresh.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/skins/moono/readme.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ckeditor/styles.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/colorpicker/bootstrap-colorpicker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/colorpicker/bootstrap-colorpicker.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/datatables/dataTables.bootstrap.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/datatables/jquery.dataTables.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/daterangepicker/daterangepicker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/excanvas.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/excanvas.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.colorhelpers.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.colorhelpers.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.canvas.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.canvas.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.categories.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.categories.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.crosshair.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.crosshair.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.errorbars.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.errorbars.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.fillbetween.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.fillbetween.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.image.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.image.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.navigate.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.navigate.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.pie.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.pie.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.resize.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.resize.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.selection.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.selection.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.stack.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.stack.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.symbol.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.symbol.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.threshold.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.threshold.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.time.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/flot/jquery.flot.time.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/fullcalendar/fullcalendar.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/fullcalendar/fullcalendar.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/iCheck/icheck.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/iCheck/icheck.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/jquery.inputmask.date.extensions.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/jquery.inputmask.extensions.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/jquery.inputmask.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/jquery.inputmask.numeric.extensions.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/jquery.inputmask.phone.extensions.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/jquery.inputmask.regex.extensions.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/phone-codes/phone-be.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/phone-codes/phone-codes.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/input-mask/phone-codes/readme.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/ionslider/ion.rangeSlider.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/jquery-2.1.4.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/jquery-3.3.1.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/jquery.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/jquery.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/jqueryKnob/jquery.knob.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/misc/html5shiv.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/misc/jquery.ba-resize.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/misc/jquery.placeholder.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/misc/modernizr.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/misc/respond.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/morris/morris.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/morris/morris.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/slimScroll/jquery.slimscroll.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/slimScroll/jquery.slimscroll.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/slimScroll/slimScroll.jquery.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/sparkline/jquery.sparkline.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/sparkline/jquery.sparkline.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/timepicker/bootstrap-timepicker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/plugins/timepicker/bootstrap-timepicker.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/js/respond.min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/404_500_errors.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/AdminLTE.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/alerts.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/boxes.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/buttons.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/callout.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/core.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/dropdown.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/forms.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/header.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/iCheck.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/invoice.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/lockscreen.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/login_and_register.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/mailbox.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/mixins.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/navs.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/pace.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/progress-bars.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/sidebar.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/skins.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/small-box.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/timeline.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/less/vars.less" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/menu.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/profile/1_201801311235.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/profile/1_201802151910.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/profile/admission/1.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/profile/admission/1_201802151910.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/profile/admission/5_201801122021.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/profile/faculty/1_201710111919.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/profile/faculty/5_201709072059.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/profile/faculty/6_201709141757.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/static/master/pulgins/daterangepicker/daterangepicker.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/task" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/addcourse.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/admission.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/aform.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/batch/batch.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/batch/bform.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/batch/list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/content.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/course/cform.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/course/course.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/course/list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/emp.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/empty.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/faculty/addfaculty.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/faculty/facultyprofile.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/faculty/updatefaculty.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/index.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/inquiry/addinquiry.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/inquiry/list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/inquiry/updateinquiry.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/invoice/generate.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/invoice/iform.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/invoice/invoice.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/invoice/list.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/login.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/buttons.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/calendar.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/empty.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/general.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/icons.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/jquery-ui.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/mailbox.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/sliders.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/timeline.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/UI/widgets.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/charts/empty.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/charts/flot.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/charts/inline.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/charts/morris.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/examples/404.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/examples/500.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/examples/blank.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/examples/lockscreen.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/forms/advanced.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/forms/editors.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/forms/empty.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/forms/general.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/tables/data.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/tables/simple.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/tables/tbluser.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/pages/tables/userform.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/profile.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/readme.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/register.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/technology/add.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/technology/tech.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/technology/techform.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/logicplus/templates/master/technology/technology.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/run.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/setup.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/Untitled Document" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/attachment" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/join" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/lp.pgsql" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/multi course" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/tmp/sitemap" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/bug list" afterPath="$PROJECT_DIR$/bug list" />
+      <change beforePath="$PROJECT_DIR$/logicplus.pgsql" afterPath="$PROJECT_DIR$/logicplus.pgsql" />
+      <change beforePath="$PROJECT_DIR$/logicplus/controllers/admission.py" afterPath="$PROJECT_DIR$/logicplus/controllers/admission.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/controllers/faculty.py" afterPath="$PROJECT_DIR$/logicplus/controllers/faculty.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/model/admission.py" afterPath="$PROJECT_DIR$/logicplus/model/admission.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/model/batch.py" afterPath="$PROJECT_DIR$/logicplus/model/batch.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/model/course.py" afterPath="$PROJECT_DIR$/logicplus/model/course.py" />
+      <change beforePath="$PROJECT_DIR$/logicplus/static/master/profile/admission/1_201802151910.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/logicplus/templates/master/admission/list.html" afterPath="$PROJECT_DIR$/logicplus/templates/master/admission/list.html" />
+      <change beforePath="$PROJECT_DIR$/logicplus/templates/master/index.html" afterPath="$PROJECT_DIR$/logicplus/templates/master/index.html" />
+      <change beforePath="$PROJECT_DIR$/tmp/multi course" afterPath="$PROJECT_DIR$/tmp/multi course" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -710,57 +23,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/logicplus_mvc$run.coverage" NAME="run Coverage Results" MODIFIED="1518701784533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/logicplus_mvc$run.coverage" NAME="run Coverage Results" MODIFIED="1518788874022" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run.py">
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+            <state relative-caret-position="3294">
+              <caret line="183" column="59" lean-forward="false" selection-start-line="183" selection-start-column="59" selection-end-line="183" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicplus/controllers/controllers.py">
+      <file leaf-file-name="admission.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1872">
-              <caret line="114" column="41" lean-forward="false" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aform.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/aform.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4590">
-              <caret line="255" column="4" lean-forward="false" selection-start-line="255" selection-start-column="4" selection-end-line="255" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admission.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/admission.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5112">
-              <caret line="284" column="23" lean-forward="false" selection-start-line="284" selection-start-column="23" selection-end-line="284" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tmp.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/logicplus/model/tmp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+            <state relative-caret-position="216">
+              <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -769,13 +50,81 @@
         </entry>
       </file>
       <file leaf-file-name="admission.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
+        <entry file="file://$PROJECT_DIR$/logicplus/model/admission.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1458">
-              <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+            <state relative-caret-position="1710">
+              <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#3471#7023#0" expanded="false" />
+                <marker date="1518788429745" expanded="true" signature="193:252" ph="update lp.admission_trnxs... " />
+                <marker date="1518788429745" expanded="true" signature="371:693" ph="select = &quot;se... " />
+                <marker date="1518788429745" expanded="true" signature="706:892" ph="update = &quot;up... " />
+                <marker date="1518788429745" expanded="true" signature="1018:1201" ph="insert into lp.admission_trnxs... " />
+                <marker date="1518788429745" expanded="true" signature="1525:1687" ph="update lp.admission_trnxs... " />
+                <marker date="1518788429745" expanded="true" signature="1872:1922" ph="select id fr... admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="2027:2074" ph="update lp.admission_trnxs... " />
+                <marker date="1518788429745" expanded="true" signature="2205:2249" ph="select * fro... admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="2288:2330" ph="select * fro... admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="2424:2474" ph="update lp.admission_trnxs... " />
+                <marker date="1518788429745" expanded="true" signature="2568:2618" ph="update lp.admission_trnxs... " />
+                <marker date="1518788429745" expanded="true" signature="2776:2832" ph="select id,na... admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="2949:2997" ph="select dp,fe... admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="3113:3193" ph="select id,na... admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="3301:3346" ph="select fees admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="7067:7107" ph="select count... admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="7229:7272" ph="select dp fr... admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="7415:7460" ph="select fees admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="7415:7462" ph="select fees admission_trnxs" />
+                <marker date="1518788429745" expanded="true" signature="7574:7631" ph="select fees admission_batch" />
+                <marker date="1518788429745" expanded="true" signature="7574:7633" ph="select fees admission_batch" />
+                <marker date="1518788429745" expanded="true" signature="7734:7781" ph="update lp.admission_trnxs... " />
+                <marker date="1518788429745" expanded="true" signature="7734:7783" ph="update lp.admission_trnxs... " />
+                <marker date="1518788429745" expanded="true" signature="7871:7923" ph="delete from lp.admission_batch... " />
+                <marker date="1518788429745" expanded="true" signature="7871:7925" ph="delete from lp.admission_batch... " />
+                <marker date="1518788429745" expanded="true" signature="8072:8132" ph="select aid,b... admission_batch" />
+                <marker date="1518788429745" expanded="true" signature="8244:8318" ph="insert into lp.admission_batch... " />
+                <marker date="1518788429745" expanded="true" signature="8522:8572" ph="select bid,t... " />
+                <marker date="1518788429745" expanded="true" signature="9979:10039" ph="select bid f... admission_batch" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="course.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/logicplus/model/course.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="72" column="19" lean-forward="false" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+                <marker date="1518789111115" expanded="true" signature="136:220" ph="insert into lp.course_trnxs... " />
+                <marker date="1518789111115" expanded="true" signature="381:441" ph="select cname... course_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="560:615" ph="select cname... course_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="741:783" ph="select * fro... course_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="822:861" ph="select * fro... course_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="988:1072" ph="update lp.course_trnxs... " />
+                <marker date="1518789111115" expanded="true" signature="1195:1246" ph="update lp.course_trnxs... " />
+                <marker date="1518789111115" expanded="true" signature="1338:1389" ph="update lp.course_trnxs... " />
+                <marker date="1518789111115" expanded="true" signature="1484:1549" ph="select id,cn... course_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="1643:1685" ph="select fees course_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="1976:2112" ph="select disti... course_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="2309:2522" ph="select sum(l... course_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="2695:2728" ph="select id fr... admission_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="2695:2740" ph="select id fr... admission_trnxs" />
+                <marker date="1518789111115" expanded="true" signature="2856:2901" ph="select bid f... admission_batch" />
+                <marker date="1518789111115" expanded="true" signature="2856:2903" ph="select bid f... admission_batch" />
+                <marker date="1518789111115" expanded="true" signature="3100:3236" ph="select disti... course_trnxs" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logicplus/templates/master/batch/list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2124">
+              <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -788,7 +137,14 @@
       <find>get</find>
       <find>getdtby</find>
       <find>updatecourse</find>
+      <find>add(</find>
+      <find>tmp()</find>
+      <find>getcname</find>
+      <find>{{r}}</find>
     </findStrings>
+    <replaceStrings>
+      <replace>r</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -801,12 +157,16 @@
         <option value="$PROJECT_DIR$/logicplus/templates/master/profile.html" />
         <option value="$PROJECT_DIR$/logicplus/controllers/bacth.py" />
         <option value="$PROJECT_DIR$/logicplus/templates/master/batch/bform.html" />
-        <option value="$PROJECT_DIR$/logicplus/model/batch.py" />
         <option value="$PROJECT_DIR$/logicplus/templates/master/empty.html" />
-        <option value="$PROJECT_DIR$/logicplus/controllers/admission.py" />
-        <option value="$PROJECT_DIR$/logicplus/model/admission.py" />
         <option value="$PROJECT_DIR$/logicplus/templates/master/admission/aform.html" />
         <option value="$PROJECT_DIR$/logicplus/model/tmp.py" />
+        <option value="$PROJECT_DIR$/logicplus/templates/master/index.html" />
+        <option value="$PROJECT_DIR$/logicplus/model/batch.py" />
+        <option value="$PROJECT_DIR$/logicplus/controllers/faculty.py" />
+        <option value="$PROJECT_DIR$/logicplus/model/admission.py" />
+        <option value="$PROJECT_DIR$/logicplus/templates/master/admission/list.html" />
+        <option value="$PROJECT_DIR$/logicplus/controllers/admission.py" />
+        <option value="$PROJECT_DIR$/logicplus/model/course.py" />
       </list>
     </option>
   </component>
@@ -838,6 +198,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -903,8 +265,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -990,15 +350,24 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="75" y="16" width="1303" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3228228" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3183183" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1016,26 +385,26 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3243243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32882884" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3198198" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24980783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1049,11 +418,148 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3294">
+          <caret line="183" column="59" lean-forward="false" selection-start-line="183" selection-start-column="59" selection-end-line="183" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/admission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2484">
+          <caret line="138" column="0" lean-forward="true" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding>
+            <element signature="e#3471#7023#0" expanded="false" />
+            <marker date="1518788429745" expanded="true" signature="193:252" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="371:693" ph="select = &quot;se... " />
+            <marker date="1518788429745" expanded="true" signature="706:892" ph="update = &quot;up... " />
+            <marker date="1518788429745" expanded="true" signature="1018:1201" ph="insert into lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="1525:1687" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="1872:1922" ph="select id fr... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="2027:2074" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="2205:2249" ph="select * fro... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="2288:2330" ph="select * fro... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="2424:2474" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="2568:2618" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="2776:2832" ph="select id,na... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="2949:2997" ph="select dp,fe... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="3113:3193" ph="select id,na... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="3301:3346" ph="select fees admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7067:7107" ph="select count... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7229:7272" ph="select dp fr... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7415:7460" ph="select fees admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7415:7462" ph="select fees admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7574:7631" ph="select fees admission_batch" />
+            <marker date="1518788429745" expanded="true" signature="7574:7633" ph="select fees admission_batch" />
+            <marker date="1518788429745" expanded="true" signature="7734:7781" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="7734:7783" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="7871:7923" ph="delete from lp.admission_batch... " />
+            <marker date="1518788429745" expanded="true" signature="7871:7925" ph="delete from lp.admission_batch... " />
+            <marker date="1518788429745" expanded="true" signature="8072:8132" ph="select aid,b... admission_batch" />
+            <marker date="1518788429745" expanded="true" signature="8244:8318" ph="insert into lp.admission_batch... " />
+            <marker date="1518788429745" expanded="true" signature="8522:8572" ph="select bid,t... " />
+            <marker date="1518788429745" expanded="true" signature="9979:10039" ph="select bid f... admission_batch" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/course.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="81" column="0" lean-forward="true" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1518789111115" expanded="true" signature="136:220" ph="insert into lp.course_trnxs... " />
+            <marker date="1518789111115" expanded="true" signature="381:441" ph="select cname... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="560:615" ph="select cname... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="741:783" ph="select * fro... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="822:861" ph="select * fro... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="988:1072" ph="update lp.course_trnxs... " />
+            <marker date="1518789111115" expanded="true" signature="1195:1246" ph="update lp.course_trnxs... " />
+            <marker date="1518789111115" expanded="true" signature="1338:1389" ph="update lp.course_trnxs... " />
+            <marker date="1518789111115" expanded="true" signature="1484:1549" ph="select id,cn... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="1643:1685" ph="select fees course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="1976:2112" ph="select disti... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="2309:2522" ph="select sum(l... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="2695:2728" ph="select id fr... admission_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="2695:2740" ph="select id fr... admission_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="2856:2901" ph="select bid f... admission_batch" />
+            <marker date="1518789111115" expanded="true" signature="2856:2903" ph="select bid f... admission_batch" />
+            <marker date="1518789111115" expanded="true" signature="3100:3236" ph="select disti... course_trnxs" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/batch/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2124">
+          <caret line="118" column="0" lean-forward="true" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="846">
+          <caret line="47" column="32" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2052">
+          <caret line="114" column="41" lean-forward="false" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/aform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4590">
+          <caret line="255" column="4" lean-forward="false" selection-start-line="255" selection-start-column="4" selection-end-line="255" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/admission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5112">
+          <caret line="284" column="23" lean-forward="false" selection-start-line="284" selection-start-column="23" selection-end-line="284" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1458">
+          <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/tmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1061,7 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4590">
           <caret line="255" column="4" lean-forward="true" selection-start-line="255" selection-start-column="4" selection-end-line="255" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1069,9 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2052">
           <caret line="114" column="41" lean-forward="true" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1079,7 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5112">
           <caret line="284" column="23" lean-forward="true" selection-start-line="284" selection-start-column="23" selection-end-line="284" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1097,17 +598,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="35" column="3" lean-forward="false" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
+        <state relative-caret-position="0">
           <caret line="4" column="25" lean-forward="false" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1115,13 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/controllers/bacth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -1139,20 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/course.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="46" column="28" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/batch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="122" column="15" lean-forward="false" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logicplus/templates/master/empty.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-432">
@@ -1167,55 +644,216 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="354" column="16" lean-forward="true" selection-start-line="354" selection-start-column="16" selection-end-line="354" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/fxml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/mail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-554">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/batch/batch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="138" column="17" lean-forward="true" selection-start-line="138" selection-start-column="17" selection-end-line="138" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/tmp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-554">
+          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/chat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/batch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2250">
+          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding>
+            <marker date="1518771827076" expanded="true" signature="211:294" ph="insert into lp.batch_trnxs... " />
+            <marker date="1518771827076" expanded="true" signature="387:472" ph="select bid f... batch_trnxs" />
+            <marker date="1518771827076" expanded="true" signature="673:746" ph="update lp.batch_trnxs... " />
+            <marker date="1518771827076" expanded="true" signature="923:964" ph="select * fro... batch_trnxs" />
+            <marker date="1518771827076" expanded="true" signature="1403:1468" ph="select bid,d... " />
+            <marker date="1518771827076" expanded="true" signature="2242:2289" ph="update lp.batch_trnxs... " />
+            <marker date="1518771827076" expanded="true" signature="2392:2439" ph="update lp.batch_trnxs... " />
+            <marker date="1518771827076" expanded="true" signature="2908:2960" ph="select disti... batch_trnxs" />
+            <marker date="1518771827076" expanded="true" signature="3229:3281" ph="select disti... batch_trnxs" />
+            <marker date="1518771827076" expanded="true" signature="3604:3645" ph="select fid f... batch_trnxs" />
+            <marker date="1518771827076" expanded="true" signature="3781:3967" ph="select lp.ad... admission_batch" />
+            <marker date="1518771827076" expanded="true" signature="4070:4117" ph="update lp.batch_trnxs... " />
+            <marker date="1518771827076" expanded="true" signature="4228:4280" ph="select count... admission_batch" />
+            <marker date="1518771827076" expanded="true" signature="4357:4404" ph="update lp.batch_trnxs... " />
+            <marker date="1518771827076" expanded="true" signature="4525:4566" ph="select day f... " />
+            <marker date="1518771827076" expanded="true" signature="4721:4779" ph="select id,ti... " />
+            <marker date="1518771827076" expanded="true" signature="6222:6286" ph="insert into lp.batch_faculty... " />
+            <marker date="1518771827076" expanded="true" signature="6405:6452" ph="update lp.batch_faculty... " />
+            <marker date="1518771827076" expanded="true" signature="6405:6455" ph="update lp.batch_faculty... " />
+            <marker date="1518771827076" expanded="true" signature="6562:6600" ph="delete from lp.batch_faculty... " />
+            <marker date="1518771827076" expanded="true" signature="6711:6894" ph="select lp.ba... batch_trnxs" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/invoice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/faculty.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="65" column="0" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/bacth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/logicplus/controllers/controllers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1872">
-          <caret line="114" column="41" lean-forward="false" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1458">
-          <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/admission.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5112">
-          <caret line="284" column="23" lean-forward="false" selection-start-line="284" selection-start-column="23" selection-end-line="284" selection-end-column="23" />
-          <folding />
+        <state relative-caret-position="515">
+          <caret line="100" column="13" lean-forward="true" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/aform.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4590">
+        <state relative-caret-position="566">
           <caret line="255" column="4" lean-forward="false" selection-start-line="255" selection-start-column="4" selection-end-line="255" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/course.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/admission.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-583">
+          <caret line="213" column="33" lean-forward="true" selection-start-line="213" selection-start-column="33" selection-end-line="213" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/batch/list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2124">
+          <caret line="118" column="0" lean-forward="false" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logicplus/model/admission.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="158" column="36" lean-forward="false" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="36" />
+        <state relative-caret-position="1710">
+          <caret line="138" column="0" lean-forward="false" selection-start-line="138" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+          <folding>
+            <element signature="e#3471#7023#0" expanded="false" />
+            <marker date="1518788429745" expanded="true" signature="193:252" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="371:693" ph="select = &quot;se... " />
+            <marker date="1518788429745" expanded="true" signature="706:892" ph="update = &quot;up... " />
+            <marker date="1518788429745" expanded="true" signature="1018:1201" ph="insert into lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="1525:1687" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="1872:1922" ph="select id fr... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="2027:2074" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="2205:2249" ph="select * fro... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="2288:2330" ph="select * fro... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="2424:2474" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="2568:2618" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="2776:2832" ph="select id,na... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="2949:2997" ph="select dp,fe... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="3113:3193" ph="select id,na... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="3301:3346" ph="select fees admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7067:7107" ph="select count... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7229:7272" ph="select dp fr... admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7415:7460" ph="select fees admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7415:7462" ph="select fees admission_trnxs" />
+            <marker date="1518788429745" expanded="true" signature="7574:7631" ph="select fees admission_batch" />
+            <marker date="1518788429745" expanded="true" signature="7574:7633" ph="select fees admission_batch" />
+            <marker date="1518788429745" expanded="true" signature="7734:7781" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="7734:7783" ph="update lp.admission_trnxs... " />
+            <marker date="1518788429745" expanded="true" signature="7871:7923" ph="delete from lp.admission_batch... " />
+            <marker date="1518788429745" expanded="true" signature="7871:7925" ph="delete from lp.admission_batch... " />
+            <marker date="1518788429745" expanded="true" signature="8072:8132" ph="select aid,b... admission_batch" />
+            <marker date="1518788429745" expanded="true" signature="8244:8318" ph="insert into lp.admission_batch... " />
+            <marker date="1518788429745" expanded="true" signature="8522:8572" ph="select bid,t... " />
+            <marker date="1518788429745" expanded="true" signature="9979:10039" ph="select bid f... admission_batch" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/logicplus/model/tmp.py">
+    <entry file="file://$PROJECT_DIR$/logicplus/templates/master/admission/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        <state relative-caret-position="3294">
+          <caret line="183" column="59" lean-forward="false" selection-start-line="183" selection-start-column="59" selection-end-line="183" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/controllers/admission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logicplus/model/course.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="72" column="19" lean-forward="false" selection-start-line="72" selection-start-column="19" selection-end-line="72" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <marker date="1518789111115" expanded="true" signature="136:220" ph="insert into lp.course_trnxs... " />
+            <marker date="1518789111115" expanded="true" signature="381:441" ph="select cname... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="560:615" ph="select cname... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="741:783" ph="select * fro... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="822:861" ph="select * fro... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="988:1072" ph="update lp.course_trnxs... " />
+            <marker date="1518789111115" expanded="true" signature="1195:1246" ph="update lp.course_trnxs... " />
+            <marker date="1518789111115" expanded="true" signature="1338:1389" ph="update lp.course_trnxs... " />
+            <marker date="1518789111115" expanded="true" signature="1484:1549" ph="select id,cn... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="1643:1685" ph="select fees course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="1976:2112" ph="select disti... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="2309:2522" ph="select sum(l... course_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="2695:2728" ph="select id fr... admission_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="2695:2740" ph="select id fr... admission_trnxs" />
+            <marker date="1518789111115" expanded="true" signature="2856:2901" ph="select bid f... admission_batch" />
+            <marker date="1518789111115" expanded="true" signature="2856:2903" ph="select bid f... admission_batch" />
+            <marker date="1518789111115" expanded="true" signature="3100:3236" ph="select disti... course_trnxs" />
           </folding>
         </state>
       </provider>

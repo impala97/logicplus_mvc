@@ -16,7 +16,6 @@
 
     </head>
     <body class="skin-black">
-
     {% block body %}
         {{ super() }}
     {% endblock %}
@@ -344,7 +343,7 @@
             $(function () {
                $('#send').bind('click', function () {
                    $.ajax({
-                       url: {{ url_for('rtmail') }},
+                       url: "{{ url_for('rtmail') }}",
                        data: $('#email').serializable(),
                        type: 'POST',
                        success: function(response) {
