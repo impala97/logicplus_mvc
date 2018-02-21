@@ -3,7 +3,7 @@ from .batch import batch
 
 
 class course:
-    def addCourse(self,cname,duration,fees,details):
+    def addCourse(self, cname, duration, fees, details):
         insert = "insert into lp.course_trnxs(cname,duration,fees,details) values('%s','%s','%s','%s')"%(cname,duration,fees,details)
         return dbcon().do_insert(insert)
 
@@ -23,11 +23,11 @@ class course:
             select = "select * from lp.course_trnxs where id=%d;"%id
         return dbcon().do_select(select)
 
-    def updateCourse(self,cname,duration,fees,details,id):
+    def updateCourse(self, cname, duration, fees, details, id):
         update = "update lp.course_trnxs set cname='%s',duration='%s',fees='%s',details='%s' where id=%d;"%(cname,duration,fees,details,id)
         return dbcon().do_insert(update)
 
-    def active(self,id):
+    def active(self, id):
         update = "update lp.course_trnxs set active='1' where id='%d';"%id
         return dbcon().do_insert(update)
 
@@ -39,7 +39,7 @@ class course:
         select = "select id,cname from lp.course_trnxs where active='1' order by id;"
         return dbcon().do_select(select)
 
-    def getFeesById(self,cid):
+    def getFeesById(self, cid):
         select = "select fees from lp.course_trnxs where id=%d;" % int(cid)
         fees = dbcon().do_select(select)
         return fees[0][0]

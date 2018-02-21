@@ -54,7 +54,6 @@ def rtalist():
     t = {'username': master.__username__, 'title': 'Master | Admission'}
     row = admission().getAdmission()
     course_data = course().getcnamebyaid()
-    print(course_data)
     return render_template('master/admission/list.html', row=row, course=course_data, **t)
 
 
@@ -77,38 +76,40 @@ def rtaUpdate():
         cid = request.form.get('course_txt')
         cname = course().getCourseName(cid)
         aid = request.form['id']
-        valid = admission_batch().getdt(aid=int(aid), bdata=bdata)
-        print("conflict==", valid)
+        conflict, err_str = admission_batch().getdt(aid=int(aid), bdata=bdata)
+        print(err_str)
+        print("conflict==", conflict)
 
-        if valid is False:
-            valid = admission().updateAddmission(name, phone, email, study, cname[0], address, gender, join, fees, details, int(bid[0]), aid)
-            if valid is True:
-                print(request.files)
-                if 'file' in request.files:
-                    # if not request.form.get('dp_img', None):
-                    print(request.form.get('dp_img'))
-                    ufolder = '/logicplus/static/master/profile/admission'
-                    old_img = admission().getimgbyid(int(aid))
-                    print(old_img)
-                    path = os.path.sep.join(app.instance_path.split(os.path.sep)[:-1]) + ufolder
-                    dp = request.files['dp_img']
-                    filename = tmp().saveIMG(dp, aid, path)
-                    if filename:
-                        tmp().remove_img(path, old_img)
-                        print("old image removed.")
-                        print(dp)
-                        print("image uploaded.")
-                        if admission().updatedpById(filename, int(aid)):
-                            admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
-                            batch().updatecount(int(bid[0]))
-                            return jsonify(url=url_for('rtalist'), error='False')
-                else:
-                    print("image not uploaded")
+        valid = admission().updateAddmission(name, phone, email, study, cname[0], address, gender, join, fees, details, int(bid[0]), aid)
+        if valid is True:
+            print(request.files)
+            # if 'file' in request.files:
+            if not request.form.get('dp_img', None):
+                ufolder = '/logicplus/static/master/profile/admission'
+                old_img = admission().getimgbyid(int(aid))
+                print(old_img)
+                path = os.path.sep.join(app.instance_path.split(os.path.sep)[:-1]) + ufolder
+                dp = request.files['dp_img']
+                filename = tmp().saveIMG(dp, aid, path)
+                print(filename)
+                tmp().remove_img(path, old_img)
+                print("old image removed.")
+                print(dp)
+                print("image uploaded.")
+                # to update image by id
+                valid = admission().updatedpById(filename, int(aid))
+                if valid:
                     admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
                     batch().updatecount(int(bid[0]))
                     return jsonify(url=url_for('rtalist'), error='False')
-        else:
-            return jsonify(error='True', string='You have time clash with another batch.')
+                else:
+                    return jsonify(error='True', err_str=err_str)
+            else:
+                print("image not uploaded")
+                admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
+                batch().updatecount(int(bid[0]))
+                return jsonify(url=url_for('rtalist'), error='False')
+
 
 
 @app.route('/admission/active', methods=['GET', 'POST'])
@@ -176,7 +177,9 @@ def rtupdatecourse():
         batch_data = request.form['batch_txt']
         fees = request.form['fees_txt']
         cname = request.form['course_txt'].split(':')
-        if admission_batch().getdt(int(aid), batch_data) is False:
+        flag, err_str = admission_batch().getdt(int(aid), batch_data)
+        print(err_str)
+        if flag is False:
             batch_data = batch_data.split('_')
             time = batch_data[1].split(' ')
             print(admission_batch().add(int(aid), int(batch_data[0]), str(time[1]), int(fees)))
@@ -185,7 +188,7 @@ def rtupdatecourse():
             del batch_data, aid, fees, cname
             return json.dumps({'url': url_for('rtalist'), 'error': 'False'})
         else:
-            return json.dumps({'error': 'True', 'str': 'Your batch time is clash with another batch.'})
+            return json.dumps({'error': 'True', 'err_str': err_str})
 
 
 @app.route('/admission/course/delete', methods=['POST'])

@@ -26,7 +26,7 @@
                 {% for r in range(row|length) %}
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="box  box-success">
+                        <div class="box box-success">
                         <div class="box-header">
                             <h3 class="box-title"><i class="fa fa-user">&nbsp;{{ row[r][1] }}</i></h3>
                             <div class="box-tools pull-right">
@@ -40,26 +40,27 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-3 center">
                                 <span class="profile-picture">
-                                    <img class="editable img-responsive" width="300px" height="300px" halt="dp" id="avatar2" src="{{ url_for('static',filename='master/profile/admission/'+row[r][11]) }}">
+                                    <img class="editable img-responsive" style="width: 300px" halt="dp" id="avatar2" src="{{ url_for('static',filename='master/profile/admission/'+row[r][11]) }}">
+                                    <form>
+                                        <input type="hidden" name="id" value="{{ row[r][0] }}">
+                                        <button class="btn btn-sm btn-block btn-success" formmethod="post" formaction="{{ url_for('rtalist') }}">
+                                            <i class="ace-icon fa fa-edit bigger-120"></i>
+                                            <span class="bigger-110">Edit Profile</span>
+                                        </button>
+                                        <button class="btn btn-sm btn-block btn-danger" formaction="{{ url_for('rtaDelete')}}" formmethod="post">
+                                            <i class="ace-icon fa fa-trash-o bigger-110"></i>
+                                            <span class="bigger-110">Delete Profile</span>
+                                        </button>
+                                        <button class="btn btn-sm btn-block btn-primary" formaction="{{ url_for('rtaActive') }}" formmethod="post">
+                                            <span class="bigger-110">Activate Faculty</span>
+                                        </button>
+                                        <button class="btn btn-sm btn-block btn-primary" formaction="{{ url_for('rtacourse') }}" formmethod="post">
+                                            <span class="bigger-110">Add Course</span>
+                                        </button>
+                                     </form>
                                 </span>
                                 <div class="space space-4"></div>
-                                <form>
-                                    <input type="hidden" name="id" value="{{ row[r][0] }}">
-                                    <button class="btn btn-sm btn-block btn-success" formmethod="post" formaction="{{ url_for('rtalist') }}">
-                                        <i class="ace-icon fa fa-edit bigger-120"></i>
-                                        <span class="bigger-110">Edit Profile</span>
-                                    </button>
-                                    <button class="btn btn-sm btn-block btn-danger" formaction="{{ url_for('rtaDelete')}}" formmethod="post">
-                                        <i class="ace-icon fa fa-trash-o bigger-110"></i>
-                                        <span class="bigger-110">Delete Profile</span>
-                                    </button>
-                                    <button class="btn btn-sm btn-block btn-primary" formaction="{{ url_for('rtaActive') }}" formmethod="post">
-                                        <span class="bigger-110">Activate Faculty</span>
-                                    </button>
-                                    <button class="btn btn-sm btn-block btn-primary" formaction="{{ url_for('rtacourse') }}" formmethod="post">
-                                        <span class="bigger-110">Add Course</span>
-                                    </button>
-                                </form>
+
                             </div><!-- /.col -->
                             <div class="col-xs-12 col-sm-9">
                                 <div class="profile-user-info">

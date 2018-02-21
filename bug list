@@ -1,3 +1,10 @@
+#------------ Not Done
+bug : css is not responsive according to resolution at profile page
+bug type : small changes
+priority : high
+solution : change in css
+status : NSY
+
 #--------got it ----------------
 bug : displaying course problem at course_data
 bug type : smalll changes

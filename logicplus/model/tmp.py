@@ -43,7 +43,6 @@ class tmp():
 
     def remove_img(self, path, img_name):
         file = path + '/' + img_name
-        print(file)
         os.remove(file)
         # check if file exists or not
         if os.path.exists(path + '/' + img_name) is False:

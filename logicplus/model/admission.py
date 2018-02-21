@@ -7,7 +7,7 @@ class admission():
     def updatecourse(self, aid):
         cname, fees = course().getcname(aid)
         update = "update lp.admission_trnxs set course='%s',fees=%d where id=%d;" % (str(cname), fees, aid)
-        print(len(cname))
+        print("len==cname==", len(cname))
         return dbcon().do_insert(update)
 
         """
@@ -32,11 +32,11 @@ class admission():
         update = "update lp.admission_trnxs set name='%s',phone='%s',email='%s',study='%s',course='%s',address='%s',gender='%s',join_date='%s',fees=%d,details='%s',bid=%d where id=%d;"%(name,phone,email,study,cname,address,gender,join,int(fees),details,int(bid),int(id))
         return dbcon().do_insert(update)
 
-    def getIdByPhone(self,phone):
+    def getIdByPhone(self, phone):
         select = "select id from lp.admission_trnxs where phone='%s';"%(phone)
         return dbcon().do_select(select)
 
-    def updatedpById(self,dp,id):
+    def updatedpById(self, dp, id):
         update = "update lp.admission_trnxs set dp='%s' where id=%d;"%(dp,id)
         return dbcon().do_insert(update)
 
@@ -157,6 +157,7 @@ class admission_batch():
             result[i] = result[i] + batch().getdtbybid(result[i][0])
 
         time_clash = False
+        error_str = ""
         # extract bid from batch data
         bdata = bdata.split('_')
         bid_org = bdata[0]
@@ -175,20 +176,20 @@ class admission_batch():
                     if d in result[i][2]:
                         if time in result[i][1]:
                             time_clash = True
-                            print("time match==", time_clash)
-                            return True
+                            error_str = "Your batch time is clash with another batch."
                         else:
                             time_clash = False
+                print("time match==", time_clash)
             else:
+                print("else", result[i])
                 if time in result[i][1]:
-                    print("else", result[i])
                     # if no time clashing
                     time_clash = True
+                    error_str = "You have already added this batch."
                     print("id match==", time_clash)
-                    return True
                 else:
                     time_clash = False
-        return time_clash
+        return time_clash, error_str
 
     def getbid(self, aid):
         select = "select bid from lp.admission_batch where aid=%d order by bid;" % aid

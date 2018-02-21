@@ -1822,6 +1822,7 @@ Component: timeline
 .btn.btn-block.btn-sm {
   font-size: 13px;
   padding: 7px;
+    margin-top: 2%;
 }
 .btn.btn-flat {
   -webkit-border-radius: 0;

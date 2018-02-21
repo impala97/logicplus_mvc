@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.10
 
--- Started on 2018-02-16 19:22:22 IST
+-- Started on 2018-02-21 18:47:23 IST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -830,8 +830,8 @@ SELECT pg_catalog.setval('admission_batch_id_seq', 9, true);
 --
 
 COPY admission_trnxs (id, name, phone, email, study, course, address, gender, join_date, fees, active, dp, details, bid) FROM stdin;
-5	Bhavik Vyas	9033986379	vcr.faculty@gmail.com	BE-IT	Python	dsgsdfg	t	10/13/2017 - 10/13/2017	15000	t	5_201801122021.jpg	cvbcv	1
-1	mehta smit	9904274495	vcr.student@gmail.com	BE-IT	Python,Asp.net,Java,Python	arihant aashish,6/10 gayakwadi plot	t	09/14/2017 - 09/14/2017	52500	t	1_201802161438.jpg	GEC,Modasa	1
+5	Bhavik Vyas	9033986379	vcr.faculty@gmail.com	BE-IT	Python	dsgsdfg	t	10/13/2017 - 10/13/2017	15000	t	5_201802211725.jpg	cvbcv	1
+1	mehta smit	9904274495	vcr.student@gmail.com	BE-IT	Python	arihant aashish,6/10 gayakwadi plot	t	09/14/2017 - 09/14/2017	15000	t	1_201802161438.jpg	GEC,Modasa	1
 \.
 
 
@@ -866,8 +866,8 @@ COPY batch_faculty (id, fid, bid, "time") FROM stdin;
 10	6	5	15:00
 8	1	3	12:00
 9	1	4	15:00
-2	1	1	12:00
 11	1	1	10:00
+12	1	1	12:00
 \.
 
 
@@ -877,7 +877,7 @@ COPY batch_faculty (id, fid, bid, "time") FROM stdin;
 -- Name: batch_faculty_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
 
-SELECT pg_catalog.setval('batch_faculty_id_seq', 11, true);
+SELECT pg_catalog.setval('batch_faculty_id_seq', 12, true);
 
 
 --
@@ -1097,10 +1097,10 @@ SELECT pg_catalog.setval('test_id_seq', 22, true);
 --
 
 COPY "user" (id, username, password, email, mobile, last_login, status, live, active) FROM stdin;
+4	admin	admin	admin@itmusketeers.com	1234567890	2018-02-21 18:05:00	f	t	t
 2	bhavik1991	bhavik1991	bhavik@itmusketeers.com	9033986379	2017-09-06 17:17:00	f	f	t
 3	test	ITMCS	test@itmusketeers.com	1234567890	2017-08-19 13:04:00	f	f	f
 1	sr_mehta	srmehta	postgres@itmusketeers.com	9904274495	2018-02-15 16:12:00	f	t	t
-4	admin	admin	admin@itmusketeers.com	1234567890	2018-02-16 18:45:00	f	t	t
 \.
 
 
@@ -2961,7 +2961,7 @@ REVOKE ALL ON TABLE "user" FROM postgres;
 GRANT ALL ON TABLE "user" TO postgres;
 
 
--- Completed on 2018-02-16 19:22:22 IST
+-- Completed on 2018-02-21 18:47:23 IST
 
 --
 -- PostgreSQL database dump complete

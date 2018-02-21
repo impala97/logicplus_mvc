@@ -146,13 +146,16 @@
                         url:"{{ url_for('rtupdatecourse') }}",
                         data: $('form').serialize(),
                         type:'POST',
+                        sync: true,
                         success: function(response) {
+                            console.log(response);
                             var data = JSON.parse(response);
+                            console.log(data);
                             if(data.error === 'True')
                             {
-                                $('#err_lbl').text(data.str);
+                                $('#err_lbl').text(data.err_str);
                             }
-                            if(data.error === 'False')
+                            else if(data.error === 'False')
                             {
                                 window.location = data.url;
                             }
