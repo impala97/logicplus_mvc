@@ -2,10 +2,10 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 9.5.10
--- Dumped by pg_dump version 9.5.10
+-- Dumped from database version 9.5.11
+-- Dumped by pg_dump version 9.5.11
 
--- Started on 2018-02-22 14:57:20 IST
+-- Started on 2018-02-22 19:32:50 IST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -806,13 +806,13 @@ ALTER TABLE ONLY "user" ALTER COLUMN id SET DEFAULT nextval('user_id_seq'::regcl
 --
 
 COPY admission_batch (aid, bid, id, "time", fees) FROM stdin;
-1	1	6	12:00	15000
-1	2	7	10:00	10000
 1	3	8	10:00	12500
 1	5	9	15:00	15000
 5	2	10	10:00	10000
 5	4	11	15:00	8500
-5	1	5	10:00	15000
+1	1	12	12:00	15000
+1	2	13	10:00	10000
+5	1	14	12:00	15000
 \.
 
 
@@ -822,7 +822,7 @@ COPY admission_batch (aid, bid, id, "time", fees) FROM stdin;
 -- Name: admission_batch_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
 
-SELECT pg_catalog.setval('admission_batch_id_seq', 11, true);
+SELECT pg_catalog.setval('admission_batch_id_seq', 14, true);
 
 
 --
@@ -832,8 +832,8 @@ SELECT pg_catalog.setval('admission_batch_id_seq', 11, true);
 --
 
 COPY admission_trnxs (id, name, phone, email, study, course, address, gender, join_date, fees, active, dp, details, bid) FROM stdin;
-1	mehta smit	9904274495	vcr.student@gmail.com	BE-IT	Python	arihant aashish,6/10 gayakwadi plot	t	09/14/2017 - 09/14/2017	15000	t	1_201802221150.jpg	GEC,Modasa	1
-5	Bhavik Vyas	9033986379	vcr.faculty@gmail.com	BE-IT	Php	dsgsdfg	t	10/13/2017 - 10/13/2017	8500	t	5_201802211725.jpg	cvbcv	4
+1	mehta smit	9904274495	vcr.student@gmail.com	BE-IT	Python,Asp.net,Java,Python	arihant aashish,6/10 gayakwadi plot	t	09/14/2017 - 09/14/2017	52500	t	1_201802221150.jpg	GEC,Modasa	1
+5	Bhavik Vyas	9033986379	vcr.faculty@gmail.com	BE-IT	Python,Asp.net,Php	dsgsdfg	t	10/13/2017 - 10/13/2017	33500	t	5_201802211725.jpg	cvbcv	4
 \.
 
 
@@ -2822,7 +2822,7 @@ ALTER TABLE ONLY programe
 --
 -- TOC entry 2422 (class 0 OID 0)
 -- Dependencies: 9
--- Name: lp; Type: ACL; Schema: -; Owner: postgres
+-- Name: SCHEMA lp; Type: ACL; Schema: -; Owner: postgres
 --
 
 REVOKE ALL ON SCHEMA lp FROM PUBLIC;
@@ -2833,7 +2833,7 @@ GRANT ALL ON SCHEMA lp TO postgres;
 --
 -- TOC entry 2424 (class 0 OID 0)
 -- Dependencies: 8
--- Name: public; Type: ACL; Schema: -; Owner: postgres
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
 --
 
 REVOKE ALL ON SCHEMA public FROM PUBLIC;
@@ -2845,7 +2845,7 @@ GRANT ALL ON SCHEMA public TO PUBLIC;
 --
 -- TOC entry 2428 (class 0 OID 0)
 -- Dependencies: 183
--- Name: admission_trnxs; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE admission_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE admission_trnxs FROM PUBLIC;
@@ -2856,7 +2856,7 @@ GRANT ALL ON TABLE admission_trnxs TO postgres;
 --
 -- TOC entry 2432 (class 0 OID 0)
 -- Dependencies: 186
--- Name: batch_trnxs; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE batch_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE batch_trnxs FROM PUBLIC;
@@ -2867,7 +2867,7 @@ GRANT ALL ON TABLE batch_trnxs TO postgres;
 --
 -- TOC entry 2434 (class 0 OID 0)
 -- Dependencies: 188
--- Name: chat; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE chat; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE chat FROM PUBLIC;
@@ -2878,7 +2878,7 @@ GRANT ALL ON TABLE chat TO postgres;
 --
 -- TOC entry 2436 (class 0 OID 0)
 -- Dependencies: 190
--- Name: course_trnxs; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE course_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE course_trnxs FROM PUBLIC;
@@ -2889,7 +2889,7 @@ GRANT ALL ON TABLE course_trnxs TO postgres;
 --
 -- TOC entry 2438 (class 0 OID 0)
 -- Dependencies: 192
--- Name: faculty; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE faculty; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE faculty FROM PUBLIC;
@@ -2900,7 +2900,7 @@ GRANT ALL ON TABLE faculty TO postgres;
 --
 -- TOC entry 2440 (class 0 OID 0)
 -- Dependencies: 194
--- Name: inquiry_trnxs; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE inquiry_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE inquiry_trnxs FROM PUBLIC;
@@ -2911,7 +2911,7 @@ GRANT ALL ON TABLE inquiry_trnxs TO postgres;
 --
 -- TOC entry 2442 (class 0 OID 0)
 -- Dependencies: 196
--- Name: invoice_trnxs; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE invoice_trnxs; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE invoice_trnxs FROM PUBLIC;
@@ -2922,7 +2922,7 @@ GRANT ALL ON TABLE invoice_trnxs TO postgres;
 --
 -- TOC entry 2444 (class 0 OID 0)
 -- Dependencies: 198
--- Name: programe; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE programe; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE programe FROM PUBLIC;
@@ -2933,7 +2933,7 @@ GRANT ALL ON TABLE programe TO postgres;
 --
 -- TOC entry 2446 (class 0 OID 0)
 -- Dependencies: 200
--- Name: technology; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE technology; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE technology FROM PUBLIC;
@@ -2944,7 +2944,7 @@ GRANT ALL ON TABLE technology TO postgres;
 --
 -- TOC entry 2448 (class 0 OID 0)
 -- Dependencies: 202
--- Name: test; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE test; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE test FROM PUBLIC;
@@ -2955,7 +2955,7 @@ GRANT ALL ON TABLE test TO postgres;
 --
 -- TOC entry 2450 (class 0 OID 0)
 -- Dependencies: 203
--- Name: user; Type: ACL; Schema: lp; Owner: postgres
+-- Name: TABLE "user"; Type: ACL; Schema: lp; Owner: postgres
 --
 
 REVOKE ALL ON TABLE "user" FROM PUBLIC;
@@ -2963,7 +2963,7 @@ REVOKE ALL ON TABLE "user" FROM postgres;
 GRANT ALL ON TABLE "user" TO postgres;
 
 
--- Completed on 2018-02-22 14:57:20 IST
+-- Completed on 2018-02-22 19:32:50 IST
 
 --
 -- PostgreSQL database dump complete

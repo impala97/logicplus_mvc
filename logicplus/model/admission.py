@@ -6,7 +6,9 @@ from .batch import batch
 class admission():
     def updatecourse(self, aid):
         cname, fees = course().getcname(aid)
+        print("aid==%s==fees==%s" % (aid, fees))
         update = "update lp.admission_trnxs set course='%s',fees=%d where id=%d;" % (str(cname), fees, aid)
+        print(update)
         print("len==cname==", len(cname))
         return dbcon().do_insert(update)
 
@@ -131,6 +133,7 @@ class admission():
         total_fees = total_fees[0][0]
         select = "select fees from lp.admission_batch WHERE aid=%d and bid=%d;" % (aid, bid)
         fees = dbcon().do_select(select)
+        print(fees)
         fees = fees[0][0]
         update = "update lp.admission_trnxs set fees=%d where id=%d;" % (total_fees-fees, aid)
         if dbcon().do_insert(update):

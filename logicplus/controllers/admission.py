@@ -193,8 +193,8 @@ def rtupdatecourse():
 @app.route('/admission/course/delete', methods=['POST'])
 def deletecourse():
     if request.method == 'POST':
-        print(request.form)
         aid = request.form["aid"]
+        print(aid)
         aid = aid.split("_")
         admission().deletecourse(int(aid[0]), int(aid[1]))
         return jsonify(url=url_for('rtalist'))

@@ -1,5 +1,23 @@
-#--------------- Not Done ---------------
-bug : 
+#-----------------not done --------------------
+bug : jquery is not working at invoice insrtallment details
+bug type : small chantges
+priority : high
+solution : get jquery from ace admin template
+status : wip
+
+#------------- got it --------------------
+bug : delete course is working fine | fees index out of bound
+bug type : small changes
+priority : small
+status : closed
+
+#--------------- got it ---------------
+bug : fees is not autoupdating while change in course
+bug type : small changes
+priority : high
+solution : require testing and resolver problem
+status : closed
+
 #------------ got it ----------------------
 bug : css is not responsive according to resolution at profile page
 bug type : small changes
@@ -37,7 +55,7 @@ bug : at invoice filter
 bug type : major changes
 priority : high
 solution : use admission_batch data to filter all students | or find a better way to filter data
-status : NSY
+status : wip
 
 #------------ got it -------------
 bug : console bug found at index page

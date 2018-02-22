@@ -176,10 +176,12 @@
         <script type="text/javascript">
             $(function () {
                 $('.course').bind('click', function () {
+                    var aid = $(this).parent().find('input:hidden').val();
+                    console.log("fees==" + aid);
                     $.ajax({
                         url: "{{ url_for('deletecourse') }}",
                         type: 'POST',
-                        data: $("#cdata").serialize() + "_" + $(this).val()   ,
+                        data: { aid: aid + "_" + $(this).val()},
                         success: function (response) {
                             console.log("Course Successfully deleted." + response)
                             window.location = response.url;
