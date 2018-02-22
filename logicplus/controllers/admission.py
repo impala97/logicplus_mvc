@@ -84,7 +84,7 @@ def rtaUpdate():
         if valid is True:
             print(request.files)
             # if 'file' in request.files:
-            if not request.form.get('dp_img', None):
+            if not request.form.get('dp_img', None) and 'dp_img' in request.files:
                 ufolder = '/logicplus/static/master/profile/admission'
                 old_img = admission().getimgbyid(int(aid))
                 print(old_img)
@@ -109,7 +109,6 @@ def rtaUpdate():
                 admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
                 batch().updatecount(int(bid[0]))
                 return jsonify(url=url_for('rtalist'), error='False')
-
 
 
 @app.route('/admission/active', methods=['GET', 'POST'])

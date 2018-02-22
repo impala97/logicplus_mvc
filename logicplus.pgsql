@@ -5,7 +5,7 @@
 -- Dumped from database version 9.5.10
 -- Dumped by pg_dump version 9.5.10
 
--- Started on 2018-02-21 18:47:23 IST
+-- Started on 2018-02-22 14:57:20 IST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -810,6 +810,8 @@ COPY admission_batch (aid, bid, id, "time", fees) FROM stdin;
 1	2	7	10:00	10000
 1	3	8	10:00	12500
 1	5	9	15:00	15000
+5	2	10	10:00	10000
+5	4	11	15:00	8500
 5	1	5	10:00	15000
 \.
 
@@ -820,7 +822,7 @@ COPY admission_batch (aid, bid, id, "time", fees) FROM stdin;
 -- Name: admission_batch_id_seq; Type: SEQUENCE SET; Schema: lp; Owner: postgres
 --
 
-SELECT pg_catalog.setval('admission_batch_id_seq', 9, true);
+SELECT pg_catalog.setval('admission_batch_id_seq', 11, true);
 
 
 --
@@ -830,8 +832,8 @@ SELECT pg_catalog.setval('admission_batch_id_seq', 9, true);
 --
 
 COPY admission_trnxs (id, name, phone, email, study, course, address, gender, join_date, fees, active, dp, details, bid) FROM stdin;
-5	Bhavik Vyas	9033986379	vcr.faculty@gmail.com	BE-IT	Python	dsgsdfg	t	10/13/2017 - 10/13/2017	15000	t	5_201802211725.jpg	cvbcv	1
-1	mehta smit	9904274495	vcr.student@gmail.com	BE-IT	Python	arihant aashish,6/10 gayakwadi plot	t	09/14/2017 - 09/14/2017	15000	t	1_201802161438.jpg	GEC,Modasa	1
+1	mehta smit	9904274495	vcr.student@gmail.com	BE-IT	Python	arihant aashish,6/10 gayakwadi plot	t	09/14/2017 - 09/14/2017	15000	t	1_201802221150.jpg	GEC,Modasa	1
+5	Bhavik Vyas	9033986379	vcr.faculty@gmail.com	BE-IT	Php	dsgsdfg	t	10/13/2017 - 10/13/2017	8500	t	5_201802211725.jpg	cvbcv	4
 \.
 
 
@@ -887,10 +889,10 @@ SELECT pg_catalog.setval('batch_faculty_id_seq', 12, true);
 --
 
 COPY batch_trnxs (bid, cid, fid, day, "time", active, entries) FROM stdin;
+2	2	6	Monday,Wednesday,Friday	10:00,15:00	t	2
 1	1	1	Monday,Wednesday,Friday	10:00,12:00	t	2
-2	2	6	Monday,Wednesday,Friday	10:00,15:00	t	1
-5	1	6	Wednesday,Thursday,Friday,Saturday	15:00	t	1
 4	4	1	Tuesday,Thursday,Saturday	15:00	t	1
+5	1	6	Wednesday,Thursday,Friday,Saturday	15:00	t	1
 3	3	1	Tuesday,Thursday,Saturday	10:00,12:00	t	1
 \.
 
@@ -1097,7 +1099,7 @@ SELECT pg_catalog.setval('test_id_seq', 22, true);
 --
 
 COPY "user" (id, username, password, email, mobile, last_login, status, live, active) FROM stdin;
-4	admin	admin	admin@itmusketeers.com	1234567890	2018-02-21 18:05:00	f	t	t
+4	admin	admin	admin@itmusketeers.com	1234567890	2018-02-22 11:45:00	f	t	t
 2	bhavik1991	bhavik1991	bhavik@itmusketeers.com	9033986379	2017-09-06 17:17:00	f	f	t
 3	test	ITMCS	test@itmusketeers.com	1234567890	2017-08-19 13:04:00	f	f	f
 1	sr_mehta	srmehta	postgres@itmusketeers.com	9904274495	2018-02-15 16:12:00	f	t	t
@@ -2961,7 +2963,7 @@ REVOKE ALL ON TABLE "user" FROM postgres;
 GRANT ALL ON TABLE "user" TO postgres;
 
 
--- Completed on 2018-02-21 18:47:23 IST
+-- Completed on 2018-02-22 14:57:20 IST
 
 --
 -- PostgreSQL database dump complete

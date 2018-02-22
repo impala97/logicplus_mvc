@@ -1,17 +1,19 @@
-#------------ Not Done
+#--------------- Not Done ---------------
+bug : 
+#------------ got it ----------------------
 bug : css is not responsive according to resolution at profile page
 bug type : small changes
 priority : high
 solution : change in css
-status : NSY
+status : closed
 
-#--------got it ----------------
+#-------- got it ----------------
 bug : displaying course problem at course_data
 bug type : smalll changes
 priority : high
 status : closed
 
-#----------Not done------------
+#---------- got it ------------
 bug : put exception handling when deleting iamge
 bug type : small cahnges
 priority : low
@@ -48,7 +50,7 @@ status : closed
 bug : after password change angularjs does not redirect to page.
 bug type : small changes
 priority : low
-solution : learn how to redirect to another page using angularjs
+solution : learn how to redirect to another page using angularjs | use jquery there is no need for angularjs
 status : NSY
 
 
@@ -66,13 +68,13 @@ priority : normal
 suggestion : return id of batch which is causing the time clash | get name of course through that batch id
 status : NSY
 
-#-----Not Done-------
+#----- got it -------
 bug : when calculating time clash remove entry of current batch timings.
 bug type : small change
 priority : normal
 suggestion : sql query change on model/batch.py getdt() function.
 where : do it at both side Faculty | admission
-status : WIP
+status : closed
 
 #-----------Not done ------------------------------
 implementation : craete db session

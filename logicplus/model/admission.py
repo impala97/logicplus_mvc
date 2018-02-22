@@ -169,26 +169,29 @@ class admission_batch():
         day = dati[0].split(',')
         print("bdata==", bdata)
         for i in range(len(result)):
-            if int(bid_org) != result[i][0]:
-                print("if", result[i])
-                # check day and time clash
-                for d in day:
-                    if d in result[i][2]:
-                        if time in result[i][1]:
-                            time_clash = True
-                            error_str = "Your batch time is clash with another batch."
-                        else:
-                            time_clash = False
-                print("time match==", time_clash)
-            else:
-                print("else", result[i])
-                if time in result[i][1]:
-                    # if no time clashing
-                    time_clash = True
-                    error_str = "You have already added this batch."
-                    print("id match==", time_clash)
+            if time_clash is False:
+                if int(bid_org) != result[i][0]:
+                    print("if", result[i])
+                    # check day and time clash
+                    for d in day:
+                        if d in result[i][2]:
+                            if time in result[i][1]:
+                                time_clash = True
+                                error_str = "Your batch time is clash with another batch."
+                            else:
+                                time_clash = False
                 else:
-                    time_clash = False
+                    print("else", result[i])
+                    if time in result[i][1]:
+                        # if no time clashing
+                        time_clash = True
+                        error_str = "You have already added this batch."
+                        print("id match==", time_clash)
+                    else:
+                        time_clash = False
+            else:
+                return time_clash, error_str
+                print("time match==", time_clash)
         return time_clash, error_str
 
     def getbid(self, aid):
