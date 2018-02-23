@@ -1,0 +1,18 @@
+case - 1:
+\\ query for get invoice data by aid
+select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,(lp.admission_trnxs.fees-sum(lp.invoice_trnxs.fees)) as remaining_fees,phone,count(lp.invoice_trnxs.aid) as installment_no,lp.admission_trnxs.bid from lp.admission_trnxs inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id where lp.admission_trnxs.id=1 group by lp.admission_trnxs.id order by lp.admission_trxns.id;
+
+
+case - 2:
+\\ fetch bid from fid of batch and get aid from that bid
+select distinct lp.admission_batch.aid from lp.admission_batch inner join lp.batch_trnxs on lp.batch_trnxs.bid=lp.admission_batch.bid and lp.batch_trnxs.fid=1 order by lp.admission_batch.aid;
+
+
+case - 3:
+\\ fetch bid from cid of batch and get aid from that bid
+select distinct lp.admission_batch.aid from lp.admission_batch inner join lp.batch_trnxs on lp.batch_trnxs.bid=lp.admission_batch.bid and lp.batch_trnxs.cid=1 order by lp.admission_batch.aid;
+
+
+case - 4 :
+\\ fetch bid from fid and cid and get aid from that bid
+select distinct lp.admission_batch.aid from lp.admission_batch inner join lp.batch_trnxs on lp.batch_trnxs.bid=lp.admission_batch.bid and lp.batch_trnxs.fid=6 and lp.batch_trnxs.cid=1 order by lp.admission_batch.aid;

@@ -1,5 +1,5 @@
 #-----------------not done --------------------
-bug : jquery is not working at invoice insrtallment details
+bug : implement show_detial_btn feature of ace template
 bug type : small chantges
 priority : high
 solution : get jquery from ace admin template
@@ -50,12 +50,12 @@ priority : high
 solution : buttons to delete course | use ajax | create controller
 status : closed
  
-#----------- Not done -----------------
+#----------- got it -----------------
 bug : at invoice filter
 bug type : major changes
 priority : high
 solution : use admission_batch data to filter all students | or find a better way to filter data
-status : wip
+status : closed
 
 #------------ got it -------------
 bug : console bug found at index page

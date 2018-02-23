@@ -74,48 +74,39 @@ class admission():
         select = "select fees from lp.admission_trnxs where id=%d;"% aid
         return dbcon().do_select(select)
 
-    def getInvoiceData(self,course_name=None,faculty_name=None):
-        if course_name != 'ALL' and course_name is not None:
-            course_name = course_name.split(':')
-            course_id = course_name[0]
-            course_name = course_name[1]
-
+    def getInvoiceData(self, course_name=None, faculty_name=None):
+        aid = list()
         if (course_name is None and faculty_name is None) or (course_name == 'ALL' and faculty_name == 'ALL'):
-            select = "select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,(lp.admission_trnxs.fees-sum(lp.invoice_trnxs.fees)) as remaining_fees,phone,count(lp.invoice_trnxs.aid) as installment_no,lp.admission_trnxs.bid from lp.admission_trnxs inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id group by lp.admission_trnxs.id;"
-            result1 = dbcon().do_select(select)
-
-            for r in range(0,len(result1)):
-                select = "select lp.faculty.name from lp.faculty,(select lp.batch_trnxs.fid from lp.batch_trnxs,lp.admission_trnxs where lp.batch_trnxs.bid=%d) as fid where lp.faculty.id=1;"%int(result1[r][7])
-                result2 = dbcon().do_select(select)
-                result1[r] += result2[r]
-            return result1
-        elif course_name == 'ALL':
-            select = "select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,(lp.admission_trnxs.fees-sum(lp.invoice_trnxs.fees)) as remaining_fees,phone,count(lp.invoice_trnxs.aid) as installment_no,lp.admission_trnxs.bid from lp.admission_trnxs inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id group by lp.admission_trnxs.id;"
-            result1 = dbcon().do_select(select)
-
-            for r in range(0, len(result1)):
-                select = "select lp.faculty.name from lp.faculty,(select lp.batch_trnxs.fid from lp.batch_trnxs,lp.admission_trnxs where lp.batch_trnxs.bid=%d) as fid where lp.faculty.id=1;" % int(result1[r][7])
-                result2 = dbcon().do_select(select)
-                result1[r] += result2[r]
-            return result1
-        elif faculty_name == 'ALL':
-            select = "select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,sum(lp.invoice_trnxs.fees),phone,count(lp.invoice_trnxs.aid) as installment_no,lp.admission_trnxs.bid from lp.admission_trnxs inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id where course='%s' group by lp.admission_trnxs.id;"%course_name
-            result1 = dbcon().do_select(select)
-
-            for r in range(0, len(result1)):
-                select = "select lp.faculty.name from lp.faculty,(select lp.batch_trnxs.fid from lp.batch_trnxs,lp.admission_trnxs where lp.batch_trnxs.bid=%d) as fid where lp.faculty.id=1;" % int(result1[r][7])
-                result2 = dbcon().do_select(select)
-                result1[r] += result2[r]
-            return result1
+            print("case - 1")
+            select = "select distinct aid from lp.admission_batch order by aid;"
+            aid = dbcon().do_select(select)
+        elif course_name == 'ALL' and faculty_name != 'ALL':
+            print("case - 2")
+            select = "select distinct lp.admission_batch.aid from lp.admission_batch inner join lp.batch_trnxs on lp.batch_trnxs.bid=lp.admission_batch.bid and lp.batch_trnxs.fid=%d order by lp.admission_batch.aid;" % faculty_name
+            aid = dbcon().do_select(select)
+        # get all admission data from batch_trnxs and admission_batch
+        elif course_name != 'ALL' and faculty_name == 'ALL':
+            print("case - 3")
+            select = "select distinct lp.admission_batch.aid from lp.admission_batch inner join lp.batch_trnxs on lp.batch_trnxs.bid=lp.admission_batch.bid and lp.batch_trnxs.cid=%d order by lp.admission_batch.aid;" % course_name
+            aid = dbcon().do_select(select)
+        elif course_name != 'ALL' and faculty_name != 'ALL':
+            print("case - 4")
+            select = "select distinct lp.admission_batch.aid from lp.admission_batch inner join lp.batch_trnxs on lp.batch_trnxs.bid=lp.admission_batch.bid and lp.batch_trnxs.fid=%d and lp.batch_trnxs.cid=%d order by lp.admission_batch.aid;" % (faculty_name, course_name)
+            aid = dbcon().do_select(select)
         else:
-            select = "select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,(lp.admission_trnxs.fees-sum(lp.invoice_trnxs.fees)) as remaining_fees,phone,count(lp.invoice_trnxs.aid) as installment_no,lp.admission_trnxs.bid from lp.admission_trnxs inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id where course='%s'group by lp.admission_trnxs.id;" % course_name
-            result1 = dbcon().do_select(select)
+            print("else ")
+            select = "select distinct aid from lp.admission_batch order by aid;"
+            aid = dbcon().do_select(select)
+        # set aid before execute
+        print("aid===%s==len==%s" % (aid, len(aid)))
+        result1 = []
+        print("len==aid==", len(aid))
+        for i in range(len(aid)):
+            select = "select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,(lp.admission_trnxs.fees-sum(lp.invoice_trnxs.fees)) as remaining_fees,phone,count(lp.invoice_trnxs.aid) as installment_no,lp.admission_trnxs.bid from lp.admission_trnxs inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id where lp.admission_trnxs.id=%d group by lp.admission_trnxs.id;" % aid[i][0]
+            result1.append(dbcon().do_select(select))
+            result1[i][0] += batch().getfacultynamebybid(result1[i][0][7])
 
-            for r in range(0, len(result1)):
-                select = "select lp.faculty.name from lp.faculty,(select lp.batch_trnxs.fid from lp.batch_trnxs,lp.admission_trnxs where lp.batch_trnxs.bid=%d) as fid where lp.faculty.id=1;" % int(result1[r][7])
-                result2 = dbcon().do_select(select)
-                result1[r] += result2[r]
-            return result1
+        return result1
 
     def coountid(self):
         select = "select count(id) from lp.admission_trnxs;"

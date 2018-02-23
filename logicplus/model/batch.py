@@ -125,6 +125,11 @@ class batch:
         result = dbcon().do_select(select)
         return result[0]
 
+    def getfacultynamebybid(self, bid):
+        select = "select lp.faculty.name from lp.faculty inner join lp.batch_trnxs on lp.batch_trnxs.fid=lp.faculty.id and lp.batch_trnxs.bid=%d;" % bid
+        result = dbcon().do_select(select)
+        return result[0]
+
 
 class batch_faculty:
     def add(self, fid, bid, time):
