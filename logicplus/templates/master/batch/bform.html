@@ -124,53 +124,67 @@
 {% endblock %}
 {% block script %}
     {{ super() }}
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.js') }}"></script>
-    <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.min.js') }}"></script>
     <script type="text/javascript">
-        $('#batch_btn').click(function () {
-            $.ajax({
-                url: "{{ url_for('bupdate') }}",
-                data: $('form').serialize(),
-                type: 'POST',
-                success: function (response) {
-                    console.log(response);
-                    if(response.error === 'True'){
-                        $('#err_lbl').text(response.errstr);
-                    }
-                    else if(response.error === 'False')
-                    {
-                        window.location = response.url;
-                    }
-                    else
-                    {
-                        $('#err_lbl').text = "Something went wrong!!!";
-                    }
+        $(function () {
+            $('#batch_btn').click(function () {
+                $.ajax({
+                    url: "{{ url_for('bupdate') }}",
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function (response) {
+                        console.log(response);
+                        if(response.error === 'True'){
+                            $('#err_lbl').text(response.errstr);
+                        }
+                        else if(response.error === 'False')
+                        {
+                            window.location = response.url;
+                        }
+                        else
+                        {
+                            $('#err_lbl').text = "Something went wrong!!!";
+                        }
 
-                },
-                error: function (error) {
-                    
-                }
+                    },
+                    error: function (error) {
+
+                    }
+                });
+            });
+
+            $('#time_txt').multiselect({
+                 enableFiltering: true,
+                 enableHTML: true,
+                 buttonClass: 'form-control',
+                 includeSelectAllOption: true,
+                 templates: {
+                    button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"><span class="multiselect-selected-text"></span> &nbsp;<b class="fa fa-caret-down"></b></button>',
+                    ul: '<ul class="multiselect-container dropdown-menu"></ul>',
+                    filter: '<li class="multiselect-item filter"><div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
+                    filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span>',
+                    li: '<li><a tabindex="0"><label></label></a></li>',
+                    divider: '<li class="multiselect-item divider"></li>',
+                    liGroup: '<li class="multiselect-item multiselect-group"><label></label></li>'
+                 }
+            });
+            $('#day_txt').multiselect({
+                 enableFiltering: true,
+                 enableHTML: true,
+                 buttonClass: 'form-control',
+                 includeSelectAllOption: true,
+                 templates: {
+                    button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"><span class="multiselect-selected-text"></span> &nbsp;<b class="fa fa-caret-down"></b></button>',
+                    ul: '<ul class="multiselect-container dropdown-menu"></ul>',
+                    filter: '<li class="multiselect-item filter"><div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
+                    filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span>',
+                    li: '<li><a tabindex="0"><label></label></a></li>',
+                    divider: '<li class="multiselect-item divider"></li>',
+                    liGroup: '<li class="multiselect-item multiselect-group"><label></label></li>'
+                 }
             });
         });
-        
-        $('.multiselect').multiselect({
-             enableFiltering: true,
-             enableHTML: true,
-             buttonClass: 'form-control',
-             includeSelectAllOption: true,
-             templates: {
-                button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"><span class="multiselect-selected-text"></span> &nbsp;<b class="fa fa-caret-down"></b></button>',
-                ul: '<ul class="multiselect-container dropdown-menu"></ul>',
-                filter: '<li class="multiselect-item filter"><div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
-                filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span>',
-                li: '<li><a tabindex="0"><label></label></a></li>',
-                divider: '<li class="multiselect-item divider"></li>',
-                liGroup: '<li class="multiselect-item multiselect-group"><label></label></li>'
-             }
-            });
-        </script>
+    </script>
 {% endblock %}
 </body>
 </html>

@@ -7,6 +7,7 @@
     {% endblock %}
     {% block css %}
         {{ super() }}
+        <link href="{{ url_for('static',filename='master/css/bootstrap-multiselect.min.css') }}" rel="stylesheet" type="text/css" />
     {% endblock %}
 </head>
 <body class="skin-black">
@@ -82,7 +83,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-2 control-label">Course</label>
                                             <div class="col-sm-4">
-                                                <select class="form-control" name="course_txt" id="course_txt">
+                                                <select class="form-control multiselect" name="course_txt" id="course_txt" multiple>
                                                     {% for r in range(0,c|length) %}
                                                         <option value="{{ c[r][0] }}:{{ c[r][1] }}">{{ c[r][1] }}</option>
                                                     {% endfor %}
@@ -99,12 +100,18 @@
                                     <!-- details_txt | gender-->
                                     <div class="row">
                                         <div class="form-group">
-                                            <label class="col-sm-2 control-label">Details</label>
+                                            <label class="col-sm-2 control-label">Status</label>
                                             <div class="col-sm-4">
-                                                <textarea class="textarea" name="details_txt" rows="5" placeholder="Enter Extra Details">{{ row[0][6] }}</textarea>
+                                                <select class="form-control" name="status_txt" id="status_txt">
+                                                    <option>Opend</option>
+                                                    <option>Closed</option>
+                                                    <option>Intrested</option>
+                                                    <option>Not Intrested</option>
+                                                </select>
                                             </div>
 
                                             <label class="col-sm-2 control-label">Gender</label>
+                                            {% if row[0][7] == 'True' %}
                                             <div class="col-sm-2">
                                                 <input type="radio" class="form-control" name="gender" value="True" checked>Male</input>
                                             </div>
@@ -112,8 +119,27 @@
                                             <div class="col-sm-2">
                                                 <input type="radio" class="form-control" name="gender" value="False">Female</input>&nbsp;
                                             </div>
+                                            {% else %}
+                                            <div class="col-sm-2">
+                                                <input type="radio" class="form-control" name="gender" value="True">Male</input>
+                                            </div>
+
+                                            <div class="col-sm-2">
+                                                <input type="radio" class="form-control" name="gender" value="False" checked>Female</input>&nbsp;
+                                            </div>
+                                            {% endif %}
                                         </div>
                                     </div><br />
+
+                                    <!-- Details_txt -->
+                                    <div class="row">
+                                        <div class="form-group">
+                                            <label class="col-sm-2 control-label">Details</label>
+                                            <div class="col-sm-4">
+                                                <textarea class="textarea" name="details_txt" rows="5s" placeholder="Enter Extra Details">{{ row[0][6] }}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <!--submit button -->
                                     <div class="row">
@@ -134,26 +160,41 @@
     {% endblock %}
     {% block script %}
         {{ super() }}
-
+        <script src="{{ url_for('static',filename='master/js/bootstrap-multiselect.js') }}"></script>
         <script type="text/javascript">
             $(function () {
-               $('#course_txt').bind('change', function() {
-                  $.ajax({
-                      url: "{{ url_for('coursedata') }}",
-                      data: $('#course_txt'),
-                      type: 'POST',
-                      success: function(response) {
-                          var data = JSON.parse(response);
-                          $("#fees_txt").val(data.fees);
-                      },
-                      error: function (error) {
-                          console.log(error);
-                      }
-                  });
-                  return false;
+                $('#course_txt').bind('change', function() {
+                    $.ajax({
+                        url: "{{ url_for('coursedata') }}",
+                        data: {course_txt:JSON.stringify($('#course_txt').val())},
+                        type: 'POST',
+                        success: function(response) {
+                            var data = JSON.parse(response);
+                            $("#fees_txt").val(data.fees);
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                    return false;
                 });
 
-               $('#course_txt').trigger('change');
+
+                $('.multiselect').multiselect({
+                    enableFiltering: true,
+                    enableHTML: true,
+                    buttonClass: 'form-control',
+                    includeSelectAllOption: true,
+                    templates: {
+                        button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown"><span class="multiselect-selected-text"></span> &nbsp;<b class="fa fa-caret-down"></b></button>',
+                        ul: '<ul class="multiselect-container dropdown-menu"></ul>',
+                        filter: '<li class="multiselect-item filter"><div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
+                        filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span>',
+                        li: '<li><a tabindex="0"><label></label></a></li>',
+                        divider: '<li class="multiselect-item divider"></li>',
+                        liGroup: '<li class="multiselect-item multiselect-group"><label></label></li>'
+                    }
+                });
             });
         </script>
     {% endblock %}

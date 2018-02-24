@@ -1,3 +1,18 @@
+#-------------------- got it ----------------
+feature : add status column for inquiry
+solution : use dropdown and add status column in database
+status : closed
+
+#------------------ got it -----------------
+feature : add multiple course inquiry feature
+solution : use multiselect in inquiry module.
+status : closed
+
+#--------------------- got it -----------------
+feature : add notes to inquiry
+solution : add another column to the inquiry table
+status : closed
+
 #-----------------not done --------------------
 bug : implement show_detial_btn feature of ace template
 bug type : small chantges
@@ -49,7 +64,7 @@ bug type : major chanes
 priority : high
 solution : buttons to delete course | use ajax | create controller
 status : closed
- 
+
 #----------- got it -----------------
 bug : at invoice filter
 bug type : major changes
@@ -70,7 +85,6 @@ bug type : small changes
 priority : low
 solution : learn how to redirect to another page using angularjs | use jquery there is no need for angularjs
 status : NSY
-
 
 #-------- got it ------
 bug : remove old profile pic when user uploads a new one
@@ -128,13 +142,13 @@ priority : normal
 solution : use angular js to solve this
 status : NSY
 
-#--- Not done -------
+#--- Got it -------
 bug : js confalict at batch
 bug type : small
 priority : small
 solution : use noconfalict() function of jQuery
 page : batch.html | bform.html
-status : NSY
+status : closed
 
 #------ got it ----
 bug : did not update course in lp.admission_trnxs when add course.

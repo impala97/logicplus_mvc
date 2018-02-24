@@ -3,8 +3,8 @@ import datetime
 
 
 class inquiry():
-    def addInquiry(self,name, email, phone, course, study, details, gender):
-        insert = "insert into lp.inquiry_trnxs(name,email,phone,course,study,details,gender,date) values('%s','%s','%s','%s','%s','%s','%s','%s')"%(name, email, phone, course, study, details, gender,self.currentdate())
+    def addInquiry(self,name, email, phone, course, study, details, gender, status):
+        insert = "insert into lp.inquiry_trnxs(name,email,phone,course,study,details,gender,status,date) values('%s','%s','%s','%s','%s','%s','%s','%s','%s')"%(name, email, phone, course, study, details, gender, status, self.currentdate())
         return dbcon().do_insert(insert)
 
     def getinquiry(self):
@@ -19,8 +19,16 @@ class inquiry():
         update = "update lp.inquiry_trnxs set active='0' where id=%d"%int(id)
         return dbcon().do_insert(update)
 
-    def updateInquiry(self,id,name, email, phone, course, study, details, gender):
-        update = "update lp.inquiry_trnxs set name='%s',email='%s',phone='%s',course='%s',study='%s',details='%s',gender='%s' where id=%d;"%(name, email, phone, course, study, details, gender,int(id))
+    def updateInquiry(self, id, name, email, phone, course, study, details, gender, status):
+        print(type(course), len(course))
+        if len(course) > 0:
+            print("course is not none")
+            update = "update lp.inquiry_trnxs set name='%s',email='%s',phone='%s',course='%s',study='%s',details='%s',gender='%s', status='%s',date='%s' where id=%d;"%(name, email, phone, course, study, details, gender, status, self.currentdate(),int(id))
+            print(update)
+        else:
+            print("course is None")
+            update = "update lp.inquiry_trnxs set name='%s',email='%s',phone='%s',study='%s',details='%s',gender='%s', status='%s',date='%s' where id=%d;" % (name, email, phone, study, details, gender, status, self.currentdate(), int(id))
+            print(update)
         return dbcon().do_insert(update)
 
     def getdataById(self, iid):
@@ -29,6 +37,10 @@ class inquiry():
 
     def currentdate(self):
         return datetime.datetime.now().strftime("%Y-%m-%d")
+
+    def getnotes(self, inquiry_id):
+        select = "select * from lp.inquiry_notes where iid=%d and active='True';" % (inquiry_id)
+        return dbcon().do_select(select)
 
 
 if __name__ == "__main__":

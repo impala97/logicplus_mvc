@@ -1,19 +1,10 @@
 from logicplus import app
-from flask import url_for, render_template, request, redirect, json
+from flask import url_for, render_template, request, redirect
 from ..model.course import course
 from ..model.master import master
 
 
 # ----------------------course-----------
-@app.route('/course/data', methods=['POST'])
-def coursedata():
-    if request.method == 'POST':
-        cid = request.form['course_txt'].split(':')
-        fees = course().getFeesById(cid[0])
-        del cid
-        return json.dumps({'fees': fees})
-
-
 @app.route('/course', methods=['GET', 'POST'])
 def rtcourse():
     if request.method == 'POST':
