@@ -18,7 +18,7 @@ bug : implement show_detial_btn feature of ace template
 bug type : small chantges
 priority : high
 solution : get jquery from ace admin template
-status : wip
+status : NSY
 
 #------------- got it --------------------
 bug : delete course is working fine | fees index out of bound
@@ -112,7 +112,7 @@ status : closed
 implementation : craete db session
 bug type : small
 priority : normal
-status : NSY
+status : WIP
 
 #-------- Not done-----
 bug : session time out
@@ -133,7 +133,7 @@ bug : roll back database when exception raise
 bug type : major
 priority : high
 solution : implement exception handling | and view in database
-status : NSY
+status : WIP
 
 #--- Not done -------
 bug : js confalict at datatbale

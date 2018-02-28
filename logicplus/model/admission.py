@@ -30,23 +30,25 @@ class admission():
             aid = self.getIdByPhone(phone)
             return aid[0][0]
 
-    def updateAddmission(self,name,phone,email,study,cname,address,gender,join,fees,details,bid,id):
-        update = "update lp.admission_trnxs set name='%s',phone='%s',email='%s',study='%s',course='%s',address='%s',gender='%s',join_date='%s',fees=%d,details='%s',bid=%d where id=%d;"%(name,phone,email,study,cname,address,gender,join,int(fees),details,int(bid),int(id))
+    def updateAddmission(self,name,phone,email,study,cname,address,gender,join,details,bid,id):
+        update = "update lp.admission_trnxs set name='%s',phone='%s',email='%s',study='%s',course='%s',address='%s',gender='%s',join_date='%s',details='%s',bid=%d where id=%d;"%(name,phone,email,study,cname,address,gender,join,details,int(bid),int(id))
+        return update
         return dbcon().do_insert(update)
 
     def getIdByPhone(self, phone):
-        select = "select id from lp.admission_trnxs where phone='%s';"%(phone)
+        select = "select id from lp.admission_trnxs where phone='%s';" % (phone)
         return dbcon().do_select(select)
 
     def updatedpById(self, dp, id):
-        update = "update lp.admission_trnxs set dp='%s' where id=%d;"%(dp,id)
+        update = "update lp.admission_trnxs set dp='%s' where id=%d;" % (dp, id)
+        return update
         return dbcon().do_insert(update)
 
     def getAdmission(self, id=0):
         if id == 0:
             select = "select * from lp.admission_trnxs order by id;"
         else:
-            select = "select * from lp.admission_trnxs where id=%d;"%id
+            select = "select * from lp.admission_trnxs where id=%d;" % id
         return dbcon().do_select(select)
 
     def active(self, id):
@@ -131,17 +133,22 @@ class admission():
             delete = "delete from lp.admission_batch where aid=%d and bid=%d;" % (aid ,bid)
             return dbcon().do_insert(delete)
 
+    def call_do_bulk(self, query):
+        return dbcon().do_bulk(query)
 
-class admission_batch():
+
+class admission_batch:
     def add(self, aid, bid, time, fees):
         select = "select aid,bid from lp.admission_batch where aid=%d AND bid=%d;" % (aid, bid)
         result = dbcon().do_select(select)
         if len(result) == 0:
             insert = "insert into lp.admission_batch(aid, bid, time, fees) VALUES(%d,%d,'%s',%d);" % (aid, bid, time, fees)
+            print("insert==", insert)
+            return insert
             return dbcon().do_insert(insert)
         else:
-            del aid, bid, select, result
-            return True
+            update = "update lp.admission_batch set time='%s', fees=%d where aid=%d and bid=%d;" % (time, fees, aid, bid)
+            return update
 
     def getdt(self, aid, bdata):
         select = "select bid,time from lp.admission_batch where aid=%d;" % aid

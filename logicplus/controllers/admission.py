@@ -1,7 +1,7 @@
 import os
 from logicplus import app
 from flask import redirect, request, render_template, url_for, jsonify, json
-from ..model.admission import admission, admission_batch
+from ..model.admission import *
 from ..model.batch import batch
 from ..model.course import course
 from ..model.faculty import faculty
@@ -80,7 +80,9 @@ def rtaUpdate():
         print(err_str)
         print("conflict==", conflict)
 
-        valid = admission().updateAddmission(name, phone, email, study, cname[0], address, gender, join, fees, details, int(bid[0]), aid)
+        valid = True
+        query = list()
+        query.append(admission().updateAddmission(name, phone, email, study, cname[0], address, gender, join, details, int(bid[0]), aid))
         if valid is True:
             print(request.files)
             # if 'file' in request.files:
@@ -92,15 +94,19 @@ def rtaUpdate():
                 dp = request.files['dp_img']
                 filename = tmp().saveIMG(dp, aid, path)
                 print(filename)
-                tmp().remove_img(path, old_img)
-                print("old image removed.")
-                print(dp)
-                print("image uploaded.")
                 # to update image by id
-                valid = admission().updatedpById(filename, int(aid))
-                if valid:
-                    admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
-                    batch().updatecount(int(bid[0]))
+                query.append(admission().updatedpById(filename, int(aid)))
+                que = admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
+                if isinstance(que, str):
+                    query.append(que)
+                query.append(batch().updatecount(int(bid[0])))
+                print("len==query==", len(query))
+                valid = admission().call_do_bulk(query)
+                print("valid==", valid)
+                if valid is True:
+                    tmp().remove_img(path, old_img)
+                    admission().updatecourse(int(aid))
+                    print("old image removed.")
                     return jsonify(url=url_for('rtalist'), error='False')
                 else:
                     return jsonify(error='True', err_str=err_str)

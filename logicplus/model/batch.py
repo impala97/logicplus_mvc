@@ -117,7 +117,8 @@ class batch:
         select = "select count(bid) from lp.admission_batch where bid=%d;" % bid
         data_entry = dbcon().do_select(select)
 
-        update = "update lp.batch_trnxs set entries=%d WHERE bid=%d" % (data_entry[0][0], bid)
+        update = "update lp.batch_trnxs set entries=%d WHERE bid=%d;" % (data_entry[0][0], bid)
+        return update
         return dbcon().do_insert(update)
 
     def getdtbybid(self, bid):
