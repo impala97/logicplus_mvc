@@ -4,12 +4,14 @@ from .batch import batch
 
 
 class admission():
-    def updatecourse(self, aid):
+    def updatecourse(self, aid, string=False):
         cname, fees = course().getcname(aid)
         print("aid==%s==fees==%s" % (aid, fees))
         update = "update lp.admission_trnxs set course='%s',fees=%d where id=%d;" % (str(cname), fees, aid)
         print(update)
         print("len==cname==", len(cname))
+        if string is True:
+            return update
         return dbcon().do_insert(update)
 
         """
@@ -24,24 +26,27 @@ class admission():
             return dbcon().do_insert(update)
         """
 
-    def addAdmission(self,name,phone,email,study,cname,address,gender,join,fees,details,bid):
-        insert = "insert into lp.admission_trnxs(name,phone,email,study,course,address,gender,join_date,fees,active,dp,details,bid) values('%s','%s','%s','%s','%s','%s','%s','%s','%s','1','%s','%s',%d);"%(name,phone,email,study,cname,address,gender,join,fees,'profile-pic.jpg',details,int(bid))
-        if dbcon().do_insert(insert):
-            aid = self.getIdByPhone(phone)
-            return aid[0][0]
+    def addAdmission(self, name, phone, email, study, cname, address, gender, join, fees, details, bid, string=False):
+        insert = "insert into lp.admission_trnxs(name,phone,email,study,course,address,gender,join_date,fees,active,details,bid,dp) values('%s','%s','%s','%s','%s','%s','%s','%s','%s','1','%s',%d,'profile-pic.jpg') returning id;"%(name,phone,email,study,cname[0],address,gender,join,fees,details,int(bid[0]))
+        if string is True:
+            return insert
+        aid = dbcon().do_insert(insert,response=True)
+        return aid
 
-    def updateAddmission(self,name,phone,email,study,cname,address,gender,join,details,bid,id):
+    def updateAddmission(self, name, phone, email, study, cname, address, gender, join, details, bid, id, string=False):
         update = "update lp.admission_trnxs set name='%s',phone='%s',email='%s',study='%s',course='%s',address='%s',gender='%s',join_date='%s',details='%s',bid=%d where id=%d;"%(name,phone,email,study,cname,address,gender,join,details,int(bid),int(id))
-        return update
+        if string is True:
+            return update
         return dbcon().do_insert(update)
 
     def getIdByPhone(self, phone):
-        select = "select id from lp.admission_trnxs where phone='%s';" % (phone)
+        select = "select id from lp.admission_trnxs where phone='%s';" % phone
         return dbcon().do_select(select)
 
-    def updatedpById(self, dp, id):
+    def updatedpById(self, dp, id, string=False):
         update = "update lp.admission_trnxs set dp='%s' where id=%d;" % (dp, id)
-        return update
+        if string is True:
+            return update
         return dbcon().do_insert(update)
 
     def getAdmission(self, id=0):
@@ -105,8 +110,11 @@ class admission():
         print("len==aid==", len(aid))
         for i in range(len(aid)):
             select = "select lp.admission_trnxs.id,name,course,lp.admission_trnxs.fees,(lp.admission_trnxs.fees-sum(lp.invoice_trnxs.fees)) as remaining_fees,phone,count(lp.invoice_trnxs.aid) as installment_no,lp.admission_trnxs.bid from lp.admission_trnxs inner join lp.invoice_trnxs on lp.invoice_trnxs.aid=lp.admission_trnxs.id where lp.admission_trnxs.id=%d group by lp.admission_trnxs.id;" % aid[i][0]
-            result1.append(dbcon().do_select(select))
-            result1[i][0] += batch().getfacultynamebybid(result1[i][0][7])
+            response = dbcon().do_select(select)
+            if len(response) > 0:
+                result1.append(response)
+                print("result1==",result1[i])
+                result1[i][0] += batch().getfacultynamebybid(result1[i][0][7])
 
         return result1
 
@@ -136,19 +144,24 @@ class admission():
     def call_do_bulk(self, query):
         return dbcon().do_bulk(query)
 
+    def delete_admission(self, aid):
+        delete = "delete from lp.admission_trnxs where id=%d;" % int(aid)
+        return dbcon().do_insert(delete)
+
 
 class admission_batch:
-    def add(self, aid, bid, time, fees):
+    def add(self, aid, bid, time, fees, string=False):
         select = "select aid,bid from lp.admission_batch where aid=%d AND bid=%d;" % (aid, bid)
         result = dbcon().do_select(select)
+        query = ""
         if len(result) == 0:
-            insert = "insert into lp.admission_batch(aid, bid, time, fees) VALUES(%d,%d,'%s',%d);" % (aid, bid, time, fees)
-            print("insert==", insert)
-            return insert
-            return dbcon().do_insert(insert)
+            query = "insert into lp.admission_batch(aid, bid, time, fees) VALUES(%d,%d,'%s',%d);" % (aid, bid, time, fees)
         else:
-            update = "update lp.admission_batch set time='%s', fees=%d where aid=%d and bid=%d;" % (time, fees, aid, bid)
-            return update
+            query = "update lp.admission_batch set time='%s', fees=%d where aid=%d and bid=%d;" % (time, fees, aid, bid)
+
+        if string is True:
+            return query
+        return dbcon().do_insert(query)
 
     def getdt(self, aid, bdata):
         select = "select bid,time from lp.admission_batch where aid=%d;" % aid

@@ -1,3 +1,4 @@
+
 #-------------------- got it ----------------
 feature : add status column for inquiry
 solution : use dropdown and add status column in database
@@ -108,11 +109,11 @@ suggestion : sql query change on model/batch.py getdt() function.
 where : do it at both side Faculty | admission
 status : closed
 
-#-----------Not done ------------------------------
+#----------- got it ------------------------------
 implementation : craete db session
 bug type : small
 priority : normal
-status : WIP
+status : closed
 
 #-------- Not done-----
 bug : session time out

@@ -1,4 +1,5 @@
 import os
+import psycopg2
 from logicplus import app
 from flask import redirect, request, render_template, url_for, jsonify, json
 from ..model.admission import *
@@ -13,31 +14,42 @@ from ..model.master import master
 @app.route('/admission/add', methods=['GET', 'POST'])
 def rtadmission():
     if request.method == 'POST':
-        name = request.form['name_txt']
-        phone = request.form['phone_txt']
-        email = request.form['email_txt']
-        join = request.form['join_txt']
-        fees = request.form['fees_txt']
-        study = request.form['study_txt']
-        gender = request.form['gender']
-        details = request.form['details_txt']
-        address = request.form['address_txt']
         cid = request.form.get('course_txt')
-        bid = request.form.get('batch_txt').split('_')
-        time = bid[1].split(' ')
-        cname = course().getCourseName(cid)
-        aid = admission().addAdmission(name, phone, email, study, cname[0], address, gender, join, fees, details, int(bid[0]))
-        if aid == int(aid):
+        data = {}
+        data.update(name=request.form['name_txt'])
+        data.update(phone=request.form['phone_txt'])
+        data.update(email=request.form['email_txt'])
+        data.update(join=request.form['join_txt'])
+        data.update(fees=request.form['fees_txt'])
+        data.update(study=request.form['study_txt'])
+        data.update(gender=request.form['gender'])
+        data.update(details=request.form['details_txt'])
+        data.update(address=request.form['address_txt'])
+        data.update(cname=course().getCourseName(int(cid)))
+        data.update(bid=request.form.get('batch_txt').split('_'))
+        time = data['bid'][1].split(' ')
+        del data['bid'][1]
+        del time[0]
+        print(time)
+        print("len==data==", len(data))
+
+        query = list()
+        aid = admission().addAdmission(**data)
+        print("len==query==", len(query))
+        if not request.form.get('dp_img', None) and 'dp_img' in request.files:
             dp = request.files['dp_img']
             ufolder = 'logicplus/static/master/profile/admission'
             filename = tmp().saveIMG(dp, aid, ufolder)
-            valid = admission().updatedpById(filename, aid)
-            if valid is True:
-                admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
-                batch().updatecount(int(bid[0]))
+            query.append(admission().updatedpById(filename, aid, string=True))
+        query.append(admission_batch().add(int(aid), int(data['bid'][0]), str(time[0]), int(data['fees']), string=True))
+        query.append(batch().updatecount(int(data['bid'][0]), string=True))
+        try:
+            if admission().call_do_bulk(query):
                 return jsonify(url=url_for('rtalist'), error='False')
-            else:
-                return jsonify(error='True', errstr='Please try sometime later.')
+        except psycopg2.Error:
+            admission().delete_admission(aid)
+            return jsonify(error='True', errstr='Please try sometime later.')
+
     t = {'username': master.__username__, 'title': 'Master | Admission'}
     cname = batch().getCid()
     return render_template('master/admission/admission.html', c=cname, **t)
@@ -82,7 +94,7 @@ def rtaUpdate():
 
         valid = True
         query = list()
-        query.append(admission().updateAddmission(name, phone, email, study, cname[0], address, gender, join, details, int(bid[0]), aid))
+        query.append(admission().updateAddmission(name, phone, email, study, cname[0], address, gender, join, details, int(bid[0]), aid, string=True))
         if valid is True:
             print(request.files)
             # if 'file' in request.files:
@@ -95,26 +107,28 @@ def rtaUpdate():
                 filename = tmp().saveIMG(dp, aid, path)
                 print(filename)
                 # to update image by id
-                query.append(admission().updatedpById(filename, int(aid)))
-                que = admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
-                if isinstance(que, str):
-                    query.append(que)
-                query.append(batch().updatecount(int(bid[0])))
+                query.append(admission().updatedpById(filename, int(aid), string=True))
+                query.append(admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees), string=True))
+                query.append(batch().updatecount(int(bid[0]), string=True))
+                query.append(admission().updatecourse(int(aid), string=True))
                 print("len==query==", len(query))
                 valid = admission().call_do_bulk(query)
                 print("valid==", valid)
                 if valid is True:
                     tmp().remove_img(path, old_img)
-                    admission().updatecourse(int(aid))
                     print("old image removed.")
                     return jsonify(url=url_for('rtalist'), error='False')
                 else:
                     return jsonify(error='True', err_str=err_str)
             else:
                 print("image not uploaded")
-                admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees))
-                batch().updatecount(int(bid[0]))
-                return jsonify(url=url_for('rtalist'), error='False')
+                query.append(admission_batch().add(int(aid), int(bid[0]), str(time[1]), int(fees), string=True))
+                query.append(admission().updatecourse(int(aid),string=True))
+                query.append(batch().updatecount(int(bid[0]), string=True))
+                if admission().call_do_bulk(query):
+                    return jsonify(url=url_for('rtalist'), error='False')
+                else:
+                    return jsonify(error='True', err_str=err_str)
 
 
 @app.route('/admission/active', methods=['GET', 'POST'])
@@ -161,7 +175,7 @@ def rtacourse():
         cname = batch().getCid()
         aid = request.form['id']
         print("aid====", aid)
-        return render_template('/master/admission/addcourse.html', aid=aid, c=cname, **t)
+        return render_template('master/admission/addcourse.html', aid=aid, c=cname, **t)
 
 
 # for ajax data loading
@@ -183,7 +197,7 @@ def rtupdatecourse():
         fees = request.form['fees_txt']
         cname = request.form['course_txt'].split(':')
         flag, err_str = admission_batch().getdt(int(aid), batch_data)
-        print(err_str)
+        print("err_str==", err_str)
         if flag is False:
             batch_data = batch_data.split('_')
             time = batch_data[1].split(' ')
@@ -204,7 +218,3 @@ def deletecourse():
         aid = aid.split("_")
         admission().deletecourse(int(aid[0]), int(aid[1]))
         return jsonify(url=url_for('rtalist'))
-
-
-
-

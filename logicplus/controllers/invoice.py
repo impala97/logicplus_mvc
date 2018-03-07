@@ -1,6 +1,7 @@
 from flask import request, url_for, render_template, redirect, json, jsonify
 from logicplus import app
 from ..model.admission import admission
+from ..model.batch import batch
 from ..model.course import course
 from ..model.faculty import faculty
 from ..model.invoice import invoice

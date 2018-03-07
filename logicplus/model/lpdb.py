@@ -2,21 +2,36 @@ import psycopg2 as db
 
 
 class dbcon:
-    con = db.connect(dbname='logicplus', host='localhost', user='postgres', password='root')
-    cursor = con.cursor()
+    con = None
+    cursor = None
 
     def __init__(self):
-        pass
+        self.con = db.connect(dbname='logicplus', host='localhost', user='postgres', password='root')
+        self.cursor = self.con.cursor()
 
     def do_select(self, select):
-        self.cursor.execute(select)
-        row = self.cursor.fetchall()
-        return row
+        try:
+            self.cursor.execute(select)
+            row = self.cursor.fetchall()
+            return row
+        except psycopg2.DatabaseError as error:
+            print(error)
+        finally:
+            self.con.close()
 
-    def do_insert(self, query):
-        self.cursor.execute(query)
-        self.con.commit()
-        return True
+    def do_insert(self, query,response=False):
+        try:
+            self.cursor.execute(query)
+            if response is True:
+                response = self.cursor.fetchone()[0]
+                print("response==",response)
+                return response
+            return True
+        except psycopg2.DatabaseError as error:
+            print(error)
+        finally:
+            self.con.commit()
+            self.con.close()
 
     def do_bulk(self, query):
         if isinstance(query, list):
@@ -32,6 +47,8 @@ class dbcon:
             else:
                 self.con.commit()
                 return True
+            finally:
+                self.con.close()
         """
         sub_str = ""
         for que in query:
